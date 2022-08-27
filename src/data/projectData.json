@@ -1,0 +1,44 @@
+{
+    "projects": [
+        {
+            "title":"Dum-E",
+            "color":"Yellow",
+            "description": "Dum-E is an Iron Man inspired robot. It uses a Raspberry Pi to drive it, and is programmed in Python. It also uses OpenCV to track faces, and three servo motors to follow the tracked face, so that it can move in 3-dimensions. If the room is too dark to detect faces, an led face-light will automatically turn on so that a face can be detected. It has integrated speakers and a microphone to be given audible commands and output audible responses along with playing some music. Dum-E also has an LCD screen to display responses and errors.",
+            "video": "<iframe width='560' height='315' src='https://www.youtube.com/embed/cBq_qrmsrXQ' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
+            "link": {"link":"https://github.com/mghera02/Dum-E-Bot", "github": true},
+            "skills":["Raspberry Pi", "Motor Control", "Python", "OpenCV", "CAD", "3D-Printing", "Circuit Design"]
+        },
+        {
+            "title": "Accessible Partner Account Explorer",
+            "color": "White",
+            "description": "The Accessible Partner Account Explorer is a webpage that I designed, created, and pushed to production during my 2022 internship at Amazon. This is an internal page built for customer support and developers for the sellerCentral Amazon site.",
+            "video": "<iframe width='560' height='315' src='https://www.youtube.com/embed/0Me9P6x6LBU' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
+            "link": {"link":"", "github": false},
+            "skills":["Vue.js", "HTML", "CSS", "JavaScript", "Web Design", "unit testing", "Jest"]
+        },
+        {
+            "title": "H4-KR",
+            "color": "Green",
+            "description": "H4-KR is a Star Wars inspired droid with a design based off of Chopper from Rebels. H4-KR uses 2 arduinos programmed in C++. Its features are as follows: remote controlled movement via IR remote, semi-autonomous movement using ultrasonic sensor, 10+ diagnostic LEDs, temperature sensor, head movement via servo, hacking capabilities using a ATtiny85.",
+            "video": "<iframe width='560' height='315' src='https://www.youtube.com/embed/rc-0-Qx7w10' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
+            "link": {"link":"https://github.com/mghera02/starwarsDroid", "github": true},
+            "skills":["Arduino", "C++", "CAD", "3D-Printing", "Motor Control", "Circuit Design"]
+        },
+        {
+            "title": "Sith Holocron",
+            "color": "Red",
+            "description": "This is a Star Wars inspired IoT project. The sith holocron is built using the same Raspberry Pi that is hosting this website. Through the website, users can control the lights and motors embedded in the device and see the output through a live webcam.",
+            "video": "<iframe width='560' height='315' src='https://www.youtube.com/embed/4KzuhPVkj2g' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
+            "link": {"link":"http://aquanet.ddnsfree.com/#/HolocronPage", "github":false},
+            "skills":["Raspberry Pi", "PHP", "HTML", "CSS", "JS", "Vue.js", "CAD", "3D-Printing", "Motor Control", "Circuit Design", "Server Management"]
+        },
+        {
+            "title": "SchedLink",
+            "color": "Red",
+            "description": "SchedLink is a student and teacher portal used to keep track of bell schedules, extracurricular activities, class updates, and digital hall passes. As the CEO and founder, I Identified the business need and technical solution to aid students and faculty, and developed the initial vision, mission, and project management structure for the team.I was also a full stack developer, so I designed and implemented front and back-end systems including: notifications, settings, sign in, create account, extracurricular management, and creating/signing up for classes. SchedLink Achieved 10k unique views/day and eliminated costs for administration by having a free, multi-tool site.",
+            "video": "<iframe width='560' height='315' src='https://www.youtube.com/embed/HQGwd_BH2-Y' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
+            "link": {"link":"https://schedlink.com/fishers/", "github":false},
+            "skills":["HTML", "PHP", "JS", "CSS", "Server Management", "Project Management", "Leadership", "Entrepreneurship"]
+        }
+    ]
+}

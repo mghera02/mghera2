@@ -1,5 +1,5 @@
 <template>
-    <div id="routeBtn" @click="changeRoute()">&#8592; {{ site }}</div>
+    <div id="routeBtn" @click="changeRoute()">{{ site }}</div>
 </template>
 
 <script>
@@ -12,7 +12,7 @@
         methods: {
             changeRoute() {
                 let site = ""
-                if(this.site != "Home") {
+                if(this.site != "Exit") {
                     site = this.site
                 }
                 window.location = "http://aquanet.ddnsfree.com/#/" + site
@@ -30,10 +30,11 @@
 
 <style>
     #routeBtn {
-        font-size: 4rem;
+        font-size: 3rem !important;
         color:red;
         text-shadow: 0rem 0rem 1rem #ff0000, 0rem 0rem 2rem #ff0000;
         cursor:pointer;
         z-index: 2;
+        font-family: 'Iceland';
     }
 </style>

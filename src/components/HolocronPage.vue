@@ -1,6 +1,6 @@
 <template>
   <div id="holocronPage">
-    <routeBtn :site="'Home'" id="routeBtn"/>
+    <routeBtn :site="'Gallery'" id="routeBtn"/>
     <div id="starCollection">
       <div v-for="(pos,posInd) in starPos" :key="posInd">
         <star :style="getPos(pos)"/>

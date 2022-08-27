@@ -91,7 +91,8 @@
                 return retVal
             },
             goToNextPage() {
-                window.location = window.location.href + "#/HolocronPage"
+                //window.location = window.location.href + "#/HolocronPage"
+                window.location = window.location.href + "#/Gallery"
             }
         },
         props: {
@@ -174,18 +175,18 @@
                     
                     this.randRow.forEach((row,idx) => {
                         if(idx) {
-                            if(this.randRow[idx] - this.randRow[0] > 4) {
-                                this.randRow[idx] -= 5;
-                            } else if(this.randRow[idx] - this.randRow[0] < -4) {
-                                this.randRow[idx] += 5;
+                            if(this.randRow[idx] - this.randRow[0] > 3) {
+                                this.randRow[idx] -= 4;
+                            } else if(this.randRow[idx] - this.randRow[0] < -3) {
+                                this.randRow[idx] += 4;
                             } else {
                                 this.randRow[idx] += (Math.floor(Math.random() * 3) - 1);
                             }
 
-                            if(this.randCol[idx] - this.randCol[0] > 4) {
-                                this.randCol[idx] -= 5;
-                            } else if(this.randCol[idx] - this.randCol[0] < -4) {
-                                this.randCol[idx] += 5;
+                            if(this.randCol[idx] - this.randCol[0] > 3) {
+                                this.randCol[idx] -= 4;
+                            } else if(this.randCol[idx] - this.randCol[0] < -3) {
+                                this.randCol[idx] += 4;
                             } else {
                                 this.randCol[idx] += (Math.floor(Math.random() * 3) - 1);
                             }
@@ -284,17 +285,11 @@
         color:#60a0ff;
         font-family: 'Iceland';
         font-size:9rem;
-        text-shadow: 
-            0rem 0rem 1rem #60a0ff,
-            0rem 0rem 2rem #5080ff, 
-            0rem 0rem 4rem #4070ff, 
-            0rem 0rem 6rem #3060ff, 
-            0rem 0rem 8rem #2050ff,   
-            0rem 0rem 10rem #1040ff, 
-            0rem 0rem 12rem #0030ff;
+        animation: enterHover1 3s infinite;   
     }
     #enter:hover {
-        animation: enterHover 3s infinite;   
+        color: #ffff99;
+        animation: enterHover2 3s infinite;   
     }
     #circle1 {
         background:#FF3333;
@@ -373,10 +368,8 @@
     100% { opacity:1; }
 }
 
-@keyframes enterHover {
-    
+@keyframes enterHover1 {
   0%, 50%, 100% {
-
       text-shadow: 
             0rem 0rem 1rem #60a0ff,
             0rem 0rem 2rem #5080ff, 
@@ -387,9 +380,7 @@
             0rem 0rem 12rem #0030ff;
   
   }
-
   25%, 75% {
-
       text-shadow: 
             0rem 0rem .25rem #60a0ff,
             0rem 0rem .5rem #5080ff, 
@@ -398,9 +389,30 @@
             0rem 0rem 2rem #2050ff,   
             0rem 0rem 2.5rem #1040ff, 
             0rem 0rem 3rem #0030ff;
-  
+    }
   }
 
+  @keyframes enterHover2 {
+  0%, 50%, 100% {
+      text-shadow: 
+            0rem 0rem 2rem #ffcc66,
+            0rem 0rem 4rem #ffbb55, 
+            0rem 0rem 8rem #ffaa44, 
+            0rem 0rem 12rem #ff9933, 
+            0rem 0rem 16rem #dd8822,   
+            0rem 0rem 20rem #cc7711, 
+            0rem 0rem 24rem #bb6600;
+  
+  }
+  25%, 75% {
+      text-shadow: 
+            0rem 0rem .25rem #ffcc66,
+            0rem 0rem .5rem #ffbb55, 
+            0rem 0rem 1rem #ffaa44, 
+            0rem 0rem 1.25rem #ff9933, 
+            0rem 0rem 2rem #dd8822,   
+            0rem 0rem 2.5rem #cc7711, 
+            0rem 0rem 3rem #bb6600;
+    }
 }
-
 </style>

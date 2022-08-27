@@ -1,12 +1,14 @@
 <script>
 /* eslint-disable */
 import Home from './components/Home.vue'
+import Gallery from './components/Gallery.vue'
 import HolocronPage from './components/HolocronPage.vue'
 
 const routes = {
   '': Home,
   '/': Home,
   '#/': Home,
+  '/Gallery': Gallery,
   '/HolocronPage': HolocronPage
 }
 
@@ -29,7 +31,7 @@ export default {
 }
 </script>
 
-<template>
+<template> 
   <component :is="currentView" />
 </template>
 
