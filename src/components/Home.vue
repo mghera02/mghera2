@@ -92,7 +92,11 @@
             },
             goToNextPage() {
                 //window.location = window.location.href + "#/HolocronPage"
-                window.location = window.location.href + "#/Gallery"
+                if(window.location.href.indexOf('#') > -1) {
+                    window.location = window.location.href + "Gallery"
+                } else {
+                    window.location = window.location.href + "#/Gallery"
+                }
             }
         },
         props: {
