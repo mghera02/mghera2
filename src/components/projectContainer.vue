@@ -88,7 +88,7 @@
 
     #title {
         margin-left:1rem;
-        font-size:2rem;
+        font-size:3rem;
         font-family: 'Michroma';
         font-weight: 700; 
     }

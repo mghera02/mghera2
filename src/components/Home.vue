@@ -32,6 +32,7 @@
                 lastVert: 'down',
                 oldRow: [-1],
                 oldCol: [-1],
+                magicInterval: null
             }
         },
         methods: {
@@ -92,6 +93,7 @@
             },
             goToNextPage() {
                 //window.location = window.location.href + "#/HolocronPage"
+                clearInterval(this.magicInterval);
                 if(window.location.href.indexOf('#') > -1) {
                     window.location = window.location.href + "Gallery"
                 } else {
@@ -105,7 +107,7 @@
         },
         mounted: function () {
             //let counter = 0;
-            setInterval(() => {
+            this.magicInterval = setInterval(() => {
                 //console.log(counter)
                 const d = new Date();
                 console.log('seconds since:', d.getUTCMilliseconds()-this.time)
@@ -209,7 +211,7 @@
                 }
                 //counter++;
             }, 10)
-        },
+        }
     }
 </script>
 
