@@ -6,7 +6,7 @@
             "description": "Dum-E is an Iron Man inspired robot. It uses a Raspberry Pi to drive it, and is programmed in Python. It also uses OpenCV to track faces, and three servo motors to follow the tracked face, so that it can move in 3-dimensions. If the room is too dark to detect faces, an led face-light will automatically turn on so that a face can be detected. It has integrated speakers and a microphone to be given audible commands and output audible responses along with playing some music. Dum-E also has an LCD screen to display responses and errors.",
             "video": "<iframe width='560' height='315' src='https://www.youtube.com/embed/cBq_qrmsrXQ' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
             "link": {"link":"https://github.com/mghera02/Dum-E-Bot", "github": true},
-            "skills":["Raspberry Pi", "Motor Control", "Python", "OpenCV", "CAD", "3D-Printing", "Circuit Design"]
+            "skills":["Raspberry Pi", "Robotics", "Motor Control", "Python", "OpenCV", "CAD", "3D-Printing", "Circuit Design"]
         },
         {
             "title": "Accessible Partner Account Explorer",
@@ -22,7 +22,7 @@
             "description": "H4-KR is a Star Wars inspired droid with a design based off of Chopper from Rebels. H4-KR uses 2 arduinos programmed in C++. Its features are as follows: remote controlled movement via IR remote, semi-autonomous movement using ultrasonic sensor, 10+ diagnostic LEDs, temperature sensor, head movement via servo, hacking capabilities using a ATtiny85.",
             "video": "<iframe width='560' height='315' src='https://www.youtube.com/embed/rc-0-Qx7w10' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
             "link": {"link":"https://github.com/mghera02/starwarsDroid", "github": true},
-            "skills":["Arduino", "C++", "CAD", "3D-Printing", "Motor Control", "Circuit Design"]
+            "skills":["Arduino", "Robotics", "C++", "CAD", "3D-Printing", "Motor Control", "Circuit Design"]
         },
         {
             "title": "Sith Holocron",

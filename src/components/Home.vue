@@ -109,14 +109,13 @@
             //let counter = 0;
             this.magicInterval = setInterval(() => {
                 //console.log(counter)
-                const d = new Date();
-                console.log('seconds since:', d.getUTCMilliseconds()-this.time)
-                this.time = d.getUTCMilliseconds();
-                console.log(this.oldRow.length)
+                //const d = new Date();
+                //console.log('seconds since:', d.getUTCMilliseconds()-this.time)
+                //this.time = d.getUTCMilliseconds();
                 if(this.randRow[0] == -1 || this.randCol[0] == -1) {
                     this.randRow[0] = Math.floor(Math.random() * 25) + 12;
                     this.randCol[0] = Math.floor(Math.random() * 25) + 12;
-                    for(let i = 0; i < 10; i++) {
+                    for(let i = 0; i < 6; i++) {
                         const randDeg = ((Math.random() * 360))
                         let x = Math.cos(randDeg * Math.PI/180) * ((Math.random() * 8) + 1);
                         let y = Math.sin(randDeg * Math.PI/180) * ((Math.random() * 12) + 1);
@@ -181,25 +180,25 @@
                     
                     this.randRow.forEach((row,idx) => {
                         if(idx) {
-                            if(this.randRow[idx] - this.randRow[0] > 3) {
-                                this.randRow[idx] -= 4;
-                            } else if(this.randRow[idx] - this.randRow[0] < -3) {
-                                this.randRow[idx] += 4;
+                            if(this.randRow[idx] - this.randRow[0] > 2) {
+                                this.randRow[idx] -= 3;
+                            } else if(this.randRow[idx] - this.randRow[0] < -2) {
+                                this.randRow[idx] += 3;
                             } else {
-                                this.randRow[idx] += (Math.floor(Math.random() * 3) - 1);
+                                this.randRow[idx] += (Math.floor(Math.random() * 2) - 1);
                             }
 
-                            if(this.randCol[idx] - this.randCol[0] > 3) {
-                                this.randCol[idx] -= 4;
-                            } else if(this.randCol[idx] - this.randCol[0] < -3) {
-                                this.randCol[idx] += 4;
+                            if(this.randCol[idx] - this.randCol[0] > 2) {
+                                this.randCol[idx] -= 3;
+                            } else if(this.randCol[idx] - this.randCol[0] < -2) {
+                                this.randCol[idx] += 3;
                             } else {
-                                this.randCol[idx] += (Math.floor(Math.random() * 3) - 1);
+                                this.randCol[idx] += (Math.floor(Math.random() * 2) - 1);
                             }
                         }
 
                         let randNum = (Math.floor(Math.random() * 50))
-                        if (randNum < 6) {
+                        if (randNum < 10) {
                             this.oldRow.push(this.randRow[idx])
                             this.oldCol.push(this.randCol[idx])
                         }
@@ -210,7 +209,7 @@
                     })
                 }
                 //counter++;
-            }, 10)
+            }, 0)
         }
     }
 </script>
@@ -223,7 +222,10 @@
         width:100%;
         display: flex;
         flex-direction: column;
-        background: radial-gradient(rgb(80,80,160) 0%, rgb(40,40,90) 40%, rgb(25,25,60)60%);
+        background: rgb(16,9,129);
+        background: linear-gradient(180deg, rgba(14,5,120,1) 25%, rgba(20,0,230,1) 58%, rgba(130,0,200,1) 100%);
+        /*background: radial-gradient(rgb(80,80,160) 0%, rgb(40,40,90) 40%, rgb(25,25,60)60%);*/
+
         overflow: hidden;
         /*background-image: url('../assets/bricks.jpg');
         background-repeat: no-repeat;
@@ -270,25 +272,25 @@
         position:absolute;
         top:27.5%;
         left:30%;
-        color:#ffccee;
+        color:#ffff99;
         font-family: 'Iceland';
         font-size:9rem;
         text-align:center;
         text-shadow: 
-            0rem 0rem 1rem #ff7788,
-            0rem 0rem 2rem #ff5566, 
-            0rem 0rem 4rem #ff4444, 
-            0rem 0rem 6rem #ff2222, 
-            0rem 0rem 8rem #ff0000,   
-            0rem 0rem 10rem #ff0000, 
-            0rem 0rem 12rem #ff0000;
+            0rem 0rem .25rem #ffcc66,
+            0rem 0rem .5rem #ffbb55, 
+            0rem 0rem 1rem #ffaa44, 
+            0rem 0rem 1.25rem #ff9933, 
+            0rem 0rem 2rem #dd8822,   
+            0rem 0rem 2.5rem #cc7711, 
+            0rem 0rem 3rem #bb6600;
     }
     #enter {
         position:absolute;
         top:80%;
         cursor:pointer;
         left:41.75%;
-        color:#60a0ff;
+        color:#aaddff;
         font-family: 'Iceland';
         font-size:9rem;
         animation: enterHover1 3s infinite;   
@@ -313,14 +315,13 @@
   0%, 18%, 22%, 25%, 39%, 41%, 53%, 57%, 100% {
 
       text-shadow: 
-            0rem 0rem 1rem #ff7788,
-            0rem 0rem 2rem #ff5566, 
-            0rem 0rem 4rem #ff4444, 
-            0rem 0rem 6rem #ff2222, 
-            0rem 0rem 8rem #ff0000,   
-            0rem 0rem 10rem #ff0000, 
-            0rem 0rem 12rem #ff0000;
-  
+            0rem 0rem .25rem #ffcc66,
+            0rem 0rem .5rem #ffbb55, 
+            0rem 0rem 1rem #ffaa44, 
+            0rem 0rem 1.25rem #ff9933, 
+            0rem 0rem 2rem #dd8822,   
+            0rem 0rem 2.5rem #cc7711, 
+            0rem 0rem 3rem #bb6600;
   }
   
   20%, 24%, 40%, 55% {        
@@ -333,14 +334,13 @@
   0%, 12%, 14%, 31%, 33%, 63%, 65%, 82%, 84%, 98%, 100% {
 
       text-shadow: 
-            0rem 0rem 1rem #ff7788,
-            0rem 0rem 2rem #ff5566, 
-            0rem 0rem 4rem #ff4444, 
-            0rem 0rem 6rem #ff2222, 
-            0rem 0rem 8rem #ff0000,   
-            0rem 0rem 10rem #ff0000, 
-            0rem 0rem 12rem #ff0000;
-  
+            0rem 0rem .25rem #ffcc66,
+            0rem 0rem .5rem #ffbb55, 
+            0rem 0rem 1rem #ffaa44, 
+            0rem 0rem 1.25rem #ff9933, 
+            0rem 0rem 2rem #dd8822,   
+            0rem 0rem 2.5rem #cc7711, 
+            0rem 0rem 3rem #bb6600;
   }
   
   13%, 32%, 64%, 83%, 99% {        
@@ -353,14 +353,13 @@
   0%, 4%, 6%, 24%, 26%, 49%, 51%, 74%, 76%, 89%, 91% {
 
       text-shadow: 
-            0rem 0rem 1rem #ff7788,
-            0rem 0rem 2rem #ff5566, 
-            0rem 0rem 4rem #ff4444, 
-            0rem 0rem 6rem #ff2222, 
-            0rem 0rem 8rem #ff0000,   
-            0rem 0rem 10rem #ff0000, 
-            0rem 0rem 12rem #ff0000;
-  
+            0rem 0rem .25rem #ffcc66,
+            0rem 0rem .5rem #ffbb55, 
+            0rem 0rem 1rem #ffaa44, 
+            0rem 0rem 1.25rem #ff9933, 
+            0rem 0rem 2rem #dd8822,   
+            0rem 0rem 2.5rem #cc7711, 
+            0rem 0rem 3rem #bb6600;
   }
   
   5%, 25%, 50%, 75%, 90% {        
@@ -377,24 +376,23 @@
 @keyframes enterHover1 {
   0%, 50%, 100% {
       text-shadow: 
-            0rem 0rem 1rem #60a0ff,
-            0rem 0rem 2rem #5080ff, 
-            0rem 0rem 4rem #4070ff, 
-            0rem 0rem 6rem #3060ff, 
-            0rem 0rem 8rem #2050ff,   
-            0rem 0rem 10rem #1040ff, 
-            0rem 0rem 12rem #0030ff;
-  
+            0rem 0rem 1rem #3070e0,
+            0rem 0rem 2rem #2060d0, 
+            0rem 0rem 4rem #1050c0, 
+            0rem 0rem 6rem #0040b0, 
+            0rem 0rem 8rem #0030a0,   
+            0rem 0rem 10rem #002090, 
+            0rem 0rem 12rem #001080;
   }
   25%, 75% {
       text-shadow: 
-            0rem 0rem .25rem #60a0ff,
-            0rem 0rem .5rem #5080ff, 
-            0rem 0rem 1rem #4070ff, 
-            0rem 0rem 1.25rem #3060ff, 
-            0rem 0rem 2rem #2050ff,   
-            0rem 0rem 2.5rem #1040ff, 
-            0rem 0rem 3rem #0030ff;
+            0rem 0rem .25rem #3070e0,
+            0rem 0rem .5rem #2060d0, 
+            0rem 0rem 1rem #1050c0, 
+            0rem 0rem 1.5rem #0040b0, 
+            0rem 0rem 2rem #0030a0,   
+            0rem 0rem 2.5rem #002090, 
+            0rem 0rem 3rem #001080;
     }
   }
 
