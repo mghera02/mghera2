@@ -7,7 +7,8 @@
                 :title="project.title" 
                 :color="project.color" 
                 :description="project.description" 
-                :video="project.video"
+                :videoLandscape="project.videoLandscape"
+                :videoVertical="project.videoVertical"
                 :skills="project.skills"
                 :link="project.link"
             />
@@ -47,6 +48,18 @@
         overflow-y: visible !important;
     }
 
+    @media (max-width: 1000px) {
+        #galleryTitle {
+            font-size:5rem;
+        }
+    }
+
+    @media (min-width: 1000px) {
+        #galleryTitle {
+            font-size:9rem;
+        }
+    }
+
     #Gallery {
         display: flex;
         flex-direction: column;
@@ -60,7 +73,6 @@
         margin-top:3rem;
         color:#ffccee;
         font-family: 'Iceland';
-        font-size:9rem;
         text-shadow: 
             0rem 0rem 1rem #ff7788,
             0rem 0rem 2rem #ff5566, 

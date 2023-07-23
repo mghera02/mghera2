@@ -106,116 +106,13 @@
         computed: {
         },
         mounted: function () {
-            //let counter = 0;
-            this.magicInterval = setInterval(() => {
-                //console.log(counter)
-                //const d = new Date();
-                //console.log('seconds since:', d.getUTCMilliseconds()-this.time)
-                //this.time = d.getUTCMilliseconds();
-                if(this.randRow[0] == -1 || this.randCol[0] == -1) {
-                    this.randRow[0] = Math.floor(Math.random() * 25) + 12;
-                    this.randCol[0] = Math.floor(Math.random() * 25) + 12;
-                    for(let i = 0; i < 6; i++) {
-                        const randDeg = ((Math.random() * 360))
-                        let x = Math.cos(randDeg * Math.PI/180) * ((Math.random() * 8) + 1);
-                        let y = Math.sin(randDeg * Math.PI/180) * ((Math.random() * 12) + 1);
-                        this.randRow.push(Math.floor(this.randRow[0] + y));
-                        this.randCol.push(Math.floor(this.randCol[0] + x));
-                    }
-                } else {
-                    let upDown = Math.floor(Math.random() * 20) + 1;
-                    let leftRight = Math.floor(Math.random() * 20) + 1;
-
-                    if(this.randRow[0] == 50) {
-                        this.randRow[0] -= 1;
-                        this.lastVert = 'down'
-                    } else if(this.randRow[0] == 0) {
-                        this.randRow[0] += 1;
-                        this.lastVert = 'up'
-                    } else {
-                        if(this.lastVert == 'down') {
-                            if(upDown <= 19) {
-                                this.randRow[0] -= 1;
-                                this.lastVert = 'down'
-                            } else {
-                                this.randRow[0] += 1;
-                                this.lastVert = 'up'
-                            }
-                        } else {
-                            if(upDown <= 19) {
-                                this.randRow[0] += 1;
-                                this.lastVert = 'up'
-                            } else {
-                                this.randRow[0] -= 1;
-                                this.lastVert = 'down'
-                            }
-                        }
-                    }
-
-                    if(this.randCol[0] == 50) {
-                        this.randCol[0] -= 1;
-                        this.lastHoriz = 'left'
-                    } else if(this.randCol[0] == 0) {
-                        this.randCol[0] += 1;
-                        this.lastHoriz = 'right'
-                    } else {
-                        if(this.lastHoriz == 'left') {
-                            if(leftRight <= 19) {
-                                this.randCol[0] -= 1;
-                                this.lastHoriz = 'left'
-                            } else {
-                                this.randCol[0] += 1;
-                                this.lastHoriz = 'right'
-                            }
-                        } else {
-                            if(leftRight <= 19) {
-                                this.randCol[0] += 1;
-                                this.lastHoriz = 'right'
-                            } else {
-                                this.randCol[0] -= 1;
-                                this.lastHoriz = 'left'
-                            }
-                        }
-                    }
-                    
-                    this.randRow.forEach((row,idx) => {
-                        if(idx) {
-                            if(this.randRow[idx] - this.randRow[0] > 2) {
-                                this.randRow[idx] -= 3;
-                            } else if(this.randRow[idx] - this.randRow[0] < -2) {
-                                this.randRow[idx] += 3;
-                            } else {
-                                this.randRow[idx] += (Math.floor(Math.random() * 2) - 1);
-                            }
-
-                            if(this.randCol[idx] - this.randCol[0] > 2) {
-                                this.randCol[idx] -= 3;
-                            } else if(this.randCol[idx] - this.randCol[0] < -2) {
-                                this.randCol[idx] += 3;
-                            } else {
-                                this.randCol[idx] += (Math.floor(Math.random() * 2) - 1);
-                            }
-                        }
-
-                        let randNum = (Math.floor(Math.random() * 50))
-                        if (randNum < 10) {
-                            this.oldRow.push(this.randRow[idx])
-                            this.oldCol.push(this.randCol[idx])
-                        }
-                        if(this.oldRow.length > 40) {
-                            this.oldRow.shift()
-                            this.oldCol.shift()
-                        }
-                    })
-                }
-                //counter++;
-            }, 0)
         }
     }
 </script>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Iceland');
+
     #Home {
         z-index:-2;
         height: 100%;
@@ -224,35 +121,58 @@
         flex-direction: column;
         background: rgb(16,9,129);
         background: linear-gradient(180deg, rgba(14,5,120,1) 25%, rgba(20,0,230,1) 58%, rgba(130,0,200,1) 100%);
-        /*background: radial-gradient(rgb(80,80,160) 0%, rgb(40,40,90) 40%, rgb(25,25,60)60%);*/
-
         overflow: hidden;
-        /*background-image: url('../assets/bricks.jpg');
-        background-repeat: no-repeat;
-        background-size: cover;*/
     }
-    .magicRow {
-        height: 10%;
-        width:100%;
-        display: flex;
-        flex-direction: row;
+
+    #mainTitle {
+        position:relative;
+        top: 10%;
+        color:#ffff99;
+        font-family: 'Iceland';
+        font-size:4rem;
+        text-align:center;
+        text-shadow: 
+            0rem 0rem .25rem #ffcc66,
+            0rem 0rem .5rem #ffbb55, 
+            0rem 0rem 1rem #ffaa44, 
+            0rem 0rem 1.25rem #ff9933, 
+            0rem 0rem 2rem #dd8822,   
+            0rem 0rem 2.5rem #cc7711, 
+            0rem 0rem 3rem #bb6600;
     }
-    .magicCol {
-        width: 10%;
-        height:100%;
-        border-radius: 50%;
+
+    #enter {
+        position:relative;
+        text-align:center;
+        cursor:pointer;
+        color:#aaddff;
+        font-family: 'Iceland';
+        font-size:5rem;
+        animation: enterHover1 3s infinite;   
     }
-    .magicItem {
-        width:30%;
-        height:60%;
-        border-radius: 50%;
+
+    @media (max-width: 1000px) {
+        #mainTitle {
+            font-size:4rem;
+        }
+        #enter {
+            font-size:5rem;
+            top: 50%;
+        }
     }
-    .oldMagicItem {
-        width:15%;
-        height:30%;
-        border-radius: 50%;
-        z-index:2;
+
+    @media (min-width: 1000px) {
+        #mainTitle {
+            font-size:9rem;
+            
+        }
+
+        #enter {
+            font-size:9rem; 
+            top: 30%;
+        }
     }
+
     #firstWord {
         animation: flickerNeonSign1 20s infinite alternate;   
     }
@@ -268,33 +188,7 @@
     #fifthWord {
         animation: flickerNeonSign2 44s infinite alternate;   
     }
-    #mainTitle {
-        position:absolute;
-        top:27.5%;
-        left:30%;
-        color:#ffff99;
-        font-family: 'Iceland';
-        font-size:9rem;
-        text-align:center;
-        text-shadow: 
-            0rem 0rem .25rem #ffcc66,
-            0rem 0rem .5rem #ffbb55, 
-            0rem 0rem 1rem #ffaa44, 
-            0rem 0rem 1.25rem #ff9933, 
-            0rem 0rem 2rem #dd8822,   
-            0rem 0rem 2.5rem #cc7711, 
-            0rem 0rem 3rem #bb6600;
-    }
-    #enter {
-        position:absolute;
-        top:80%;
-        cursor:pointer;
-        left:41.75%;
-        color:#aaddff;
-        font-family: 'Iceland';
-        font-size:9rem;
-        animation: enterHover1 3s infinite;   
-    }
+    
     #enter:hover {
         color: #ffff99;
         animation: enterHover2 3s infinite;   

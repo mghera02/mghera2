@@ -1,5 +1,5 @@
 <template>
-    <iframe id="webcamVid" src="http://aquanet.ddnsfree.com:8082" height="240" width="320"></iframe>
+    <img id="webcamVid" src="http://aquanet.ddnsfree.com:8082" allowfullscreen="true"/>
 </template>
 
 <script>
@@ -9,8 +9,15 @@
 </script>
 
 <style>
-    iframe {
-        border: .2rem solid black;
-        box-shadow: 0px 0px 4rem 2rem black;
+    @media (max-width: 1000px) {
+        img {
+            width: 100vw;
+        }
+    }
+
+    @media (min-width: 1000px) {
+        img {
+            width: 22vw;
+        }
     }
 </style>

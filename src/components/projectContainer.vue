@@ -30,6 +30,7 @@
         name: 'projectContainer',
         data() {
             return {
+                video: ""
             }
         },
         methods: {
@@ -57,7 +58,8 @@
             title: String,
             color: String,
             description: String,
-            video: String,
+            videoLandscape: String,
+            videoVertical: String,
             skills: Array,
             link: Object
         },
@@ -67,6 +69,12 @@
             skillTag
         },
         mounted: function () {
+            console.log(window.screen.width)
+            if(window.screen.width >= 1000) {
+                this.video = this.videoLandscape;
+            } else {
+                this.video = this.videoVertical;
+            }
         },
     }
 </script>
@@ -75,10 +83,55 @@
     @import url('https://fonts.googleapis.com/css2?family=Iceland');
     @import url('https://fonts.googleapis.com/css2?family=Michroma');
 
+    @media (max-width: 1000px) {
+        #projectContainer {
+            width: 400px;
+        }
+
+        #title {
+            font-size:2rem;
+        }
+
+        #description {
+            font-size: .7rem;
+        }
+
+        #video {
+            width: 160px;
+            height: 160px;
+            left: 5%;
+        }
+
+        .gitHubLink, .projectLink {
+            font-size: 1rem;
+        }
+    }
+
+    @media (min-width: 1000px) {
+        #projectContainer {
+            width: 1700px;
+        }
+
+        #title {
+            font-size:3rem;
+        }
+
+        #description {
+            font-size: 1.4rem;
+        }
+
+        #video {
+            left: 10%;
+        }
+
+        .gitHubLink, .projectLink {
+            font-size: 2rem;
+        }
+    }
+
     #projectContainer {
         position:relative;
         margin:auto;
-        width: 1700px;
         border-radius: 1rem;
         background-image:linear-gradient(135deg, #040015 0%, #222244 10%, #040015 30%);
         box-shadow:0px 0px 2rem .5rem #282848 inset;
@@ -88,7 +141,6 @@
 
     #title {
         margin-left:1rem;
-        font-size:3rem;
         font-family: 'Michroma';
         font-weight: 700; 
     }
@@ -105,22 +157,12 @@
     #description {
         position:relative;
         width: 50%;
-        font-size: 1.4rem;
         left: 1%;
         padding-bottom:1.5rem;
     }
 
     #video {
         position:relative;
-        left: 10%;
-    }
-
-    .gitHubLink {
-        font-size: 2rem;
-    }
-
-    .projectLink {
-        font-size: 2rem;
     }
 
     @keyframes loadIn {

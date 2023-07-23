@@ -2,31 +2,31 @@
     <div id="crystal" @click="changeColor()">
         <div v-if="color == 'red'" @mouseover="enableBackground()" @mouseleave="disableBackground()">
             <div id="glow" :style="displayColor"></div>
-            <img src="../assets/red.png" />
+            <img id = "kyberImg" src="../assets/red.png" />
         </div>
         <div v-if="color == 'green'" @mouseover="enableBackground()" @mouseleave="disableBackground()">
             <div id="glow" :style="displayColor"></div>
-            <img src="../assets/green.png" />
+            <img id = "kyberImg" src="../assets/green.png" />
         </div>
         <div v-if="color == 'blue'" @mouseover="enableBackground()" @mouseleave="disableBackground()">
             <div id="glow" :style="displayColor"></div>
-            <img src="../assets/blue.png" />
+            <img id = "kyberImg" src="../assets/blue.png" />
         </div>
         <div v-if="color == 'cyan'" @mouseover="enableBackground()" @mouseleave="disableBackground()">
             <div id="glow" :style="displayColor"></div>
-            <img src="../assets/cyan.jpeg" />
+            <img id = "kyberImg" src="../assets/cyan.jpeg" />
         </div>
         <div v-if="color == 'magenta'" @mouseover="enableBackground()" @mouseleave="disableBackground()">
             <div id="glow" :style="displayColor"></div>
-            <img src="../assets/magenta.png" />
+            <img id = "kyberImg" src="../assets/magenta.png" />
         </div>
         <div v-if="color == 'lime'" @mouseover="enableBackground()" @mouseleave="disableBackground()">
             <div id="glow" :style="displayColor"></div>
-            <img src="../assets/lime.png" />
+            <img id = "kyberImg" src="../assets/lime.png" />
         </div>
         <div v-if="color == 'white'" @mouseover="enableBackground()" @mouseleave="disableBackground()">
             <div id="glow" :style="displayColor"></div>
-            <img src="../assets/white.png" />
+            <img id = "kyberImg" src="../assets/white.png" />
         </div>
     </div>
 </template>
@@ -100,11 +100,36 @@
 </script>
 
 <style>
+    @media (max-width: 1000px) {
+        #crystal {
+            width:15rem;
+            height:30rem;
+        }
+
+        #kyberImg {
+            left:-14rem;
+            top:-6rem;
+            width: 50rem;
+            height: 30rem;
+        }
+    }
+
+    @media (min-width: 1000px) {
+        #crystal {
+            width:17rem;
+            height:25rem;
+        }
+
+        #kyberImg {
+            left:-14rem;
+            top:-6rem;
+            width: 45rem;
+            height: 25rem;
+        }
+    }
     #crystal {
         position:relative;
         display:flex;
-        width:17rem;
-        height:25rem;
         cursor:pointer;
         margin-right:5rem;
         margin-bottom: 5rem;
@@ -118,12 +143,8 @@
         left:7.5rem;
         top:9rem;
     }
-    img {
+    #kyberImg {
         position:relative;
-        left:-14rem;
-        top:-6rem;
-        width: 45rem;
-        height: 25rem;
     }
     @keyframes redFadeAnim {
         0%   { box-shadow: 0px 0px 3rem 5rem red}

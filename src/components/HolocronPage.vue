@@ -57,12 +57,41 @@ export default {
 </script>
 
 <style>
+@media (max-width: 1000px) {
+  #starCollection {
+    position:absolute;
+    height: 5000px;
+    width: 5000px;
+  }
+
+  #kyberCollection {
+    top:20rem;
+    left:5rem;
+    width:60rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  #starCollection {
+    position:relative;
+    height: 275%;
+    width: 150%;
+    top:-75%;
+    left: -20%;
+  }
+
+  #kyberCollection {
+    top:5rem;
+    left:25rem;
+    width:90rem;
+  }
+}
 html, body {
   height: 100%;
   border: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow: hidden !important;
   background-image: linear-gradient(45deg, black, rgb(7,0,17) 10%, rgb(15,0,35) 85%, rgb(50,50,50) 100%);
 }
 #app, #holocronPage {
@@ -71,13 +100,12 @@ html, body {
   border: none;
   margin: 0;
   padding: 0;
+  overflow: hidden !important;
+
 }
 
 #kyberCollection {
   position:absolute;
-  top:5rem;
-  left:25rem;
-  width:90rem;
   display:flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -86,7 +114,8 @@ html, body {
 #webcamBox {
   position:absolute;
   top:0;
-  left:0;
+  left:0px;
+  overflow: hidden;
 }
 
 #routeBtn {
@@ -96,12 +125,7 @@ html, body {
 }
 
 #starCollection {
-  position:relative;
   background: rgba(0,0,0,0);
-  height: 275%;
-  width: 150%;
-  top:-75%;
-  left: -20%;
   border-radius: 100%;
   -webkit-animation:spin 400s linear infinite;
   -moz-animation:spin 400s linear infinite;

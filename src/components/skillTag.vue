@@ -40,6 +40,18 @@
     @import url('https://fonts.googleapis.com/css2?family=Iceland');
     @import url('https://fonts.googleapis.com/css2?family=Michroma');
 
+    @media (max-width: 1000px) {
+        #skillTag {
+            font-size: .8rem;
+        }
+    }
+
+    @media (min-width: 1000px) {
+        #skillTag {
+            font-size: 1.2rem;
+        }
+    }
+
     #skillTag {
         border-radius:1rem;
         display: inline-block;
@@ -47,7 +59,6 @@
         padding-right: .5rem;
         padding-top: 0rem;
         padding-bottom: .25rem;
-        font-size: 1.2rem;
         font-family: 'Michroma';
         margin:.75rem;
     }
