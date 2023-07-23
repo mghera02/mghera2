@@ -91,7 +91,7 @@ html, body {
   border: none;
   margin: 0;
   padding: 0;
-  overflow: hidden !important;
+  overflow: hidden;
   background-image: linear-gradient(45deg, black, rgb(7,0,17) 10%, rgb(15,0,35) 85%, rgb(50,50,50) 100%);
 }
 #app, #holocronPage {
@@ -100,8 +100,10 @@ html, body {
   border: none;
   margin: 0;
   padding: 0;
-  overflow: hidden !important;
+}
 
+#holocronPage {
+  overflow: hidden;
 }
 
 #kyberCollection {
