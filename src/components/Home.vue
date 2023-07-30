@@ -1,19 +1,19 @@
 <template>
+    <video autoplay muted loop id="backgroundVid">
+        <source src="@/assets/stars2.mp4" type="video/mp4">
+    </video>
+    <!--<img id="backgroundVid" src="@/assets/stars.jpeg"/>-->
     <div id="Home">
-        <div v-for="magicRow in 50" :key="magicRow" class="magicRow">
-            <div v-for="magicCol in 50" :key="magicCol" class="magicCol">
-                <div class="magicItem" :style="brightenUp()" v-if="checkIfExists(magicRow,magicCol)"></div>
-                <div class="oldMagicItem" :style="change()" v-else-if="checkIfExisted(magicRow,magicCol)"></div>
-            </div>
-        </div>
+        <!--<audio ref="audio" preload="auto" volume="1" loop>
+          <source src="@/assets/homeMusic.mp3" />
+        </audio>-->
         <div id="mainTitle">
-            <span id="firstWord">Welcome </span>
-            <span id="secondWord">to </span>
-            <br>
             <span id="thirdWord">Matthew </span>
-            <span id="fourthWord">Ghera's </span>
-            <br>
-            <span id="fifthWord">Website </span>
+            <span id="fourthWord">Ghera </span>
+        </div>
+        <div id="terminalContainer">
+            <div id="terminal">
+            </div>
         </div>
         <div id="enter" @click="goToNextPage()">
             ENTER
@@ -32,73 +32,53 @@
                 lastVert: 'down',
                 oldRow: [-1],
                 oldCol: [-1],
-                magicInterval: null
+                magicInterval: null,
+                playingAudio: false
             }
         },
         methods: {
-            brightenUp() {
-                return {
-                    background: 'rgb(255,255,0)',
-                    boxShadow: '0px 0px 3rem 1.5rem rgb(220,170,40)',
-                }
-            },
-            change() {
-                return {
-                    background: 'rgb(255,255,150)',
-                    boxShadow: '0px 0px 1rem .5rem rgb(255,200,100)',
-                    animation: `flickerAnimation 1s infinite`,
-                }
-            },
-            checkIfExisted(magicRow, magicCol) {
-                let retVal = false;
-                let rowIdx = []
-                let overlap = false
-
-                this.oldRow.forEach((row,index) => {
-                    if(row == magicRow) {
-                        rowIdx.push(index)
-                    }
-                })
-                this.oldCol.forEach((col,index) => {
-                    if(col == magicCol && rowIdx.includes(index)) {
-                        overlap = true
-                    }
-                })
-                if(this.oldRow.includes(magicRow) && this.oldCol.includes(magicCol) && overlap) {
-                    retVal = true
-                }
-
-                return retVal
-            },
-            checkIfExists(magicRow, magicCol) {
-                let retVal = false;
-                let rowIdx = []
-                let overlap = false
-
-                this.randRow.forEach((row,index) => {
-                    if(row == magicRow) {
-                        rowIdx.push(index)
-                    }
-                })
-                this.randCol.forEach((col,index) => {
-                    if(col == magicCol && rowIdx.includes(index)) {
-                        overlap = true
-                    }
-                })
-                if(this.randRow.includes(magicRow) && this.randCol.includes(magicCol) && overlap) {
-                    retVal = true
-                }
-
-                return retVal
-            },
             goToNextPage() {
-                //window.location = window.location.href + "#/HolocronPage"
                 clearInterval(this.magicInterval);
                 if(window.location.href.indexOf('#') > -1) {
                     window.location = window.location.href + "Gallery"
                 } else {
                     window.location = window.location.href + "#/Gallery"
                 }
+            },
+            playAudio() {
+                let audio = this.$refs.audio;
+                audio.play();
+                this.playingAudio = true;
+            },
+            startTypingInTerminal() {
+                let count = 0;
+                setInterval(() => {
+                    if (count == 0) {
+                        let terminalStr = '"This is where the fun begins." \b - Anakin Skywalker'
+                        let terminal = document.getElementById("terminal");
+                        let idx = 0
+                        let strIdx = 0;
+                        let newUnderline = document.createTextNode('_');
+                        setInterval(() => {
+                            if(idx < terminalStr.length * 2) {
+                                if(idx % 2 == 0) {
+                                    let newChar = document.createTextNode(terminalStr[strIdx]);
+                                    if (terminalStr[strIdx] == '\b') {
+                                        console.log('here');
+                                        newChar = document.createElement('br')
+                                    }
+                                    terminal.appendChild(newChar);
+                                    terminal.appendChild(newUnderline);
+                                    strIdx++;
+                                } else {
+                                    terminal.removeChild(newUnderline);
+                                }
+                                idx++;
+                            }
+                        }, 80);
+                    }
+                    count = 1;
+                }, 2500);
             }
         },
         props: {
@@ -106,12 +86,31 @@
         computed: {
         },
         mounted: function () {
+            /*this.timer = setInterval(() => {
+                this.playAudio()
+            }, 1000);*/
+
+            if (document.getElementById("terminal").childNodes.length == 0) {
+                this.startTypingInTerminal();
+            }
+
+            document.getElementById("backgroundVid").playbackRate = 0.5;
         }
     }
 </script>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Iceland');
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono');
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron');
+
+    #backgroundVid {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+    }
 
     #Home {
         z-index:-2;
@@ -119,26 +118,90 @@
         width:100%;
         display: flex;
         flex-direction: column;
-        background: rgb(16,9,129);
-        background: linear-gradient(180deg, rgba(14,5,120,1) 25%, rgba(20,0,230,1) 58%, rgba(130,0,200,1) 100%);
+        background: #000;
+        /*animation: brightenUpBackground 30s ease-in; */
         overflow: hidden;
+    }
+
+    @font-face {
+        font-family: 'Mandalore';
+        src: url('@/assets/Mandalore-K77lD.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Mandalore-Half';
+        src: url('@/assets/MandaloreHalftone-OVVBA.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Mandalore-Half';
+        src: url('@/assets/MandaloreTitle-lggAe.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'LedText';
+        src: url('@/assets/LedSledStraightCondensed-roBB.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
     }
 
     #mainTitle {
         position:relative;
         top: 10%;
-        color:#ffff99;
-        font-family: 'Iceland';
+        /*font-family: 'Iceland';*/
+        font-family: 'Mandalore-Half';
         font-size:4rem;
         text-align:center;
+        color: rgba(255,255,245,.6);
+        background: linear-gradient(to right, #000 0, white 20%, #000 40%);
+        -webkit-background-clip: text;
+        background-position: 0;
+        animation: shine 10s infinite linear;
+        animation-fill-mode: forwards;
         text-shadow: 
-            0rem 0rem .25rem #ffcc66,
-            0rem 0rem .5rem #ffbb55, 
-            0rem 0rem 1rem #ffaa44, 
-            0rem 0rem 1.25rem #ff9933, 
-            0rem 0rem 2rem #dd8822,   
-            0rem 0rem 2.5rem #cc7711, 
-            0rem 0rem 3rem #bb6600;
+              0rem 0rem 1rem #ffbb55, 
+              0rem 0rem 2rem #ffaa44, 
+              0rem 0rem 3rem #ff9933, 
+              0rem 0rem 4rem #dd8822,   
+              0rem 0rem 5rem #cc7711, 
+              0rem 0rem 6rem #bb6600;
+    }
+
+    #terminalContainer {
+        position:absolute;
+        left: 25%;
+        top: 30%;
+        width:50%;
+    }
+
+    #terminal {
+        float: left;
+        font-family: 'orbitron';
+        color: #11ee44;
+        text-shadow: 
+              0rem 0rem .2rem #11ee55, 
+              0rem 0rem .4rem #11ff55;
+        overflow: hidden;
+        margin: 0 auto;
+        letter-spacing: .15em;
+    }
+    
+    @keyframes shine {
+        0% {
+            background-position: 0;
+        }
+        60% {
+            background-position: 60vw;
+        }
+        100% {
+            background-position: 100vw;
+        }
     }
 
     #enter {
@@ -159,6 +222,9 @@
             font-size:5rem;
             top: 50%;
         }
+        #terminal {
+            font-size: 1rem;
+        }
     }
 
     @media (min-width: 1000px) {
@@ -169,24 +235,20 @@
 
         #enter {
             font-size:9rem; 
-            top: 30%;
+            top: 50%;
+        }
+
+        #terminal {
+            font-size: 2.5rem;
         }
     }
 
-    #firstWord {
-        animation: flickerNeonSign1 20s infinite alternate;   
-    }
-    #secondWord {
-        animation: flickerNeonSign2 40s infinite alternate;   
-    }
-    #thirdWord {
-        animation: flickerNeonSign3 30s infinite alternate;   
-    }
-    #fourthWord {
-        animation: flickerNeonSign1 25s infinite alternate;   
-    }
+    #firstWord,
+    #secondWord,
+    #thirdWord,
+    #fourthWord,
     #fifthWord {
-        animation: flickerNeonSign2 44s infinite alternate;   
+        animation: brightenUpMainTitle 30s ease-in;
     }
     
     #enter:hover {
@@ -204,67 +266,39 @@
         box-shadow: 0rem 0rem 100rem 10rem #FF3333;
     }
 
-@keyframes flickerNeonSign1 {
-    
-  0%, 18%, 22%, 25%, 39%, 41%, 53%, 57%, 100% {
-
-      text-shadow: 
-            0rem 0rem .25rem #ffcc66,
-            0rem 0rem .5rem #ffbb55, 
-            0rem 0rem 1rem #ffaa44, 
-            0rem 0rem 1.25rem #ff9933, 
-            0rem 0rem 2rem #dd8822,   
-            0rem 0rem 2.5rem #cc7711, 
-            0rem 0rem 3rem #bb6600;
-  }
-  
-  20%, 24%, 40%, 55% {        
-      text-shadow: none;
-  }    
+@keyframes brightenUpMainTitle {
+    0% {
+        color: rgba(0,0,0,0);
+        text-shadow: none;
+    }
+    25% {
+        color: rgba(70,70,10,.3);
+        text-shadow: 
+              0rem 0rem .125rem #553300,
+              0rem 0rem .25rem #552200, 
+              0rem 0rem .5rem #551100, 
+              0rem 0rem .6rem #550000, 
+    }
+    100% {
+        color: rgba(255,255,230,.6);
+        text-shadow: 
+            0rem 0rem .5rem #ffcc66,
+            0rem 0rem 1rem #ffbb55, 
+            0rem 0rem 2rem #ffaa44, 
+            0rem 0rem 2.5rem #ff9933, 
+            0rem 0rem 4rem #dd8822,   
+            0rem 0rem 5rem #cc7711, 
+            0rem 0rem 6rem #bb6600;
+    }
 }
 
-@keyframes flickerNeonSign2 {
-    
-  0%, 12%, 14%, 31%, 33%, 63%, 65%, 82%, 84%, 98%, 100% {
-
-      text-shadow: 
-            0rem 0rem .25rem #ffcc66,
-            0rem 0rem .5rem #ffbb55, 
-            0rem 0rem 1rem #ffaa44, 
-            0rem 0rem 1.25rem #ff9933, 
-            0rem 0rem 2rem #dd8822,   
-            0rem 0rem 2.5rem #cc7711, 
-            0rem 0rem 3rem #bb6600;
-  }
-  
-  13%, 32%, 64%, 83%, 99% {        
-      text-shadow: none;
-  }    
-}
-
-@keyframes flickerNeonSign3 {
-    
-  0%, 4%, 6%, 24%, 26%, 49%, 51%, 74%, 76%, 89%, 91% {
-
-      text-shadow: 
-            0rem 0rem .25rem #ffcc66,
-            0rem 0rem .5rem #ffbb55, 
-            0rem 0rem 1rem #ffaa44, 
-            0rem 0rem 1.25rem #ff9933, 
-            0rem 0rem 2rem #dd8822,   
-            0rem 0rem 2.5rem #cc7711, 
-            0rem 0rem 3rem #bb6600;
-  }
-  
-  5%, 25%, 50%, 75%, 90% {        
-      text-shadow: none;
-  }    
-}
-
-@keyframes flickerAnimation {
-    0%   { opacity:1; }
-    50%  { opacity:.1; }
-    100% { opacity:1; }
+@keyframes brightenUpBackground {
+    0% {
+        background: #000;
+    }
+    100% {
+        background: #0737ae;
+    }
 }
 
 @keyframes enterHover1 {
