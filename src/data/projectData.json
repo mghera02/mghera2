@@ -1,6 +1,15 @@
 {
     "projects": [
         {
+            "title":"S3 Integration Dashboard",
+            "color":"White",
+            "description": "Throughout my Amazon AWS internship, I spent my time designing and creating a Ruby-based dashboard that will help drastically decrease the mitigation time for operators when solving Lustre-specific tickets. This dashboard utilizes the AWS CloudWatch API to display metrics on a per-filesystem basis for AutoExport, AutoImport, HSM, and other metrics. Not only are these graphs customizable and easily extendable, they will also help operators quickly find correlations between metrics. To further aid in both decreased mitigation time and reducing manual SSH access, I also developed bash script commands that will bypass the need for operators to SSH into file systems and still execute the respective command. Through the process of creating this dashboard, I gained experience learning a lot about AWS, its infrastructure, and its tools, and I learned more about being a developer. Unfortunately, I won't be able to share a video of the working dashboard, but trust me, it was cool.",
+            "videoLandscape": "",
+            "videoVertical": "",
+            "link": {"link":"", "github": false},
+            "skills":["Ruby", "Haml", "Bash", "AWS", "S3", "EC2", "CloudWatch", "Lustre File Systems", "JavaScript", "CSS"]
+        },
+        {
             "title":"Dum-E",
             "color":"Yellow",
             "description": "Dum-E is an Iron Man inspired robot. It uses a Raspberry Pi to drive it, and is programmed in Python. It also uses OpenCV to track faces, and three servo motors to follow the tracked face, so that it can move in 3-dimensions. If the room is too dark to detect faces, an led face-light will automatically turn on so that a face can be detected. It has integrated speakers and a microphone to be given audible commands and output audible responses along with playing some music. Dum-E also has an LCD screen to display responses and errors.",
