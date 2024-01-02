@@ -16,5 +16,5 @@
                 system ( "gpio write 9 0" );
                 sleep(5);
                 system ( "gpio write 21 0" );
-                header("Location:http://aquanet.ddnsfree.com/#/HolocronPage");
+                header("Location:http://seanet.asuscomm.com/#/HolocronPage");
 ?>

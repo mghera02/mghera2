@@ -7,7 +7,7 @@
 
                 system ( "gpio mode 21 out" );
                 system ( "gpio write 21 1" );
-                header("Location:http://aquanet.ddnsfree.com/#/HolocronPage");
+                header("Location:http://seanet.asuscomm.com/#/HolocronPage");
 ?>
 
 

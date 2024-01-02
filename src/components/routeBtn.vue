@@ -15,7 +15,7 @@
                 if(this.site != "Exit") {
                     site = this.site
                 }
-                window.location = "http://aquanet.ddnsfree.com/#/" + site
+                window.location = "http://seanet.asuscomm.com/#/" + site
             }
         },
         props: {

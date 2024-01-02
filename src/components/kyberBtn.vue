@@ -41,7 +41,7 @@
         },
         methods: {
             changeColor() {
-                location.href = `http://aquanet.ddnsfree.com/php/${this.color}.php`;
+                location.href = `http://seanet.asuscomm.com/php/${this.color}.php`;
             },
             enableBackground() {
                 this.background = true;
