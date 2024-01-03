@@ -41,7 +41,17 @@
         },
         methods: {
             changeColor() {
-                location.href = `http://seanet.asuscomm.com/php/${this.color}.php`;
+                const apiUrl = `curl -I http://seanet.asuscomm.com:8083/${this.color}`;
+                fetch(apiUrl).then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                }).then(data => {
+                    console.log(data);
+                }).catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
             },
             enableBackground() {
                 this.background = true;
