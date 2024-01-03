@@ -42,7 +42,7 @@
             "description": "This is a Star Wars inspired IoT project. The sith holocron is built using the same Raspberry Pi that is hosting this website. Through the website, users can control the lights and motors embedded in the device and see the output through a live webcam.",
             "videoLandscape": "<iframe width='560' height='315' src='https://www.youtube.com/embed/4KzuhPVkj2g' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
             "videoVertical": "<iframe width='160' height='160' src='https://www.youtube.com/embed/4KzuhPVkj2g' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
-            "link": {"link":"http://seanet.asuscomm.com/#/HolocronPage", "github":false},
+            "link": {"link":"http://www.mghera.com/#/HolocronPage", "github":false},
             "skills":["Raspberry Pi", "PHP", "HTML", "CSS", "JS", "Vue.js", "CAD", "3D-Printing", "Motor Control", "Circuit Design", "Server Management"]
         },
         {
