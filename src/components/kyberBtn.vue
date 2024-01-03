@@ -41,7 +41,7 @@
         },
         methods: {
             changeColor() {
-                const apiUrl = `curl -I http://seanet.asuscomm.com:8083/${this.color}`;
+                const apiUrl = `http://seanet.asuscomm.com:8083/${this.color}`;
                 fetch(apiUrl).then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
