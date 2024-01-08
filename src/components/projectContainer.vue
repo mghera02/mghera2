@@ -13,7 +13,7 @@
                     <a v-else :href="link.link" target="_blank" class="projectLink" :style="getTitleColor()">Go to the Project!</a>
                 </div>
             </div>
-            <div id="video">
+            <div v-if="videoLandscape" id="video">
                 <div v-html="video" :style="getBorderColor()"></div>
             </div>
         </div>
@@ -69,8 +69,8 @@
             skillTag
         },
         mounted: function () {
-            console.log(window.screen.width)
-            if(window.screen.width >= 1000) {
+            console.log(window.innerWidth)
+            if(window.innerWidth >= 1400) {
                 this.video = this.videoLandscape;
             } else {
                 this.video = this.videoVertical;
@@ -83,7 +83,14 @@
     @import url('https://fonts.googleapis.com/css2?family=Iceland');
     @import url('https://fonts.googleapis.com/css2?family=Michroma');
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1100px) {
+        #body {
+            position:relative;
+            top: 1rem;
+            padding-bottom: 4rem;
+            font-family: 'Michroma';
+        }
+
         #projectContainer {
             width: 400px;
         }
@@ -94,12 +101,16 @@
 
         #description {
             font-size: .7rem;
+            position:relative;
+            left: 1%;
+            padding-bottom:1.5rem;
+            width: 98%;
         }
 
         #video {
-            width: 160px;
-            height: 160px;
-            left: 5%;
+            left: 6%;
+            width: 350px;
+            height: 300px;
         }
 
         .gitHubLink, .projectLink {
@@ -107,7 +118,55 @@
         }
     }
 
-    @media (min-width: 1000px) {
+    @media (min-width: 1100px) {
+        #body {
+            position:relative;
+            top: 1rem;
+            display: flex;
+            flex-direction: row;
+            padding-bottom: 4rem;
+            font-family: 'Michroma';
+        }
+
+        #projectContainer {
+            width: 700px;
+        }
+
+        #title {
+            font-size:2rem;
+        }
+
+        #description {
+            font-size: .7rem;
+            position:relative;
+            width: 50%;
+            left: 1%;
+            padding-bottom:1.5rem;
+        }
+
+        #video {
+            width: 350px;
+            height: 300px;
+            left: 10px;
+            top:-20px;
+            padding: 30px;
+        }
+
+        .gitHubLink, .projectLink {
+            font-size: 1rem;
+        }
+    }
+
+    @media (min-width: 1400px) {
+        #body {
+            position:relative;
+            top: 1rem;
+            display: flex;
+            flex-direction: row;
+            padding-bottom: 4rem;
+            font-family: 'Michroma';
+        }
+
         #projectContainer {
             width: 1700px;
         }
@@ -118,10 +177,16 @@
 
         #description {
             font-size: 1.4rem;
+            position:relative;
+            width: 50%;
+            left: 1%;
+            padding-bottom:1.5rem;
         }
 
         #video {
             left: 10%;
+            width: 560px;
+            padding: 50px;
         }
 
         .gitHubLink, .projectLink {
@@ -143,22 +208,6 @@
         margin-left:1rem;
         font-family: 'Michroma';
         font-weight: 700; 
-    }
-
-    #body {
-        position:relative;
-        top: 1rem;
-        display: flex;
-        flex-direction: row;
-        padding-bottom: 4rem;
-        font-family: 'Michroma';
-    }
-
-    #description {
-        position:relative;
-        width: 50%;
-        left: 1%;
-        padding-bottom:1.5rem;
     }
 
     #video {

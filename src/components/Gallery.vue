@@ -1,5 +1,7 @@
 <template>
     <div id="Gallery">
+        <mediaMedallion class="githubMedallion" :medallionType='github.name' :medallionColor='github.color' :medallionLink='github.link'></mediaMedallion>
+        <mediaMedallion class="linkedInMedallion" :medallionType='linkedIn.name' :medallionColor='linkedIn.color' :medallionLink='linkedIn.link'></mediaMedallion>
         <routeBtn :site="'Exit'" id="exitBtn"/>
         <div id="galleryTitle">The Gallery</div>
         <div v-for="project in projects" :key="project">
@@ -19,6 +21,7 @@
 <script>
     import projectContainer from './projectContainer.vue'
     import routeBtn from './routeBtn.vue'
+    import mediaMedallion from './mediaMedallion.vue'
     import data from '../data/projectData.json'
 
     export default {
@@ -27,11 +30,14 @@
             return {
                 projects: data.projects,
                 scrollPosition: 0,
+                github:{name: "github", color: "rgb(120,100,200)", link: "https://github.com/mghera02"},
+                linkedIn:{name: "linkedIn", color: "rgb(50,65,255)", link: "https://www.linkedin.com/in/matthewghera/"},
             }
         },
         components: {
             projectContainer,
-            routeBtn
+            routeBtn,
+            mediaMedallion
         },
         methods: {
         },
@@ -48,13 +54,13 @@
         overflow-y: visible !important;
     }
 
-    @media (max-width: 1000px) {
+    @media (max-width: 1100px) {
         #galleryTitle {
             font-size:5rem;
         }
     }
 
-    @media (min-width: 1000px) {
+    @media (min-width:1100px) {
         #galleryTitle {
             font-size:9rem;
         }
@@ -93,4 +99,14 @@
         z-index: 2;
         font-family: 'Iceland';
     }
+    .githubMedallion {
+        position: fixed;
+        top:20px;
+        right: 6%;
+    } 
+    .linkedInMedallion {
+        position: fixed;
+        top:140px;
+        right: 6%;
+    } 
 </style>
