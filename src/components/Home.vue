@@ -24,6 +24,9 @@
 <script>
     export default {
         name: 'Home',
+        meta: [
+            { name: 'description', content: "Matthew Ghera's Website" },
+        ],
         data() {
             return {
                 randRow: [-1],
@@ -95,7 +98,7 @@
             }
 
             document.getElementById("backgroundVid").playbackRate = 0.5;
-        }
+        },
     }
 </script>
 
