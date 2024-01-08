@@ -168,7 +168,7 @@
         }
 
         #projectContainer {
-            width: 1700px;
+            width: 1300px;
         }
 
         #title {
@@ -184,8 +184,8 @@
         }
 
         #video {
-            left: 10%;
-            width: 560px;
+            left: 5%;
+            width: 500px;
             padding: 50px;
         }
 
