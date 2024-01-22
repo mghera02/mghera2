@@ -13,8 +13,13 @@
                     <a v-else :href="link.link" target="_blank" class="projectLink" :style="getTitleColor()">Go to the Project!</a>
                 </div>
             </div>
-            <div v-if="videoLandscape" id="video">
+            <div>
+                <div v-if="videoLandscape" id="video">
                 <div v-html="video" :style="getBorderColor()"></div>
+                </div>
+                <div v-if="videoLandscape2" id="video">
+                    <div v-html="video2" :style="getBorderColor()"></div>
+                </div>
             </div>
         </div>
         <span id="skills" v-for="skill in skills" :key="skill">
@@ -30,7 +35,8 @@
         name: 'projectContainer',
         data() {
             return {
-                video: ""
+                video: "",
+                video2: ""
             }
         },
         methods: {
@@ -60,6 +66,8 @@
             description: String,
             videoLandscape: String,
             videoVertical: String,
+            videoLandscape2: String,
+            videoVertical2: String,
             skills: Array,
             link: Object
         },
@@ -72,8 +80,10 @@
             console.log(window.innerWidth)
             if(window.innerWidth >= 1400) {
                 this.video = this.videoLandscape;
+                this.video2 = this.videoLandscape2;
             } else {
                 this.video = this.videoVertical;
+                this.video2 = this.videoVertical2;
             }
         },
     }
@@ -212,6 +222,11 @@
 
     #video {
         position:relative;
+    }
+
+    .flex-break {
+        flex-basis: 100%;
+        height: 0;
     }
 
     @keyframes loadIn {

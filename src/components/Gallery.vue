@@ -11,6 +11,8 @@
                 :description="project.description" 
                 :videoLandscape="project.videoLandscape"
                 :videoVertical="project.videoVertical"
+                :videoLandscape2="project.videoLandscape2"
+                :videoVertical2="project.videoVertical2"
                 :skills="project.skills"
                 :link="project.link"
             />

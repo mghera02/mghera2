@@ -1,6 +1,17 @@
 {
     "projects": [
         {
+            "title":"MIND Arduino Workshops",
+            "color":"Gold",
+            "description": "As part of my work as the director of Research & Development in Purdue MIND (Medical, Innovation, Networking, Design), I created and led a series of workshops for the club. These workshops helped both new and experienced members learn more about how to prototype with Arduinos. These workshops covered circuit design, microcontroller programming, and how to interface with different external peripherals. The first workshop covers basic fundamentals of programming and circuit design with Arduinos and then begins to go into some more complex concepts like shift registers. The second workshop focuses on combining everything taught in the first workshop into one single device and mixes in some new concepts like external interrupts and I2C communication protocol.",
+            "videoLandscape2": "<iframe src='https://docs.google.com/presentation/d/e/2PACX-1vQ26FjL_BlO_p39iJjdhlZEsDAsEXsjRzxhxQfBPUX0blamZHzyJ2Q2EeHtJ3G8ma0ITAqr4NNyuUuS/embed?start=false&loop=false&delayms=3000' frameborder='0' width='500' height='315' allowfullscreen='true' mozallowfullscreen='true' webkitallowfullscreen='true'></iframe>",
+            "videoVertical2": "<iframe src='https://docs.google.com/presentation/d/e/2PACX-1vQ26FjL_BlO_p39iJjdhlZEsDAsEXsjRzxhxQfBPUX0blamZHzyJ2Q2EeHtJ3G8ma0ITAqr4NNyuUuS/embed?start=false&loop=false&delayms=3000' frameborder='0' width='350' height='300' allowfullscreen='true' mozallowfullscreen='true' webkitallowfullscreen='true'></iframe>",
+            "videoLandscape": "<iframe src='https://docs.google.com/presentation/d/e/2PACX-1vRjaGxFhnoHS7oOU7zxlY9Ql3FfwAlt-7OpmgU1kZ818PCM2wv-GgBN3EMbLQAgtBAQ2h31m3_rNzYa/embed?start=false&loop=false&delayms=3000' frameborder='0' width='500' height='315' allowfullscreen='true' mozallowfullscreen='true' webkitallowfullscreen='true'></iframe>",
+            "videoVertical": "<iframe src='https://docs.google.com/presentation/d/e/2PACX-1vRjaGxFhnoHS7oOU7zxlY9Ql3FfwAlt-7OpmgU1kZ818PCM2wv-GgBN3EMbLQAgtBAQ2h31m3_rNzYa/embed?start=false&loop=false&delayms=3000' frameborder='0' width='350' height='300' allowfullscreen='true' mozallowfullscreen='true' webkitallowfullscreen='true'></iframe>",
+            "link": {"link":"", "github": false},
+            "skills":["Arduino", "Microcontrollers", "C++", "Circuit Design"]
+        },
+        {
             "title":"S3 Integration Dashboard",
             "color":"White",
             "description": "Throughout my Amazon AWS internship, I spent my time designing and creating a Ruby-based dashboard that will help drastically decrease the mitigation time for operators when solving Lustre-specific tickets. This dashboard utilizes the AWS CloudWatch API to display metrics on a per-filesystem basis for AutoExport, AutoImport, HSM, and other metrics. Not only are these graphs customizable and easily extendable, they will also help operators quickly find correlations between metrics. To further aid in both decreased mitigation time and reducing manual SSH access, I also developed bash script commands that will bypass the need for operators to SSH into file systems and still execute the respective command. Through the process of creating this dashboard, I gained experience learning a lot about AWS, its infrastructure, and its tools, and I learned more about being a developer. Unfortunately, I won't be able to share a video of the working dashboard, but trust me, it was cool.",
