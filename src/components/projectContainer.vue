@@ -3,6 +3,7 @@
         <div id="title" :style="getTitleColor()">
             {{title}}
         </div>
+        <div class="year">{{year}}</div>
         <hr :style="getHRColor()">
         <div id="body">
             <div id="description">
@@ -62,6 +63,7 @@
         },
         props: {
             title: String,
+            year: String,
             color: String,
             description: String,
             videoLandscape: String,
@@ -102,11 +104,18 @@
         }
 
         #projectContainer {
-            width: 400px;
+            width: 300px;
         }
 
         #title {
             font-size:2rem;
+        }
+
+        .year {
+            font-size:1.5rem;
+            margin-left:1rem;
+            font-family: 'Michroma';
+            font-weight: 700; 
         }
 
         #description {
@@ -119,8 +128,9 @@
 
         #video {
             left: 6%;
-            width: 350px;
+            width: 250px;
             height: 300px;
+            margin-bottom: 10px;
         }
 
         .gitHubLink, .projectLink {
@@ -146,6 +156,13 @@
             font-size:2rem;
         }
 
+        .year {
+            font-size:1.5rem;
+            margin-left:1rem;
+            font-family: 'Michroma';
+            font-weight: 700; 
+        }
+
         #description {
             font-size: .7rem;
             position:relative;
@@ -160,6 +177,7 @@
             left: 10px;
             top:-20px;
             padding: 30px;
+            margin-bottom: 50px;
         }
 
         .gitHubLink, .projectLink {

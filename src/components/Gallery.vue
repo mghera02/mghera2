@@ -15,6 +15,7 @@
                 :videoVertical2="project.videoVertical2"
                 :skills="project.skills"
                 :link="project.link"
+                :year="project.year"
             />
         </div>
     </div>
@@ -60,12 +61,32 @@
         #galleryTitle {
             font-size:5rem;
         }
+        .githubMedallion {
+            position: fixed;
+            top:150px;
+            right: 6%;
+        } 
+        .linkedInMedallion {
+            position: fixed;
+            top:220px;
+            right: 6%;
+        } 
     }
 
     @media (min-width:1100px) {
         #galleryTitle {
             font-size:9rem;
         }
+        .githubMedallion {
+            position: fixed;
+            top:20px;
+            right: 6%;
+        } 
+        .linkedInMedallion {
+            position: fixed;
+            top:140px;
+            right: 6%;
+        } 
     }
 
     #Gallery {
@@ -101,14 +122,4 @@
         z-index: 2;
         font-family: 'Iceland';
     }
-    .githubMedallion {
-        position: fixed;
-        top:20px;
-        right: 6%;
-    } 
-    .linkedInMedallion {
-        position: fixed;
-        top:140px;
-        right: 6%;
-    } 
 </style>

@@ -32,21 +32,43 @@
 </script>
 
 <style>
-  #medallion {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    cursor:pointer;
-    pointer-events: visibleFill;
-    z-index: 2;
-  }
+    @media (max-width: 1100px) {
+        #medallion {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor:pointer;
+            pointer-events: visibleFill;
+            z-index: 2;
+        }
 
-  .picture {
-    filter: brightness(0%);
-    max-width: 100%;
-    max-height: 100%;
-    cursor:pointer;
-    z-index: 2;
-    pointer-events: visibleFill;
-  }
+        .picture {
+            filter: brightness(0%);
+            max-width: 100%;
+            max-height: 100%;
+            cursor:pointer;
+            z-index: 2;
+            pointer-events: visibleFill;
+        }
+    }
+
+    @media (min-width:1100px) {
+        #medallion {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            cursor:pointer;
+            pointer-events: visibleFill;
+            z-index: 2;
+        }
+
+        .picture {
+            filter: brightness(0%);
+            max-width: 100%;
+            max-height: 100%;
+            cursor:pointer;
+            z-index: 2;
+            pointer-events: visibleFill;
+        }
+    }
 </style>

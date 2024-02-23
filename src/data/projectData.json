@@ -1,19 +1,43 @@
 {
     "projects": [
         {
+            "title":"M.O.U.S.E",
+            "color":"Blue",
+            "year": "2024-Present",
+            "description": "For my senior design project, I, alongside my team of 3 computer engineering colleagues, am building a mobile surveillance robot. MOUSE is a mobile surveillance robot intended for indoor use, in corporate office or residential environments. MOUSE will be powered by four motors, each controlling its own wheel for mobility. There will be a large 18V battery allowing MOUSE to perform surveillance overnight without needing to have its battery replaced. When the battery does die, it will need to be recharged manually. MOUSE will have the ability for the motors to have variable speed control through the use of PWM signals. MOUSE will also have a custom circuit to step down the 18V from the battery to 5V for motors, sensors and ICs, as well as 5V to 3.3V for the microprocessor. To complete its surveillance functionality, MOUSE will have PIR sensors on all four sides, allowing for the detection of movement. While stationary, MOUSE will use these sensors to detect any movement in its vicinity. Finally, there will be a viewable UI on a webpage to use MOUSE movement controls and display if any objects have been detected. MOUSE and the web interface will send data wirelessly through WiFi via a web server. The block diagram below represents the connections between the described functional components of MOUSE. Additionally, we have the following stretch goals for the functionality of MOUSE. The PIR sensors may be mounted to a motor to ensure 360 degree coverage, instead of simply mounting four separate sensors to each side of MOUSE. MOUSE may be able to follow a predetermined path set by the user. On the right, you can scroll through my progress journal to see my individual contributions (updated as of 2/22/24).",
+            "videoLandscape": "<iframe width='500' height='600' src='/progress3.html'></iframe>",
+            "videoVertical": "<iframe width='250' height='300' src='/progress3.html'></iframe>",
+            "link": {"link":"https://github.com/cmiotto20/477Grp2", "github": true},
+            "skills":["ESP32", "Microcontrollers", "C++", "Circuit Design", "PCB Design", "HTML", "CSS", "JS", "Web Socket", "Motor Control"]
+        },
+        {
+            "title":"KTT",
+            "color":"Green",
+            "year": "2023-Present",
+            "description": "I am part of an organization at Purdue, called EPICS (Engineering Projects In Community Service). Within this organization, I am on a team, called DKC (Deaf Kids Code). The project I have been working on in this team is called KTT (Keep the Tempo) where I have been the design lead for a few semesters. This project is based around designing a deaf and hard of hearing accessible solution to a commonly used device for swimmers, called a tempo trainer. I and my team have designed a two piece solution that uses a WiFi mesh to communciate between a remote and tempo trainer that emits light instead of sound.",
+            "videoLandscape": "<embed width='500' height='400' src='/KTTDR.pdf' type='application/pdf' />",
+            "videoVertical": "<embed width='250' height='300' src='/KTTDR.pdf' type='application/pdf' />",
+            "videoLandscape2": "<embed width='500' height='400' src='/KTTDD.pdf' type='application/pdf' />",
+            "videoVertical2": "<embed width='250' height='300' src='/KTTDD.pdf' type='application/pdf' />",
+            "link": {"link":"https://github.com/mghera02/IoTMesh", "github": true},
+            "skills":["Leadership", "ESP8266", "Microcontrollers", "C++", "Circuit Design", "PCB Design", "CAD", "WIFI Mesh"]
+        },
+        {
             "title":"MIND Arduino Workshops",
             "color":"Gold",
+            "year": "2023-2024",
             "description": "As part of my work as the director of Research & Development in Purdue MIND (Medical, Innovation, Networking, Design), I created and led a series of workshops for the club. These workshops helped both new and experienced members learn more about how to prototype with Arduinos. These workshops covered circuit design, microcontroller programming, and how to interface with different external peripherals. The first workshop covers basic fundamentals of programming and circuit design with Arduinos and then begins to go into some more complex concepts like shift registers. The second workshop focuses on combining everything taught in the first workshop into one single device and mixes in some new concepts like external interrupts and I2C communication protocol.",
             "videoLandscape2": "<iframe src='https://docs.google.com/presentation/d/e/2PACX-1vQ26FjL_BlO_p39iJjdhlZEsDAsEXsjRzxhxQfBPUX0blamZHzyJ2Q2EeHtJ3G8ma0ITAqr4NNyuUuS/embed?start=false&loop=false&delayms=3000' frameborder='0' width='500' height='315' allowfullscreen='true' mozallowfullscreen='true' webkitallowfullscreen='true'></iframe>",
-            "videoVertical2": "<iframe src='https://docs.google.com/presentation/d/e/2PACX-1vQ26FjL_BlO_p39iJjdhlZEsDAsEXsjRzxhxQfBPUX0blamZHzyJ2Q2EeHtJ3G8ma0ITAqr4NNyuUuS/embed?start=false&loop=false&delayms=3000' frameborder='0' width='350' height='300' allowfullscreen='true' mozallowfullscreen='true' webkitallowfullscreen='true'></iframe>",
+            "videoVertical2": "<iframe src='https://docs.google.com/presentation/d/e/2PACX-1vQ26FjL_BlO_p39iJjdhlZEsDAsEXsjRzxhxQfBPUX0blamZHzyJ2Q2EeHtJ3G8ma0ITAqr4NNyuUuS/embed?start=false&loop=false&delayms=3000' frameborder='0' width='250' height='300' allowfullscreen='true' mozallowfullscreen='true' webkitallowfullscreen='true'></iframe>",
             "videoLandscape": "<iframe src='https://docs.google.com/presentation/d/e/2PACX-1vRjaGxFhnoHS7oOU7zxlY9Ql3FfwAlt-7OpmgU1kZ818PCM2wv-GgBN3EMbLQAgtBAQ2h31m3_rNzYa/embed?start=false&loop=false&delayms=3000' frameborder='0' width='500' height='315' allowfullscreen='true' mozallowfullscreen='true' webkitallowfullscreen='true'></iframe>",
-            "videoVertical": "<iframe src='https://docs.google.com/presentation/d/e/2PACX-1vRjaGxFhnoHS7oOU7zxlY9Ql3FfwAlt-7OpmgU1kZ818PCM2wv-GgBN3EMbLQAgtBAQ2h31m3_rNzYa/embed?start=false&loop=false&delayms=3000' frameborder='0' width='350' height='300' allowfullscreen='true' mozallowfullscreen='true' webkitallowfullscreen='true'></iframe>",
+            "videoVertical": "<iframe src='https://docs.google.com/presentation/d/e/2PACX-1vRjaGxFhnoHS7oOU7zxlY9Ql3FfwAlt-7OpmgU1kZ818PCM2wv-GgBN3EMbLQAgtBAQ2h31m3_rNzYa/embed?start=false&loop=false&delayms=3000' frameborder='0' width='250' height='300' allowfullscreen='true' mozallowfullscreen='true' webkitallowfullscreen='true'></iframe>",
             "link": {"link":"", "github": false},
-            "skills":["Arduino", "Microcontrollers", "C++", "Circuit Design"]
+            "skills":["Leadership", "Arduino", "Microcontrollers", "C++", "Circuit Design"]
         },
         {
             "title":"S3 Integration Dashboard",
             "color":"White",
+            "year": "2023",
             "description": "Throughout my Amazon AWS internship, I spent my time designing and creating a Ruby-based dashboard that will help drastically decrease the mitigation time for operators when solving Lustre-specific tickets. This dashboard utilizes the AWS CloudWatch API to display metrics on a per-filesystem basis for AutoExport, AutoImport, HSM, and other metrics. Not only are these graphs customizable and easily extendable, they will also help operators quickly find correlations between metrics. To further aid in both decreased mitigation time and reducing manual SSH access, I also developed bash script commands that will bypass the need for operators to SSH into file systems and still execute the respective command. Through the process of creating this dashboard, I gained experience learning a lot about AWS, its infrastructure, and its tools, and I learned more about being a developer. Unfortunately, I won't be able to share a video of the working dashboard, but trust me, it was cool.",
             "videoLandscape": "",
             "videoVertical": "",
@@ -23,45 +47,50 @@
         {
             "title":"Dum-E",
             "color":"Yellow",
+            "year": "2022",
             "description": "Dum-E is an Iron Man inspired robot. It uses a Raspberry Pi to drive it, and is programmed in Python. It also uses OpenCV to track faces, and three servo motors to follow the tracked face, so that it can move in 3-dimensions. If the room is too dark to detect faces, an led face-light will automatically turn on so that a face can be detected. It has integrated speakers and a microphone to be given audible commands and output audible responses along with playing some music. Dum-E also has an LCD screen to display responses and errors.",
             "videoLandscape": "<iframe width='500' height='315' src='https://www.youtube.com/embed/_Io_BHvZyO4' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
-            "videoVertical": "<iframe width='350' height='300' src='https://www.youtube.com/embed/_Io_BHvZyO4' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
+            "videoVertical": "<iframe width='250' height='300' src='https://www.youtube.com/embed/_Io_BHvZyO4' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
             "link": {"link":"https://github.com/mghera02/Dum-E-Bot", "github": true},
             "skills":["Raspberry Pi", "Robotics", "Motor Control", "Python", "OpenCV", "CAD", "3D-Printing", "Circuit Design"]
         },
         {
             "title": "Accessible Partner Account Explorer",
             "color": "White",
+            "year": "2022",
             "description": "The Accessible Partner Account Explorer is a webpage that I designed, created, and pushed to production during my 2022 internship at Amazon. This is an internal page built for customer support and developers for the sellerCentral Amazon site.",
             "videoLandscape": "<iframe width='500' height='315' src='https://www.youtube.com/embed/0Me9P6x6LBU' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
-            "videoVertical": "<iframe width='350' height='300' src='https://www.youtube.com/embed/0Me9P6x6LBU' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
+            "videoVertical": "<iframe width='250' height='300' src='https://www.youtube.com/embed/0Me9P6x6LBU' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
             "link": {"link":"", "github": false},
             "skills":["Vue.js", "HTML", "CSS", "JavaScript", "Web Design", "unit testing", "Jest"]
         },
         {
             "title": "H4-KR",
             "color": "Green",
+            "year": "2021",
             "description": "H4-KR is a Star Wars inspired droid with a design based off of Chopper from Rebels. H4-KR uses 2 arduinos programmed in C++. Its features are as follows: remote controlled movement via IR remote, semi-autonomous movement using ultrasonic sensor, 10+ diagnostic LEDs, temperature sensor, head movement via servo, hacking capabilities using a ATtiny85.",
             "videoLandscape": "<iframe width='500' height='315' src='https://www.youtube.com/embed/rc-0-Qx7w10' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
-            "videoVertical": "<iframe width='350' height='300' src='https://www.youtube.com/embed/rc-0-Qx7w10' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
+            "videoVertical": "<iframe width='250' height='300' src='https://www.youtube.com/embed/rc-0-Qx7w10' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
             "link": {"link":"https://github.com/mghera02/starwarsDroid", "github": true},
             "skills":["Arduino", "Robotics", "C++", "CAD", "3D-Printing", "Motor Control", "Circuit Design"]
         },
         {
             "title": "Sith Holocron",
             "color": "Red",
-            "description": "This is a Star Wars inspired IoT project. The sith holocron is built using the same Raspberry Pi that is hosting this website. Through the website, users can control the lights and motors embedded in the device and see the output through a live webcam.",
+            "year": "2020-2021",
+            "description": "This is a Star Wars inspired IoT project. The sith holocron is built using the same Raspberry Pi that used to host this website. Now it, the raspberry pi is hosting an API which users can use to control the lights and motors embedded in the device and see the output through a live webcam.",
             "videoLandscape": "<iframe width='500' height='315' src='https://www.youtube.com/embed/4KzuhPVkj2g' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
-            "videoVertical": "<iframe width='350' height='300' src='https://www.youtube.com/embed/4KzuhPVkj2g' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
+            "videoVertical": "<iframe width='250' height='300' src='https://www.youtube.com/embed/4KzuhPVkj2g' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
             "link": {"link":"http://www.mghera.com/#/HolocronPage", "github":false},
             "skills":["Raspberry Pi", "PHP", "HTML", "CSS", "JS", "Vue.js", "CAD", "3D-Printing", "Motor Control", "Circuit Design", "Server Management"]
         },
         {
             "title": "SchedLink",
             "color": "Red",
+            "year": "2019-2021",
             "description": "SchedLink is a student and teacher portal used to keep track of bell schedules, extracurricular activities, class updates, and digital hall passes. As the CEO and founder, I Identified the business need and technical solution to aid students and faculty, and developed the initial vision, mission, and project management structure for the team.I was also a full stack developer, so I designed and implemented front and back-end systems including: notifications, settings, sign in, create account, extracurricular management, and creating/signing up for classes. SchedLink Achieved 10k unique views/day and eliminated costs for administration by having a free, multi-tool site.",
             "videoLandscape": "<iframe width='500' height='315' src='https://www.youtube.com/embed/HQGwd_BH2-Y' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
-            "videoVertical": "<iframe width='350' height='300' src='https://www.youtube.com/embed/HQGwd_BH2-Y' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
+            "videoVertical": "<iframe width='250' height='300' src='https://www.youtube.com/embed/HQGwd_BH2-Y' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
             "link": {"link":"https://schedlink.com/fishers/", "github":false},
             "skills":["HTML", "PHP", "JS", "CSS", "Server Management", "Project Management", "Leadership", "Entrepreneurship"]
         }
