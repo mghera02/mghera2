@@ -16,9 +16,9 @@
             "year": "2023-Present",
             "description": "I am part of an organization at Purdue, called EPICS (Engineering Projects In Community Service). Within this organization, I am on a team, called DKC (Deaf Kids Code). The project I have been working on in this team is called KTT (Keep the Tempo) where I have been the design lead for a few semesters. This project is based around designing a deaf and hard of hearing accessible solution to a commonly used device for swimmers, called a tempo trainer. I and my team have designed a two piece solution that uses a WiFi mesh to communciate between a remote and tempo trainer that emits light instead of sound.",
             "videoLandscape": "<iframe width='500' height='400' src='/KTTDR.pdf#page=1&zoom=10' /> ",
-            "videoVertical": "<object width='250' height='300' data='/KTTDR.pdf' type='application/pdf'> <embed width='250' height='300' src='/KTTDR.pdf' /> </object>",
+            "videoVertical": "<object width='250' height='300' data='/KTTDR.pdf' type='application/pdf'> <iframe width='250' height='300' src='/KTTDR.pdf' /> </object>",
             "videoLandscape2": "<iframe width='500' height='400' src='/KTTDD.pdf#page=1&zoom=60' />",
-            "videoVertical2": "<object width='250' height='300' data='/KTTDD.pdf' type='application/pdf'> <embed width='250' height='300' src='/KTTDD.pdf' /> </object>",
+            "videoVertical2": "<object width='250' height='300' data='/KTTDD.pdf' type='application/pdf'> <iframe width='250' height='300' src='/KTTDD.pdf' /> </object>",
             "link": {"link":"https://github.com/mghera02/IoTMesh", "github": true},
             "skills":["Leadership", "ESP8266", "Microcontrollers", "C++", "Circuit Design", "PCB Design", "CAD", "WIFI Mesh"]
         },
