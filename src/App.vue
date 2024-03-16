@@ -3,13 +3,15 @@
 import Home from './components/Home.vue'
 import Gallery from './components/Gallery.vue'
 import HolocronPage from './components/HolocronPage.vue'
+import VoicePage from './components/VoicePage.vue'
 
 const routes = {
   '': Home,
   '/': Home,
   '#/': Home,
   '/Gallery': Gallery,
-  '/HolocronPage': HolocronPage
+  '/HolocronPage': HolocronPage,
+  '/VoicePage': VoicePage
 }
 
 export default {
