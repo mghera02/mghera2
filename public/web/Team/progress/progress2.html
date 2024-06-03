@@ -1,0 +1,604 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+This is an example weekly progress report document that team members can use to report their individual progress 
+of their ECE477 senior design projects. Weekly progress reports are expected to follow the general guidelines
+presented in the "Progress Report Policy" document, posted on Brightspace.  
+
+Please create 4 copies of this example, renaming each copy to <PurdueID>.html, where <PurdueID> corresponds to
+the Purdue ITAP Career Account ID given by Purdue to each individual team member. If you have any questions,
+contact course staff.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!--Reconfigurable base tag; used to modify the site root location for root-relative links-->
+<!--<base href="https://engineering.purdue.edu/ece477/StudentWebTemplate/" />-->
+    <base href="https://engineering.purdue.edu/477grp2/" /> <!-- Replace the N with your team number-->
+
+<!--Content-->
+<title>ECE477 Course Documents</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="author" content="George Hadley">
+<meta name = "format-detection" content = "telephone=no" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<!--CSS-->
+<link rel="stylesheet" href="css/default.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/content.css">
+<link rel="stylesheet" href="css/chrisPage.css" type="text/css" media="all" />
+<!--[if IE 6]>
+<link href="default_ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+</head>
+<body>
+<div id="wrapper_site">
+    <div id="wrapper_page">
+	<!-- Instantiate global site header.-->
+	<div id="header"></div>
+		<!-- Instantiate site global navigation bar.-->
+		<div id="menu"></div>
+	
+		<!-- Instantiate a page banner image. Page banner images should be 1100x350px and should be located within the local
+			img folder located at this directory level. -->
+		<div id="banner">
+			<img src="Files/img/BannerImgExample.jpg"></img>
+		</div>
+	
+		<!-- Instantiate "tools" needed for a page. Tools are premade functional blocks that can be used to build a page,
+			and include things such as a file lister (for listing out homework assignments or tutorials)
+		-->
+		<div id="content">
+            <h2>Progress Report/Engineering Project Journal for Christopher Miotto</h2>
+			<b>Total Hours:</b> 133
+
+			<hr> <h1> Week 15</h1> 
+			<b>Hours this week:</b> 19 hours<hr> 
+
+			<b>Date Reported:</b> 4/16/2024 <br>
+            <b>Start Time:</b> 1:30pm <br>
+            <b>Work Time:</b>  2.5 hours <br>
+			Had the scheduled final presentation meeting at 2:30, however the micro decided to again not be working for some reason. So we told the professors that we will try to get it working and let them know if it does. We took all conectors out of the PCB and then I started to again probe everything. We were again getting the correct voltages. After about 30-45 minutes of the chip being dead it started it work for a second. Then it died again once we put it back in the shell and connected everything. So we then disconnected everything besides the motors and waiting to see if it would turn back on. After about 10 minutes it turned on, connected to wi-fi and the motors were working. We then reconnected everything, checked if they worked, which they did and then I got walter to come down. We then did the final demo and we got 4 of our base PSDRs and one stretch.
+			</br>
+			<hr>
+
+			
+			<b>Date Reported:</b> 4/15/2024 <br>
+            <b>Start Time:</b> 3:30pm <br>
+            <b>Work Time:</b> 2 hours <br>
+			We got the new micro soldered on. We then tested everything besides the motors, and they were all functional. I then soldered on the motor drive IC. We then went to test but for some reason nothing was working at all after soldering. I probed every single pin for almost 30 minutes with a voltage supplied to hopefully figure out what happened. Then for some reason after 30 minutes the micro just turned on. We believe that moisture trapped in areas was the cause for it not working. We then re-assembled everything and got videos of all components working correctly. We scheduled the final demo for tomorrow. We are still having an issue where it takes about 2 minutes with power supplied for the micro to “wake-up” we have no clue why and hope that it will work tomorrow during demo.
+			</br>
+			<img src="Team\progress\img - member2\working.jpg" width="350" height="275"/> </br>
+			Driving Down Hallway Working </br>
+			<hr>
+
+			<b>Date Reported:</b> 4/14/2024 <br>
+            <b>Start Time:</b> 2:30pm <br>
+            <b>Work Time:</b> 8 hours <br>
+			We got battery to start working and were also able to get the balancing charging function to also work correctly. Started on finalizing the packaging. We first worked on getting MOUSE to move straight and turn. We were getting issues that when turning it would only turn around 10 degrees due to friction from the wheels. We tried multiple things like only turning left wheels, first going straight then turning once at higher speed, turning with reversing other side wheels, none of these worked. In a last ditch effort we removed the tires from the wheels and ran it on the rims. This for some reason worked. We then moved onto getting the LEDs connected into the packaging. We printed a piece that press fit all the LEDs. I then number all 12 LEDs to correspond with a placement on each shift register. We then connected all LEDs and it worked correctly. We then moved onto the stepper. We had to use a slipring so I drilled a hole into the top of the packaging to fit the stepper and the slip ring it. We then connected the 3D printed attachment to the stepper and tested it, which worked. We then moved onto PIR. When testing we accidentally attached the wrong pins, this shorted the PIR and also shorted GND and 3.3V, this then backfired frying the micro and a motor drive IC. After this we desoldered the motor drive IC that was fried and after a long time of debugging decided to wait for tomorrow to have Joes help to solder a new micro on.
+			</br>
+			<img src="Team\progress\img - member2\steppir.jpg" width="350" height="275"/> </br>
+			Stepper with PIR and slipring </br>
+			<img src="Team\progress\img - member2\fullass.jpg" width="350" height="400"/> </br>
+			Almost Fully Assembled </br>
+			<hr>
+
+			
+			<b>Date Reported:</b> 4/14/2024 <br>
+            <b>Start Time:</b> 12:30pam <br>
+            <b>Work Time:</b> 0.5 hours <br>
+			Continued to work on ABET document.
+			</br>
+			<hr>
+			
+			<b>Date Reported:</b> 4/13/2024 <br>
+            <b>Start Time:</b> 10:30pm <br>
+            <b>Work Time:</b> 1.5 hours <br>
+			Had trouble with one of the motor drivers not being able to have variable speed. Figured out that it was not software related so decided to desolder motor driver and resolder a new one. The new one on it worked, so we believe it was just a faulty chip. Started to test what starting speed we should use to make all motors start at same time. Worked some more on packaging. We started to have battery issues. Our li-po battery seems to not be fully functional. The charger says it has a low voltage error, so it wouldn’t charge it. To get around this we jump started the battery to get it to a higher voltage. This worked until we got another error which was incorrect readings for the cell count, we got around this by removing the data cable and instead charged it unbalanced. Hopefully this works, if not we may need a new battery.
+			</br>
+			<hr>
+
+			<b>Date Reported:</b> 4/13/2024 <br>
+            <b>Start Time:</b> 1:00pm <br>
+            <b>Work Time:</b> 4.5 hours <br>
+			Finished soldering everything onto board. Tested all components of board with Matt and they all work, so if nothing bad happens we should be meeting all of our PSDRs besides the buck. Finished attaching MTAs to all of the LEDs. Started working on attaching the 3D printed shell to the metal chassis. It is already zip tied on; however, we cannot place the PCB directly on the metal, so we decided to use a thin wooden board. We drilled holes in the wooden board to place stand offs for our PCB. We then drilled more holes to zip tie the wood to the metal. We then drilled out a hole for the buck to be placed in so it can be accessed from the outside. Finally, we spray painted the bottom of the shell black.
+			</br>
+			<img src="Team\progress\img - member2\buckin.jpg" width="350" height="275"/> </br>
+			Buck in packaging </br>
+			<img src="Team\progress\img - member2\wood.jpg" width="350" height="300"/> </br>
+			Wood board for Packaging </br>
+			<img src="Team\progress\img - member2\paint.jpg" width="350" height="300"/> </br>
+			Painted and Assembled Lower </br>
+
+
+			<hr> <h1> Week 14</h1> 
+			<b>Hours this week:</b> 9 hours<hr> 
+
+			<b>Date Reported:</b> 4/12/2024 <br>
+            <b>Start Time:</b> 2:30pm <br>
+            <b>Work Time:</b> 1 hour <br>
+			Started working on the ABET document. Mainly focused on the individual reflection portion. I got done around 4/5th of it complete. Also started working on the sections given to me that are part of the main project description for ABET.
+			</br>
+			<hr>
+
+			<b>Date Reported:</b> 4/10/2024 <br>
+            <b>Start Time:</b> 3:00pm <br>
+            <b>Work Time:</b> 3.5 hours <br>
+			Met with team in ManLab. Soldered all of the motor controls onto the board. Worked on packaging and got the shell zip tied to the metal chassis. Soldered on the headers for steppers and motors. Soldered on the resistor for PIR. Currently don’t have the header for the PIR will need to get it from Joe. Started brainstorming on how we will use the slip ring to allow for the servo to rotate the PIR sensor.
+			</br>
+			<img src="Team\progress\img - member2\soldboard.jpg" width="350" height="450"/> </br>
+			5th Board fully soldered. </br>
+			<hr>
+
+			<b>Date Reported:</b> 4/6/2024 <br>
+            <b>Start Time:</b> 5:00pm <br>
+            <b>Work Time:</b> 4.5 hours <br>
+			Started to solder the 5th board. I soldered on LDO, heartbeats, ESP, USB, and UART. Got it working correctly we were able to flash. We found a pretty severe error in our schematic for the shift registers, so we are now going to use a proto board instead of the PCB for the shift registers. Andrew and Matt started to solder on the protoboard while I started to continue to work on packaging. I got a few more things glued. We also got a shift register working with the proto board. Soldered on all components that are used with the stepper motor. Did not have the header so I will do that in lab.
+			</br>
+
+
+			<hr> <h1> Week 13</h1> 
+			<b>Hours this week:</b> 9 hours<hr> 
+
+			<b>Date Reported:</b> 4/4/2024 <br>
+            <b>Start Time:</b> 7:00pm <br>
+            <b>Work Time:</b>  4 hours <br>
+			Completed the A11 Ethical and Environmental analysis. This can be found in the documents tab. Took around a total of 4 hours throughout the week to finish.
+			</br>
+			<hr>
+
+			<b>Date Reported:</b> 4/2/2024 <br>
+            <b>Start Time:</b> 3:30pm <br>
+            <b>Work Time:</b>  2.50 hour <br>
+			Met with team in ManLab. Our current PCB is having troubling flashes, so we decided to resolder the USB port which will hopefully allow us to flash again. After resoldering the ESP was still unable to be flashes. We then removed the USB with hot air gun, and resoldered a new USB port to it, which also didn’t work. After this I decided to help Braden with packaging, we got to glue the whole entire bottom half of the packaging. We then tried to fit it to the chassis, which it did. Our next steps for packaging will be to continue gluing the upper half. For PCB we have decided to move forward and start soldering a new PCB. We also soldered  a USB to an older PCB that we thought was fried, however it actually works. The only bad thing is that the ESP seems to be semi fried, where it seems around 3 GPIO pins are burned out. We will work on this board alongside the new one and hopefully one will work.
+			</br>
+			<hr>
+
+			<b>Date Reported:</b> 4/1/2024 <br>
+            <b>Start Time:</b> 3:00pm <br>
+            <b>Work Time:</b>  1.50 hour <br>
+			We finished soldering all the motor drive components; however, we are now having difficulties flashing the micro. Sometimes it flashes, other times it doesn’t. We reflowed all pads on the IC, which allowed us to flash our software. With this flashed we were able to get preliminary check off for the 2 PSDRS. Also got the PIR soldered and started gluing components for the packaging. 
+			</br>
+			<img src="Team\progress\img - member2\pcbyep2.jpg" width="350" height="500"/> </br>
+			PCB with working motor drives and fully soldered LEDs. </br>
+			<img src="Team\progress\img - member2\pack2.jpg" width="350" height="500"/> </br>
+			Glued together packaging </br>
+			<hr>
+
+			<b>Date Reported:</b> 3/30/2024 <br>
+            <b>Start Time:</b> 6:00pm <br>
+            <b>Work Time:</b>  1.00 hour <br>
+			Started soldering motor drive components. Got both motor drive ICs soldered. Also got all supporting capacitors and resistors soldered. Started on soldering the polarized capacitors. Next steps are to finish soldering all motor drive components and test. 
+			</br>
+			<img src="Team\progress\img - member2\pcbyep.jpg" width="350" height="500"/> </br>
+			PCB with soldered motor drives </br>
+
+
+			<hr> <h1> Week 12</h1> 
+			<b>Hours this week:</b> 10 hours<hr> 
+
+			<b>Date Reported:</b> 3/27/2024 <br>
+            <b>Start Time:</b> 3:00pm <br>
+            <b>Work Time:</b>  4.00 hours <br>
+			Met with team in Man Lab. Braden and I started to work on the packaging that Matt had printed out. We first had to sand all of the joints so then when we super glue them they will stick better. We then ran into the issue that the clearance of the connecter joint was about 1.5mm too long. So I used the Dremel and cut the connector joint off, then shaved down 1.5mm. I then reconnected the connector joint with hot glue. After checking again, it seemed to line up correctly. I also gathered a metal and wooden dowel that we will use as joints between each piece of the packaging. 
+			I then switched gears to help with debugging PCB, Matt and Andrew were unable to get the stepper motor to work. After probing with the oscilloscope, I believed that this was due to the LEDs in series will be created too much of a load not allowing for the current to move the motors. Thus, we desoldered the LEDs and shorted them. This allowed for the motor to work correctly. We then moved on to debugging the shift registers, after probing we believe that one of the GPIO pins in use for the LATCH is fried, so our next steps is to cut this trace and fly wire from a spare GPIO pin.
+			</br>
+			<img src="Team\progress\img - member2\workstep.jpg" width="350" height="400"/> </br>
+			PCB with working stepper motor</br>
+			<img src="Team\progress\img - member2\pack.jpg" width="350" height="375"/> </br>
+			Size adjusted packaging</br>
+			<hr>
+
+			<b>Date Reported:</b> 3/25/2024 <br>
+            <b>Start Time:</b> 3:00pm <br>
+            <b>Work Time:</b>  1.75 hours <br>
+			Got ESP to start working. We started using the USB port instead of the UART, which allowed us to start flashing the ESP. I started soldering the LEDs to 28 AWG with a MTA connector. The shift registers were not giving the correct outputs for the LEDs, so I resoldered the shift registers to the board. They still weren’t working, we probed the GPIO pins to see if the had expected output, which they did. So we are confused to why the shift registers aren’t giving the correct output even though the GPIO pins are correct. Will need to do further debugging.
+			</br>
+			<hr>
+
+			<b>Date Reported:</b> 3/23/2024 <br>
+            <b>Start Time:</b> 3:30pm <br>
+            <b>Work Time:</b>  4.25 hours <br>
+			The solder paste PCB did not work due to some short that was not detected during the x-ray. Due to this we decided to move forward with soldering a new PCB. We first soldered. The LDO, then we soldered the ESP and all of its components. We ran into an issue with the ESP being crooked, due to this we tried to desolder the ESP however, we accidentally pulled 3 pads in the process, however the ESP was saved. Due to this we resoldered another board with an LDO and ESP with all its components. This time the board looked good. We waited for it to dry then tested it. It did not respond to us trying to flash it. Thinking it may be a UART issue we soldered on the USB micro port which can also communicate with the ESP. We decided to not test this and instead get it x-rayed on Monday and move from there.
+			</br>
+			<img src="Team\progress\img - member2\board3.jpg" width="350" height="450"/> </br>
+			New Soldered PCB</br>
+
+			<hr> <h1> Week 11</h1> 
+			<b>Hours this week:</b> 10 <hr> 
+
+			<b>Date Reported:</b> 3/22/2024 <br>
+            <b>Start Time:</b> 1:00pm <br>
+            <b>Work Time:</b>  .5 hour <br>
+			Andrew and Braden soldered on the buck and coulomb using solder paste. I went to get an x-ray from the ECE lab, where a bridge between 2 pins on the buck was found. I fixed this then got it x rayed again, and this time there were no issues.
+			</br>
+			<hr>	
+
+			<b>Date Reported:</b> 3/21/2024 <br>
+            <b>Start Time:</b> 2:00pm <br>
+            <b>Work Time:</b>  1 hour <br>
+			Soldered on PB with decoupling caps and pull up resistors. With all supporting elements of the ESP soldered we will test if it is operational. When we tried to flash the ESP did not respond, we tested the dev board which did work. This means the ESP is fried, most likely due to soldering issues. </br>
+			<img src="Team\progress\img - member2\pbsod.jpg" width="400" height="330"/> </br>
+			Soldered PBs</br>
+			<hr>	
+
+			<b>Date Reported:</b> 3/20/2024 <br>
+            <b>Start Time:</b> 3:30pm <br>
+            <b>Work Time:</b>  2.5 hours <br>
+			Team met for ManLab. Talked with course staff seems we are headed in a good direction with our main focus only being on PCB now. Helped Andrew solder on the heartbeat led for 3.3V. Worked with Andrew to solder the ESP on. Got ESP soldered as well as the decoupling capacitors and resistors. Ran into issue when the 0hm resistor pads got scorched. So, we fly wired from C2 3.3V to R2 ESP 3.3V. We still need to solder the PBs on before we can test if ESP is functional. </br>
+			<img src="Team\progress\img - member2\espsod.png" width="400" height="300"/> </br>
+			Soldered ESP</br>
+			<hr>	
+
+			<b>Date Reported:</b> 3/20/2024 <br>
+            <b>Start Time:</b> 12:00pm <br>
+            <b>Work Time:</b>  3.5 hours <br>
+			Continued to debug the buck converter. First checked if the 5V plane is working. Connected 5V and GND from the power supply and saw that the heartbeat for the 5V was on, so the 5V plane is working. Then ran a simulation on web bench to get correct values for the buck converter. The Vin and Vpg are correct, but it would be almost impossible for these to be incorrect. The Vout is very off with us currently getting 0.8V which is not even close to 5V. Its pretty much impossible to measure current on a PCB so I can’t gain information on if those values are correct. Joe advised me to move on from buck and start soldering other components. I soldered the 5V to 3.3V LDO.  The output of the LDO is currently 4.1V which is very confusing. I checked it with a load box to put a load on it but am still getting just 4.1V. Walter said that the chip might be the wrong one, because I got it from the community shelves so someone may have put an incorrect one in. I decided to unsolder the chip and solder a new one on. With the new chip on I now get an output of 3.3V so it was the incorrect chip. Started gathering the materials needed for the heartbeat LED and the ESP so I can start soldering those next. </br>
+			<img src="Team\progress\img - member2\ldosod.png" width="200" height="200"/> </br>
+			Soldered LDO</br>
+			<img src="Team\progress\img - member2\sim1.png" width="250" height="200"/> 
+			<img src="Team\progress\img - member2\sim2.png" width="600" height="200"/> </br>
+			WebBench Simulation</br>
+			<hr> 
+
+			<b>Date Reported:</b> 3/19/2024 <br>
+            <b>Start Time:</b> 4:00pm <br>
+            <b>Work Time:</b>  0.5 hours <br>
+			Met up with Matt due to him having issues with the bucking converter on the PCB. It is currently outputting the incorrect voltage, so we tried to troubleshoot why this way happening. We decided to probe the voltages, which gave us incorrect readings. We then measured the resistance on all the PCB resistors and found strange results where they did not match what we think they should be. Our next steps are to simulate the bucking in spice to find the correct voltages on each pin, then possibly solder onto a new board.</br>
+			<hr> 
+
+			<b>Date Reported:</b> 3/18/2024 <br>
+            <b>Start Time:</b> 3:00pm <br>
+            <b>Work Time:</b>  2 hours <br>
+			Went to the lab with Andrew and Matt to start soldering components onto the PCB. Arrived a bit late so the QFN for the coulomb was already soldered. So, we started on the bucking converter. Found an error in the PCB where the pads for the top left right and bottom left were not printed on the PCB for some reason. We tried to figure out why but don’t understand what happened, our footprint on KiCad is correct so we are very confused. We talked to joe about this and thankfully these pads were on large traces, so Joe taught us how to scrap off the solder mask and create new pads for us to use. We practiced on junk PCBs then I created the new pads on our PCB. I then helped Matt to solder on the QFN. I held the chip in place and monitored using the camera to make sure none of the pins bridged. It took a while, but we got the buck soldered and checked with an x-ray in the ECE shop to make sure the joints were good. </br>
+
+
+
+			<hr> <h1> Week 9</h1> 
+			<b>Hours this week:</b> 9.5 <hr> 
+
+			
+			<b>Date Reported:</b> 3/06/2024 <br>
+            <b>Start Time:</b> 3:30pm <br>
+            <b>Work Time:</b>  2 hours <br>
+			Met with team in lab. Implemented the last of Joes feedback and finalized the PCB. Ordered the PCB (first team to do so). Started to practice soldering. Soldered multiple 0805s and a 100 pin IC using drag solder technique. Also practiced desoldering with a solder wick and pump.
+			<hr>
+
+			<b>Date Reported:</b> 3/05/2024 <br>
+            <b>Start Time:</b> 7:00pm <br>
+            <b>Work Time:</b>  1 hour <br>
+			Got feedback from Joe after sending an email. There were a few changes to make. These included: 1) The PIR is only rated for a 47K pulldown you cannot put LED on the lines, so removed LEDs 2) MD1 and MD2 should have series limit Rs, so added these resistors 3) make USB + and – traces same length, so did this 4) J2 if a backup to the switcher should have Vin, gnd and 5V out, so added Vin. </br>
+			<img src="Team\progress\img - member2\usbfix.png" width="400" height="300"/> </br>
+			Fixed USB</br>
+			<img src="Team\progress\img - member2\pirfix.png" width="300" height="300"/> </br>
+			Fixed USB</br>
+			<hr>
+
+			<b>Date Reported:</b> 3/03/2024 <br>
+            <b>Start Time:</b> 12:00pm <br>
+            <b>Work Time:</b>  3 hours <br>
+			Went through the PCB with Joe and made his changes. First added a VIA below the coulomb QFN, and extended pads. Added GND testing VIA. Pulled out extra GPIO pins. Added decoupling caps to the shift registers. Received MTA 156 for power from Joe. Got TVS from Joe. Fixed LED MTA headers to be spaced correctly. Pretty much finalized the PCB, talked to Joe and he told me to send him an email with everything and he will review it and send us feedback before we can order. I emailed Joe and Walter the final PCB. </br>
+			<img src="Team\progress\img - member2\fixmta.png" width="500" height="300"/> </br>
+			Fixed MTA headers for LEDs</br>
+			<img src="Team\progress\img - member2\fixcol.png" width="400" height="300"/> </br>
+			New Coloumb Counter with VIA and extended pads</br>
+			<img src="Team\progress\img - member2\gndvia.png" width="275" height="225"/> <img src="Team\progress\img - member2\pullgp.png" width="375" height="225"/> </br>
+			Added GND VIA and pulled out extra GPIO pins</br>
+			<hr>
+
+			<b>Date Reported:</b> 3/03/2024 <br>
+            <b>Start Time:</b> 7:00pm <br>
+            <b>Work Time:</b>  1.5 hours <br>
+			Helped Andrew with rerouting parts of the Coulomb counter, after he increased the trace size for 18V it was very hard to access the 0805 resistor. So I recommended he change it to 2512, which we did. I then made sure that all trace sizes are large enough and found that a few traces on the motors are too small. So changed them from .25mm to .6mm. Also decided to hand solder all offboard LEDs instead of buying them. </br>
+			<img src="Team\progress\img - member2\mottrace.png" width="250" height="300"/> </br>
+			New Motor Traces</br>
+			<hr>
+
+			<b>Date Reported:</b> 3/02/2024 <br>
+            <b>Start Time:</b> 1:00pm <br>
+            <b>Work Time:</b>  2 hours <br>
+			Helped Braden and Matt with PWM on ESP. First debugged the circuit. Found that the current circuit was wired incorrectly, first switched to another motor drive dev kit to make sure the original wiring I did from 3 weeks ago was still working. Then once it was working switched back to the newer dev kit. Decided to instead make code from scratch, due to Braden’s code not working. Matt and I got working code, thus PWM is now working with the ESP.	</br>
+			<img src="Team\progress\img - member2\pwmdone.jpg" width="500" height="300"/> </br>
+			PWM Prototyped</br>
+
+
+			<hr> <h1> Week 8</h1> 
+			<b>Hours this week:</b> 13.5 <hr> 
+
+			<b>Date Reported:</b> 2/29/2024 <br>
+            <b>Start Time:</b> 12:30pm <br>
+            <b>Work Time:</b>  1 hour <br>
+			Met with team to practice presentation. Decide to switch around the order of some slides and also assigned some slides to different people. Did a full run through of the presentation which was timed at around 45 minutes, so I think we are in good shape. </br>
+			<hr>
+
+			<b>Date Reported:</b> 2/28/2024 <br>
+            <b>Start Time:</b> 3:30pm <br>
+            <b>Work Time:</b>  2 hours <br>
+			Continued to work with team on presentation and assigning slides. Also went through and took inventory of all parts that we currently have. Made an excel sheet listing all parts we have ordered and are already in stock, and listed what parts we need to order to have 2 completed PCBs. </br>
+			<img src="Team\progress\img - member2\stock.png" width="500" height="300"/> </br>
+			Excel of Parts</br>
+			<hr>
+
+			<b>Date Reported:</b> 2/26/2024 <br>
+            <b>Start Time:</b> 7:00pm <br>
+            <b>Work Time:</b>  3.5 hours <br>
+			Made preliminary finalization of PCB. Then printed out PCB onto paper at 1 to 1 scale. Took all order components and verified that the footprints matched the actual component. Found that the header for TVS was too small so changed from 1mm diameter to 1.3mm diameter. Also finished all slides assigned to me for the presentation. These included the schematic and PCB overview slides. Also updated block diagram to include coulomb counter, power, and bus widths. </br>
+			<img src="Team\progress\img - member2\finpcb.png" width="880" height="950"/> </br>
+			Semi Finalized PCB</br>
+			<img src="Team\progress\img - member2\newblock.png" width="750" height="400"/> </br>
+			New Block Diagram</br>
+			<hr>
+
+			<b>Date Reported:</b> 2/25/2024 <br>
+            <b>Start Time:</b> 8:00pm <br>
+            <b>Work Time:</b>  3 hours <br>
+			Changed PCB to put GND plane on back of PCB and 5V plane on front of PCB. Did this to limit the needed routing of 5V on SMD components. Needed to add vias for all GND pads due to GND now being on back side of PCB. Also used TI Webbench to generate a simpler buck converter with only 1 GND plane instead of 2. Added the new buck converter to the schematic. Helped Andrew implement the new buck converter onto the PCB. </br>
+			<img src="Team\progress\img - member2\newbuck.png" width="880" height="400"/> </br>
+			New Buck Schematic</br>
+			<img src="Team\progress\img - member2\newbuck2.png" width="800" height="400"/> </br>
+			New Buck PCB</br>
+			<hr>
+
+			<b>Date Reported:</b> 2/22/2024 <br>
+            <b>Start Time:</b> 7:00pm <br>
+            <b>Work Time:</b>  4 hours <br>
+			Routed DC motor controls to ESP. Routed PBs to ESP. Routed stepper motor to ESP. Routed coulomb counter to ESP. Routed 5V to all needed areas with a 1mm trace. Routed 3.3V to all needed areas with 0.5mm trace. The only thing left to route is buck converter.</br>
+			<img src="Team\progress\img - member2\dcmot.png" width="400" height="500"/> </br>
+			DC Motor Controls</br>
+			<img src="Team\progress\img - member2\espru.png" width="550" height="400"/> </br>
+			ESP fully routed</br>
+			
+			<hr> <h1> Week 7</h1> 
+			<b>Hours this week:</b> 9 <hr> 
+
+			<b>Date Reported:</b> 2/19/2024 <br>
+            <b>Start Time:</b> 3:30pm <br>
+            <b>Work Time:</b>  2 hours <br>
+			Talked with joe and received the connector for out li-po battery. The connector will end in a banana clip, so we will need to put the footprint for the banana connector on our PCB. I found and added all the datasheets for all ICs, ESP, and motors to our website under references. We talked with course staff to go over the schematic and PCB that we currently have. </br>
+			<img src="Team\progress\img - member2\upweb.png" width="800" height="500"/> </br>
+			Updated Website</br>
+			<hr>
+
+			<b>Date Reported:</b> 2/19/2024 <br>
+            <b>Start Time:</b> 12:00pm <br>
+            <b>Work Time:</b>  4 hours <br>
+			Got MTA 151 connectors from Joe and connecting all of them to the robot chassis motors. Fixed the TVS diode placement for our schematic and received the TVS that Joe had in stock. He only had through hole versions, so I changed the footprint to through hole from SMD. Joe also advised me to change the USB UART to only use the TX RX GND header and PB instead of the QFN chip, so I changed the schematic to match this. Fixed motor drive routing. Routed TX RX GND and PB. Also rearranged the board for better spacing. Routed the capacitors around the ESP. Routed PIR sensors. </br>
+			<img src="Team\progress\img - member2\tvsfix.png" width="500" height="500"/> </br>
+			Fixed TVS</br>
+			<img src="Team\progress\img - member2\motorroute.png" width="250" height="300"/> <img src="Team\progress\img - member2\txrxgndhead.png" width="400" height="300"/></br>
+			New Motor & TX/RX/GND Routing</br>
+			<img src="Team\progress\img - member2\boardre.png" width="650" height="700"/> </br>
+			New Rearranged PCB</br>
+			<hr>
+			
+			<b>Date Reported:</b> 2/17/2024 <br>
+            <b>Start Time:</b> 7:00pm <br>
+            <b>Work Time:</b>  3 hours <br>
+			Started working on PCB. Created PCB and loaded all footprints. Started to organize all major components together. Used a 145x145mm square to place everything in. I successfully grouped all major components together and started organizing the LED/Shift reg, and the LDO. </br>
+			<img src="Team\progress\img - member2\pcbOG.png" width="800" height="800"/> </br>
+			Full PCB</br>
+
+
+			<hr> <h1> Week 6</h1> 
+			<b>Hours this week:</b> 8 <hr> 
+
+
+			<b>Date Reported:</b> 2/16/2024 <br>
+            <b>Start Time:</b> 11:00pm <br>
+            <b>Work Time:</b>  3 hours <br>
+			Worked more on schematic. Created global power labels for all levels of power, allowing for each component to be fully separated from one another. Then I organized and labeled each individual section of the schematic, sectioning them off in rectangles. Talked to TA and found mistake in the schematic with the CHIP_PU, fixed and now should be correct. Also learned that the bucking converter requires both an PGND and AGND plane, so relabeled both grounds to be different. Now have a AGND for part of bucking and PGND for everything else. Also discussed with TA if we are allowed to leave the 5V output from USB connected to out power plane, he said he was unsure and we should ask Joe if we should keep or remove it.</br>
+			<img src="Team\progress\img - member2\fullschclean.png" width="800" height="600"/> </br>
+			Full Schematic</br>
+			<img src="Team\progress\img - member2\chipPUsolve.png" width="325" height="275"/>          <img src="Team\progress\img - member2\bucknew.png" width="570" height="275"/></br> 	
+			Chip PU fixed & Bucking Converter with AGND & PGND</br>
+			<hr>
+
+			<b>Date Reported:</b> 2/15/2024 <br>
+            <b>Start Time:</b> 6:00pm <br>
+            <b>Work Time:</b>  1.5 hours <br>
+			To make schematic more readable I separated out the USB UART and USB ESP using global labels for each wire, instead of manually running the wires. Continued to add more footprints to all components. Researching the most easily solderable variant of each component for the footprints is much more time consuming and confusing than I thought it would be.</br>
+			<img src="Team\progress\img - member2\usb2uartclean.png" width="500" height="350"/> <img src="Team\progress\img - member2\ESPUSBclean.png" width="300" height="250"/></br>
+			Cleaner USB to UART and USB ESP</br>
+			<hr>
+
+			<b>Date Reported:</b> 2/14/2024 <br>
+            <b>Start Time:</b> 3:30pm <br>
+            <b>Work Time:</b>  2.5 hours <br>
+			Talked with professors about schematic overview and got feedback which included: add mounting holes to schematic, power connector for battery, bucking TI make sure all are 0805, ld1117 for linear reg, can use max232 instead of qfn, pull out TX and RX and GND to a header, tvs diode and 20ohm on motors, add on off switch, heartbeat LEDs, no external occ, and use 2.54mm headers. I implemented the ld1117 and added TX RX GND header. I also started adding footprints to all components that currently don’t have any. </br>
+			<img src="Team\progress\img - member2\ld1117.png" width="275" height="225"/> </br>
+			ld1117 </br>
+			<img src="Team\progress\img - member2\txrxhead.png" width="200" height="175"/> </br>
+			TX/RX/GND header </br>
+			<hr>
+
+
+			<b>Date Reported:</b> 2/13/2024 <br>
+            <b>Start Time:</b> 6:30pm <br>
+            <b>Work Time:</b>  1 hour <br>
+			Completed the USB UART, added push buttons to programming pins to manually overwrite if USB to UART fails. Need to talk to Joe to figure out where to put the header to pull out the TX and RX signals. Also spoke with Andrew to see what else needs to be done with schematic. Will start to focus on getting footprints for all components.
+			<img src="Team\progress\img - member2\usb2uartwbut.png" width="700" height="400"/> </br>
+			USB to UART with push buttons </br>
+
+
+			<hr> <h1> Week 5</h1> 
+			<b>Hours this week:</b> 9 <hr> 
+
+			<b>Date Reported:</b> 2/07/2024 <br>
+            <b>Start Time:</b> 3:30pm <br>
+            <b>Work Time:</b>  2 hours <br>
+			After speaking with the team, we decided to switch from the SLA battery to a li-po battery due to weight concerns with the chassis. The only li-po that joe current has in stock is an 18.4V one, due to this we can no longer run the motor voltage directly from the motor, so we will instead power the motors with 5V from the step down circuit. With this change I prototyped the motors at 5V, and found that they will still run, the only downside is we will need to run the PWM signal to have around a 90-100% duty cycle due to this lower voltage input. We also decided to switch from sonar sensors to IR sensors after running into a large number of issues with the sonar sensors. We ordered the IR sensors and should arrive this weekend </br>
+			<hr>
+
+			<b>Date Reported:</b> 2/06/2024 <br>
+            <b>Start Time:</b> 10:30pm <br>
+            <b>Work Time:</b>  1.5 hours <br>
+			Worked on schematic and tried to find the best way to import the schematic and footprints of the ESP parts. Found a GitHub that has all ESP schematic/footprints so downloaded it and added it as a plugin. However, ran into the issue that I was running KiCad 6.0 while it was meant for 7.0. So called my team to make sure we can switch to 7.0, which we did. Also completed the USB to UART. </br>			
+			<img src="Team\progress\img - member2\usb2uartdone.png" width="900" height="450"/> </br>
+			USB to UART </br>
+			<b>References:</b>
+			<a href="https://github.com/espressif/kicad-libraries?tab=readme-ov-file">https://github.com/espressif/kicad-libraries?tab=readme-ov-file</a> </br>
+
+			<hr>
+			<b>Date Reported:</b> 2/05/2024 <br>
+            <b>Start Time:</b> 3:00pm <br>
+            <b>Work Time:</b>  2 hours <br>
+			Talked with joe to figure out the best connection for the motors. Found that MTA-156 will be the best option, however he does not have it in stock. Joe will order a variety of MTA-156 to restock his supply.  Continued to work on schematic, talked with TA and decided to use the dev board schematic as a reference. Found the dev board schematic and started working on transferring it to KiCad. Created the ESP USB and connect it to the ESP. Also started on the USB to UART using the CP2102N. </br>			
+			<img src="Team\progress\img - member2\esp2usb.png" width="370" height="225"/> </br>
+			ESP USB</br>
+			<img src="Team\progress\img - member2\usb2uart.png" width="600" height="400"/> </br>
+			USB to UART </br>
+			<b>References:</b>
+			<a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/hw-reference/esp32s3/user-guide-devkitc-1.html">https://docs.espressif.com/projects/esp-idf/en/latest/esp32s3/hw-reference/esp32s3/user-guide-devkitc-1.html</a> </br>
+
+			<hr>
+			<b>Date Reported:</b> 2/05/2024 <br>
+            <b>Start Time:</b> 12:30pm <br>
+            <b>Work Time:</b>  2 hours <br>
+			Continued to work on motor drives. Slightly altered circuitry to now have have different inputs for motor voltage per motor drive IC. Then got a 2nd power supply which will allow me to test 2 motors at the same time, due to having now 2A output combined. Found that when runn at 100 PWM that the current draw is a steady 0.8, will play around with different PWM to see what is the most efficent. Also found 1 motor to no longer be working to took it apart, however cannot tell why its broken. </br>
+			<img src="Team\progress\img - member2\motor3.jpg" width="370" height="225"/> </br>
+			New motor circuit </br>
+			<img src="Team\progress\img - member2\2pow.jpg" width="400" height="225"/> </br>
+			Two power supplies </br>
+			<img src="Team\progress\img - member2\takemot.jpg" width="350" height="225"/><br>
+			Motor taken apart </br>
+			<hr> 
+
+			<b>Date Reported:</b> 2/04/2024 <br>
+            <b>Start Time:</b> 7:00pm <br>
+            <b>Work Time:</b>  1.5 hours <br>
+			Continued to work on schematic. Found the needed 5v to 3.3v LDO, LM3940, online which has a 1A output which should be enough to power the esp at all times. However, KiCad did not have a schematic for this IC so I researched how to add a custom IC. I found a website that has custom schematics and downloaded the one for LM3940. I found a few mistakes in the schematic, including incorrect Vcc for sonars, wrong wiring resulting in shorts, and messy wiring which I cleaned up. </br>	
+			<img src="Team\progress\img - member2\LDOsch.png" width="370" height="225"/> <img src="Team\progress\img - member2\sonarsch.png" width="500" height="225"/><br>
+			<b>References:</b>
+			<a href="https://www.snapeda.com/parts/LM3940IMP-3.3%2FNOPB/Texas%20Instruments/view-part/">https://www.snapeda.com/parts/LM3940IMP-3.3%2FNOPB/Texas%20Instruments/view-part/, </a>
+			<a href="https://www.snapeda.com/about/import/#KiCad6">https://www.snapeda.com/about/import/#KiCad6</a></br>
+
+			<hr> <h1> Week 4</h1> 
+			<b>Hours this week:</b> 8.0 <hr> 
+
+			<b>Date Reported:</b> 1/31/2024 <br>
+            <b>Start Time:</b> 3:30pm <br>
+            <b>Work Time:</b>  2 hours <br>
+			Met with professors to discuss PSDRs, found that they were all in good standing. Asked about recommendations for the 12v to 5v power converter and decided to instead change from a linear regulator to a switching buck converter. Also completed the Component Analysis document with teammates. I also worked with Andrew to start looking into <a href="https://webench.ti.com/power-designer/">TI WEBBENCH Power Designer</a> to design the buck converter. We found a promising looking 12V to 5V at 5A converter, which can be seen pictured below. The next steps are to implement this into our schematic. </br>
+			<img src="Team\progress\img - member1\1-31-WBPowerDesigner.png" width="900" height="377.5"/><br>
+			<hr>
+
+			<b>Date Reported:</b> 1/28/2024 <br>
+            <b>Start Time:</b> 3:00pm <br>
+            <b>Work Time:</b>  5 hours <br>
+			Worked on and completed the electrical overview. I finished all sections so instead of listing what I worked on I have linked the complete document <a href="Files/docs/A4 - Electrical Overview.docx">here</a>. This took a large amount of researching and writing so was my main focus for this week. I also created the new overall visual diagram of all electrical components which can be seen below, and was included in my report. </br>
+			<img src="img\newblockdiagram.png" width="750" height="450" /></img>
+			<br>Electrical Components Diagram</br>
+			<hr>
+
+			<b>Date Reported:</b> 1/28/2024 <br>
+            <b>Start Time:</b> 8:00pm <br>
+            <b>Work Time:</b>  1 hour <br>
+			Met with my cousin who is a power electronics engineer from MIT to talk about my current power concerns on the system. We went over what I currently had, in which he most agreed with what I was doing. He advised me on a few things; 1) ask for a PSU with 3A-5A output to test circuitry before buying a battery 2) Buy a smaller battery that lasts ~ 5 minutes to check for operation 3) The motors are rated for 6V however the 12V source can be directly used due to the usage of PWM for controlled, thus average voltage will be below 6V due to duty cycle 4) A linear regulator is fine for 12V to 5V and 5V to 3.3V because the motors are not being run off of a regulator so efficiency should still be okay. My next steps are to communicate this feedback with my team. </br>
+
+
+
+			<hr> <h1> Week 3</h1> 
+			<b>Hours this week:</b> 7.5 <hr> 
+
+			
+			<b>Date Reported:</b> 1/26/2024 <br>
+            <b>Start Time:</b> 3:30pm <br>
+            <b>Work Time:</b>  1.5 hours <br>
+			Continued to work with the TB6612FNG motor drives. Rebuilt the circuit with a different breakout board that was in stock, due to having 2 of them. I then connected the Arduino to both motor drivers and tried to run 1 motor per motor driver. I first controlled both motor drivers with different PWM; however, this did not work due to the current stall of the motors. I then thought that it may work if I use the same PWM for both motor drives, however I ran into the same problem. I believe that the current will not be an issue once we receive the actual battery we will use, because currently the PSU only outputs a max of 1 amp, however the actual battery should output more. A picture of the new circuit can be seen below. </br>
+			<img src="Team\progress\img - member2\motordriveproto2.jpg" width="550" height="350" /></img>
+			<br>
+			<hr>
+
+			<b>Date Reported:</b> 1/25/2024 <br>
+            <b>Start Time:</b> 1:00pm <br>
+            <b>Work Time:</b>  1 hour <br>
+			Started to work on the Electrical Overview document. Worked on section 1.0 where I first explained the overview of all electrical components. I then went into detail on how we will perform power management by building a 12V to 5V to 3.3V converter. I also went into detail on how we will use shift registers and LEDs to display battery life diagnostics. Will continue to expand upon the other areas of electronics.</br>
+			<hr>
+
+
+			<b>Date Reported:</b> 1/24/2024 <br>
+            <b>Start Time:</b> 3:30pm <br>
+            <b>Work Time:</b>  2.5 hours <br>
+			Researched the correct motor drives to power our motors. Met with Joe to figure out what motor drives he currently had in stock. Decided to use the TB6612FNG motor drives that he had in stock. This motor drive allows for the control of 2 motors at the same time. Then researched information on the motor drive pinouts and how to use them to control the motors. Decided to do a quick prototype using an Arduino Uno due to the code being easier than using the esp32. Built prototype to test if the motor drives would power. Using the power generator, I produced 12V 1A to the motor power port, however, the current limit of 1A only allowed for 1 motor to work at a time. Due to the motors’ high current draw we have decided to find less powerful motors because our robot will not need to go at a high speed. The next step is to order our 12V lead acid battery and less powerful motors and see if the current output is sufficient. I have pictured the built motor drive circuit below. </br>
+			<img src="Team\progress\img - member2\motordriveproto.jpg" width="550" height="350" /></img>
+			<br>
+			<b>References:</b>
+			<a href="https://www.sparkfun.com/products/14451">Motor Drive, </a>
+			<a href="https://adam-meyer.com/arduino/TB6612FNG">Arduino Motor Control Guide</a></br>
+			<hr>
+
+			<b>Date Reported:</b> 1/21/2024 <br>
+            <b>Start Time:</b> 10:00pm <br>
+            <b>Work Time:</b>  2.5 hours <br>
+			Added the step-down circuit to the schematic. Also found out that the esp32 model we are using needs a 3.3V input so also had to add a way to take down the 5V output to 3.3V. Decided the easiest way to do this was to use a voltage divider. So now we have a 12V to 5V step down circuit with the 5V output powering all ICs and other things that will need 5V, then we have a 5V to 3.3V voltage divider whose output will power the esp. This can all be seen below. Currently the voltage divider is temporary as it may be inefficient, however will need to investigate other options further. </br>			
+			<img src="Team\progress\img - member2\pcbwstep.png" width="750" height="450" /></img>
+			<br>Schematic with power converter and shift register LEDs.</br>
+
+			<hr> <h1> Week 2 </h1> 
+			<b>Hours this week:</b> 9 <hr> 
+
+			<b>Date Reported:</b> 1/18/2024 <br>
+            <b>Start Time:</b> 8:00pm <br>
+            <b>Work Time:</b>  2 hours <br>
+			Gathered all materials necessary to create 12V to 5V set down circuit. The exact transistor and zener diode were unavailable at the ECE shop so decided to choose a different one. The new transisitor is BC548 and diode is 5.6V 1000mA, these differ slightly than previously wanted and will resulst in a 5V 200mA output instead of 500mA. For now these will be fine to prototype but will need to order other materials to build final version. Built and tested the circuit. It worked correctly, as seen in the images below I supply 12V from DC power supply and measured ~5V with the multimeter on the output. I also witness that becuase of the large capaictor size the discharge rate is relatively slow and takes around 20ish minutes to fully discharge, this may or may not be an issue in the future but is good to remark incase it is. Met with teammate Matt to ensure that the 5V output would power the esp32, which it did. </br>
+			<img src="Team\progress\img - member2\1_18_stepdown.jpg" width="300" height="260" /></img>
+			<img src="Team\progress\img - member2\1_18_stepdown2.jpg" width="200" height="260" /></img>
+			<img src="Team\progress\img - member2\1_18_stepdown3.jpg" width="390" height="260" /></img> <br>
+			<b>References:</b>
+			<a href="https://www.eleccircuit.com/12v-to-5v-converter-step-down-3a-regulator/">https://www.eleccircuit.com/12v-to-5v-converter-step-down-3a-regulator/</a></br>
+			<hr>
+
+			<b>Date Reported:</b> 1/17/2024 <br>
+            <b>Start Time:</b> 3:30pm <br>
+            <b>Work Time:</b>  2.5 hours <br>
+			Recived feedback on PSDR from course staffed then worked with team to continue defining our PSDRs to be more specific and goal oriented. Completed the functional specification document with team. Help teammate Andrew to troubleshoot issues with his shift register circuit, determined that the issue is most likely breadboard related.  </br>   
+			<hr>
+			
+			<b>Date Reported:</b> 1/15/2024 <br>
+            <b>Start Time:</b> 6:00pm <br>
+            <b>Work Time:</b>  2 hours <br>
+			Researched power options for esp32. Decided to use a 12V lead acid battery with 20AH. Used this battery due to inexpensive cost and high amp hours. Due to output voltage being 12V need to step down voltage to 5V to allow for safest powering of esp32. Researched average esp32 current draw found that at max usage esp32 may use around 150 – 300mA, due to this 12V to 5V circuit should have higher mA than this. Found circuit that converts 12V to 5V with 500mA. To build this circuit will need transistor BD139 and 5.6V 0.5w Zener diode. Created document to hold all power related information   </br>   
+			<b>References:</b>
+			<a href="https://lastminuteengineers.com/esp32-sleep-modes-power-consumption/">https://lastminuteengineers.com/esp32-sleep-modes-power-consumption/</a></br>
+			<a href="https://www.eleccircuit.com/12v-to-5v-converter-step-down-3a-regulator/">https://www.eleccircuit.com/12v-to-5v-converter-step-down-3a-regulator/</a></br>
+			<hr>
+
+			<b>Date Reported:</b> 1/13/2024 <br>
+            <b>Start Time:</b> 4:00pm <br>
+            <b>Work Time:</b>  2.5 hours <br>
+			Helped to dissemble and test all drive motors in the robot chassis. Verified that all the motors were correctly working when a voltage between 1-12V was applied. Wrote short Arduino IDE script to see if motors can be controlled via PWM directly from a microcontroller. Found that current is too low so will need to find a motor drive IC to use.  </br>   
+			<img src="Team\progress\img - member2\j1code.png"></img>
+			<img src="Team\progress\img - member2\j1robot.jpg" width="200" height="260" /></img>
+
+			<hr> <h1> Week 1 </h1>
+			<b>Hours this week:</b> 2 <hr> 
+
+			<b>Date Reported:</b> 1/10/2024 <br>
+            <b>Start Time:</b> 3:30pm <br>
+            <b>Work Time:</b>  2 hours <br>
+			Started and finished final project proposal with team during lab time. Went on lab tour. Brainstormed with team for best possible way to dectect movement. Decided we will use a combination of ultra sonic and lidar sensors. We also decided to use a premade chassis and then 3D print the robots body. Gathered components for our project, including a robot chassis, LEDs, and shift registers.  </br>   
+
+        </div>
+	
+		<!-- Instantiate global footer. Any changes to the footer should be made through the top-level file "footer.html" -->
+		<div id="footer"></div>
+    </div>
+</div>
+
+<!--JS-->
+<script src="js/jquery.js"></script>
+<script src="js/jquery-migrate-1.1.1.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#header").load("header.html");
+	$("#menu").load("navbar.html");
+	$("#footer").load("footer.html");
+});
+</script>
+</body>
+</html>
