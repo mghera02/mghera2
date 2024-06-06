@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Name: Boilerplate
+Version: v1.3
+Last Updated: 8/02/2023
+Author: George Hadley & Phil Walter
+License: Released for free under a Creative Commons Attribution 2.5 License
+
+This website was based upon a number of source materials, which are elaborated upon in credits.txt
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!--Reconfigurable base tag; used to modify the site root location for root-relative links-->
+<!-- Python SimpleHTTPServer Testing -->
+<!--<base href="/http://localhost:8000/" />-->
+<!-- ECE477 preview URL -->
+<!--<base href="/https://engineering.purdue.edu/ece477/preview/" />-->
+<!-- ECE477 final URL -->
+<!--<base href="/https://engineering.purdue.edu/ece477/" />-->
+<!--<base href="https://engineering.purdue.edu/ece477/StudentWebTemplate/" />-->
+    <base href="https://engineering.purdue.edu/477grp2/" /> <!-- Replace the 25 with your team number-->
+	
+<!--Content-->
+<title>ECE477 Homepage</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="author" content="Phil Walter">
+<meta name = "format-detection" content = "telephone=no" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<!--CSS-->
+<link rel="stylesheet" href="css/default.css" type="text/css" media="all" />
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/content.css">
+<!--[if IE 6]>
+<link href="/default_ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+</head>
+<body>
+<div id="wrapper_site">
+    <div id="wrapper_page">
+		<!-- Instantiate global site header.-->
+		<div id="header"></div>
+		<!-- Instantiate site global navigation bar.-->
+		<div id="menu"></div>
+		<!-- Instantiate slideshow module. All slideshow images should be 1100px x 500px and stored in ./img/slideshow-->
+		<div id="slideshow"></div>
+		<!-- Instantiate main page content. All page content should be added to about.html -->
+		<div id="content">
+            <h2>M.O.U.S.E.</h2>
+			<h4>Mobile Observation Unit for Surveillance Equipment</h4>
+			
+            <h2>Project Description:</h2> 
+			<p>MOUSE is a mobile surveillance robot intended for indoor use, in corporate office or residential environments. MOUSE will be powered by four motors, each controlling its own wheel for mobility. There will be a large 18V battery allowing MOUSE to perform surveillance overnight without needing to have its battery replaced. When the battery does die, it will need to be recharged manually. MOUSE will have the ability for the motors to have variable speed control through the use of PWM signals. MOUSE will also have a custom circuit to step down the 18V from the battery to 5V for motors, sensors and ICs, as well as 5V to 3.3V for the microprocessor.</p>
+			<br>
+			<p>To complete its surveillance functionality, MOUSE will have PIR sensors on all four sides, allowing for the detection of movement. While stationary, MOUSE will use these sensors to detect any movement in its vicinity. Finally, there will be a viewable UI on a webpage to use MOUSE movement controls and display if any objects have been detected. MOUSE and the web interface will send data wirelessly through WiFi via a web server. The block diagram below represents the connections between the described functional components of MOUSE.</p>
+			<br>
+			<p>Additionally, we have the following stretch goals for the functionality of MOUSE. The PIR sensors may be mounted to a motor to ensure 360 degree coverage, instead of simply mounting four separate sensors to each side of MOUSE. MOUSE may be able to follow a predetermined path set by the user.</p>
+			<br>
+			<img src="img/newblockdiagram.png" width="890" height="450"/></img>
+            
+            <h2>Project Specific Design Requirements (PSDRs):</h2>
+                <ol>
+                    <li>PSDR #1 (Hardware): An ability to control the speed of the motors with PWM signals from the microcontroller. </li>
+                    <li>PSDR #2 (Hardware): An ability to step down 18.5V from the battery to 5V for circuit components on the PCB and motors using a team designed DC switching regulator.</li>
+                    <!--<li>PSDR #3 (Hardware): An ability to collect data related to object movement using ultrasonic sensors via I2C protocol to the microcontroller.</li>-->
+					<li>PSDR #3 (Hardware): An ability to utilize LEDs with a daisy chained shift register circuit controlled by the microcontroller to display battery life diagnostic. </li>
+                    <li>PSDR #4 (Software): An ability to display data, such as movement controls and movement detection data to a viewable UI on a webpage.</li>
+                    <li>PSDR #5 (Software): An ability to control the robot by sending data wirelessly through WiFi via a web server.</li>
+                </ol>
+				Stretch PSDR:
+				<ol>
+					<!--<li>Stretch PSDR #1: An ability to utilize LEDs with a daisy chained shift register circuit controlled by the microcontroller to display battery life diagnostic.</li>-->
+					<!--Stretch PSDR #1: An ability to follow a predetermined path with the following accuracy in a straight line: if the robot drives for 10m, then it should be within 1 m of accuracy to the expected distance through the use of time based motor control by the microcontroller.</li>-->
+					<li>Stretch PSDR #1 An ability to record a set path and then play back the same actions: if the robot records a path for 30 seconds, then its playback should be within 1 meter of the original pathing at all times</li>
+					<li>Stretch PSDR #2: An ability to detect movement by using a PIR sensor that is attached to an motor with an encoder. The microcontroller will control the motor direction using feedback from the encoder, and the microcontroller will read the output of the PIR sensor.</li>
+				</ol>
+        </div>
+		<!-- Instantiate global footer. Any changes to the footer should be made through the top-level file "footer.html" -->
+		<div id="footer"></div>
+	</div>
+</div>
+
+<!--JS-->
+<script src="js/jquery.js"></script>
+<script src="js/jquery-migrate-1.1.1.js"></script>
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#header").load("header.html");
+	$("#menu").load("navbar.html");
+	$("#slideshow").load("slideshow.html");
+	//$("#content").load("about.html");
+	$("#footer").load("footer.html");
+});
+</script>
+
+</body>
+</html>

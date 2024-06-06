@@ -10,13 +10,13 @@
 
 <style>
     @media (max-width: 1000px) {
-        img {
+        #webcamVid {
             width: 100vw;
         }
     }
 
     @media (min-width: 1000px) {
-        img {
+        #webcamVid {
             width: 20vw;
         }
     }

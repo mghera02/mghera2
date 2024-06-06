@@ -1,7 +1,8 @@
 <template>
-    <a id="medallion" :style="getBorderColor()" :href="medallionLink" target=”_blank”>
+    <a class="medallion" :style="getBorderColor()" :href="medallionLink" target="_blank" :class="{ 'medallion-visible': visible }">
         <img class="picture" src="../assets/githubLogo.png" v-if="medallionType == 'github'">   
-        <img class="picture" src="../assets/linkedInLogo.png" v-if="medallionType == 'linkedIn'">             
+        <img class="picture" src="../assets/linkedInLogo.png" v-if="medallionType == 'linkedIn'">
+        <img class="picture" src="../assets/emailLogo.png" v-if="medallionType == 'email'">             
     </a>
 </template>
 
@@ -10,14 +11,18 @@
         name: 'MediaMedallion',
         data() {
             return {
+                visible: false
             }
         },
         methods: {
             getBorderColor() {
-                return {
-                    background: `${this.medallionColor}`,
-                    boxShadow: `0px 0px 1rem .3rem ${this.medallionColor}`,
-                }  
+                if(this.visible) {
+                    return {
+                        transform: 'translateY(0)',
+                        background: `${this.medallionColor}`,
+                        boxShadow: `0px 0px 1rem .3rem ${this.medallionColor}`,
+                    }  
+                }
             }
         },
         props: {
@@ -25,50 +30,70 @@
             medallionColor: String,
             medallionLink: String
         },
-        computed: {
-           
+        mounted() {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        this.visible = true;
+                        observer.disconnect();
+                    }
+                });
+            }, {
+            });
+            observer.observe(this.$el);
         }
     }
 </script>
 
 <style>
     @media (max-width: 1100px) {
-        #medallion {
+        .medallion {
+            display: block;
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            cursor:pointer;
+            cursor: pointer;
             pointer-events: visibleFill;
             z-index: 2;
         }
 
         .picture {
+            display: block;
             filter: brightness(0%);
-            max-width: 100%;
-            max-height: 100%;
-            cursor:pointer;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
             z-index: 2;
             pointer-events: visibleFill;
         }
     }
 
-    @media (min-width:1100px) {
-        #medallion {
-            width: 100px;
-            height: 100px;
+    @media (min-width: 1100px) {
+        .medallion {
+            display: block;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            cursor:pointer;
+            cursor: pointer;
             pointer-events: visibleFill;
             z-index: 2;
         }
 
         .picture {
+            display: block;
             filter: brightness(0%);
-            max-width: 100%;
-            max-height: 100%;
-            cursor:pointer;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
             z-index: 2;
             pointer-events: visibleFill;
         }
+    }
+
+    .medallion {
+        background: rgba(0,0,0,0);
+        box-shadow: 0px 0px 0rem 0rem rgba(0,0,0,0);
+        transform: translateY(20px);
+        transition: background 1.5s ease-out, box-shadow 1.5s ease-out, transform 1.5s ease-out;
     }
 </style>

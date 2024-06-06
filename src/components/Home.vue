@@ -35,18 +35,13 @@
                 lastVert: 'down',
                 oldRow: [-1],
                 oldCol: [-1],
-                magicInterval: null,
                 playingAudio: false
             }
         },
         methods: {
             goToNextPage() {
-                clearInterval(this.magicInterval);
-                if(window.location.href.indexOf('#') > -1) {
-                    window.location = window.location.href + "Gallery"
-                } else {
-                    window.location = window.location.href + "#/Gallery"
-                }
+                const portfolioBody = document.getElementById('portfolioBody');
+                portfolioBody.scrollIntoView({ behavior: 'smooth', block: 'start' });
             },
             playAudio() {
                 let audio = this.$refs.audio;
@@ -59,26 +54,27 @@
                     if (count == 0) {
                         let terminalStr = '"This is where the fun begins." \b - Anakin Skywalker'
                         let terminal = document.getElementById("terminal");
-                        let idx = 0
-                        let strIdx = 0;
-                        let newUnderline = document.createTextNode('_');
-                        setInterval(() => {
-                            if(idx < terminalStr.length * 2) {
-                                if(idx % 2 == 0) {
-                                    let newChar = document.createTextNode(terminalStr[strIdx]);
-                                    if (terminalStr[strIdx] == '\b') {
-                                        console.log('here');
-                                        newChar = document.createElement('br')
+                        if(terminal) {
+                            let idx = 0
+                            let strIdx = 0;
+                            let newUnderline = document.createTextNode('_');
+                            setInterval(() => {
+                                if(idx < terminalStr.length * 2) {
+                                    if(idx % 2 == 0) {
+                                        let newChar = document.createTextNode(terminalStr[strIdx]);
+                                        if (terminalStr[strIdx] == '\b') {
+                                            newChar = document.createElement('br')
+                                        }
+                                        terminal.appendChild(newChar);
+                                        terminal.appendChild(newUnderline);
+                                        strIdx++;
+                                    } else {
+                                        terminal.removeChild(newUnderline);
                                     }
-                                    terminal.appendChild(newChar);
-                                    terminal.appendChild(newUnderline);
-                                    strIdx++;
-                                } else {
-                                    terminal.removeChild(newUnderline);
+                                    idx++;
                                 }
-                                idx++;
-                            }
-                        }, 80);
+                            }, 80);   
+                        }
                     }
                     count = 1;
                 }, 2500);
@@ -117,7 +113,7 @@
 
     #Home {
         z-index:-2;
-        height: 100%;
+        height: 100vh;
         width:100%;
         display: flex;
         flex-direction: column;
@@ -156,7 +152,7 @@
 
     #mainTitle {
         position:relative;
-        top: 10%;
+        top: 150px;
         /*font-family: 'Iceland';*/
         font-family: 'Mandalore-Half';
         font-size:4rem;
@@ -177,10 +173,11 @@
     }
 
     #terminalContainer {
-        position:absolute;
+        position:relative;
         left: 25%;
-        top: 30%;
+        top: 300px;
         width:50%;
+        height: 100px
     }
 
     #terminal {
@@ -223,7 +220,7 @@
         }
         #enter {
             font-size:5rem;
-            top: 50%;
+            top: 45%;
         }
         #terminal {
             font-size: 1rem;
@@ -238,7 +235,7 @@
 
         #enter {
             font-size:9rem; 
-            top: 50%;
+            top: 45%;
         }
 
         #terminal {

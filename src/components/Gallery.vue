@@ -1,10 +1,8 @@
 <template>
     <div id="Gallery">
-        <mediaMedallion class="githubMedallion" :medallionType='github.name' :medallionColor='github.color' :medallionLink='github.link'></mediaMedallion>
-        <mediaMedallion class="linkedInMedallion" :medallionType='linkedIn.name' :medallionColor='linkedIn.color' :medallionLink='linkedIn.link'></mediaMedallion>
         <routeBtn :site="'Exit'" id="exitBtn"/>
         <div id="galleryTitle">The Gallery</div>
-        <div v-for="project in projects" :key="project">
+        <div v-for="project in projects" :key="project" :id="project.title">
             <projectContainer 
                 :title="project.title" 
                 :color="project.color" 
@@ -24,23 +22,21 @@
 <script>
     import projectContainer from './projectContainer.vue'
     import routeBtn from './routeBtn.vue'
-    import mediaMedallion from './mediaMedallion.vue'
     import data from '../data/projectData.json'
+    import { useRoute } from 'vue-router';
+    import { onMounted } from 'vue';
 
     export default {
         name: 'Gallery',
         data() {
             return {
                 projects: data.projects,
-                scrollPosition: 0,
-                github:{name: "github", color: "rgb(120,100,200)", link: "https://github.com/mghera02"},
-                linkedIn:{name: "linkedIn", color: "rgb(50,65,255)", link: "https://www.linkedin.com/in/matthewghera/"},
+                scrollPosition: 0
             }
         },
         components: {
             projectContainer,
-            routeBtn,
-            mediaMedallion
+            routeBtn
         },
         methods: {
         },
@@ -48,6 +44,22 @@
         },
         computed: {
         },
+        mounted() {
+
+        },
+        setup() {
+            const route = useRoute();
+
+            onMounted(() => {
+                const elem = route.query.elem;
+                if (elem) {
+                    const element = document.getElementById(elem);
+                    if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        }
     }
 </script>
 
@@ -61,32 +73,12 @@
         #galleryTitle {
             font-size:5rem;
         }
-        .githubMedallion {
-            position: fixed;
-            top:150px;
-            right: 6%;
-        } 
-        .linkedInMedallion {
-            position: fixed;
-            top:220px;
-            right: 6%;
-        } 
     }
 
     @media (min-width:1100px) {
         #galleryTitle {
             font-size:9rem;
         }
-        .githubMedallion {
-            position: fixed;
-            top:20px;
-            right: 6%;
-        } 
-        .linkedInMedallion {
-            position: fixed;
-            top:140px;
-            right: 6%;
-        } 
     }
 
     #Gallery {

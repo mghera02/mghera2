@@ -1,0 +1,113 @@
+#define I2C_MASTER_TX_BUF_DISABLE 0
+#define I2C_MASTER_RX_BUF_DISABLE 0 
+#define WRITE_BIT I2C_MASTER_WRITE 
+#define READ_BIT I2C_MASTER_READ  
+#define ACK_CHECK_EN 0x1          
+#define ACK_CHECK_DIS 0x0         
+#define ACK_VAL 0x0                
+#define NACK_VAL 0x1               
+
+static gpio_num_t i2c_gpio_sda = 1;
+static gpio_num_t i2c_gpio_scl = 2;
+
+static uint32_t i2c_frequency = 100000;
+static i2c_port_t i2c_port = I2C_NUM_0;
+
+static esp_err_t i2c_master_driver_initialize(void) {
+    i2c_config_t conf = {
+        .mode = I2C_MODE_MASTER,
+        .sda_io_num = i2c_gpio_sda,
+        .sda_pullup_en = GPIO_PULLUP_ENABLE,
+        .scl_io_num = i2c_gpio_scl,
+        .scl_pullup_en = GPIO_PULLUP_ENABLE,
+        .master.clk_speed = i2c_frequency,
+    };
+    return i2c_param_config(i2c_port, &conf);
+}
+
+static int do_i2cdetect_cmd() {
+    i2c_driver_install(i2c_port, I2C_MODE_MASTER, I2C_MASTER_RX_BUF_DISABLE, I2C_MASTER_TX_BUF_DISABLE, 0);
+    i2c_master_driver_initialize();
+    uint8_t address;
+    uint8_t determinedAddress;
+    for (int i = 0; i < 128; i += 16) {
+        for (int j = 0; j < 16; j++) {
+            fflush(stdout);
+            address = i + j;
+            i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+            i2c_master_start(cmd);
+            i2c_master_write_byte(cmd, (address << 1) | WRITE_BIT, ACK_CHECK_EN);
+            i2c_master_stop(cmd);
+            esp_err_t ret = i2c_master_cmd_begin(i2c_port, cmd, 50 / portTICK_PERIOD_MS);
+            i2c_cmd_link_delete(cmd);
+            if (ret == ESP_OK) {
+                determinedAddress = address;
+            }
+        }
+        printf("\r\n");
+    }
+
+    i2c_driver_delete(i2c_port);
+    return determinedAddress;
+}
+
+static int do_i2cget_cmd(int chip_addr) {
+    int len = 1;
+    uint8_t *data = malloc(len);
+
+    i2c_driver_install(i2c_port, I2C_MODE_MASTER, I2C_MASTER_RX_BUF_DISABLE, I2C_MASTER_TX_BUF_DISABLE, 0);
+    i2c_master_driver_initialize();
+    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, chip_addr << 1 | READ_BIT, ACK_CHECK_EN);
+    i2c_master_read_byte(cmd, data + len - 1, NACK_VAL);
+    i2c_master_stop(cmd);
+    esp_err_t ret = i2c_master_cmd_begin(i2c_port, cmd, 1000 / portTICK_PERIOD_MS);
+    i2c_cmd_link_delete(cmd);
+    if (ret == ESP_OK) {
+        for (int i = 0; i < len; i++) {
+            printf("0x%02x ", data[i]);
+            if ((i + 1) % 16 == 0) {
+                printf("\r\n");
+            }
+        }
+        if (len % 16) {
+            printf("\r\n");
+        }
+    } else if (ret == ESP_ERR_TIMEOUT) {
+        ESP_LOGW(TAG, "Bus is busy");
+    } else {
+        ESP_LOGW(TAG, "Read failed");
+    }
+    free(data);
+    i2c_driver_delete(i2c_port);
+    return 0;
+}
+
+static int do_i2cset_cmd(int chip_addr) {
+    i2c_driver_install(i2c_port, I2C_MODE_MASTER, I2C_MASTER_RX_BUF_DISABLE, I2C_MASTER_TX_BUF_DISABLE, 0);
+    i2c_master_driver_initialize();
+    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, chip_addr << 1 | WRITE_BIT, ACK_CHECK_EN);
+    i2c_master_stop(cmd);
+    esp_err_t ret = i2c_master_cmd_begin(i2c_port, cmd, 1000 / portTICK_PERIOD_MS);
+    i2c_cmd_link_delete(cmd);
+    if (ret == ESP_OK) {
+        ESP_LOGI(TAG, "Write OK");
+    } else if (ret == ESP_ERR_TIMEOUT) {
+        ESP_LOGW(TAG, "Bus is busy");
+    } else {
+        ESP_LOGW(TAG, "Write Failed");
+    }
+    i2c_driver_delete(i2c_port);
+    return 0;
+}
+
+int address = do_i2cdetect_cmd();
+printf("address %d\n", address);
+while(true) {
+	do_i2cset_cmd(address);
+        vTaskDelay(500 / portTICK_PERIOD_MS);
+        do_i2cget_cmd(address);
+}
