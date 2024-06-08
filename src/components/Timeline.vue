@@ -2,19 +2,61 @@
     <div class="timeline">
         <div class="container left">
             <div class="content">
-                <h2>2019</h2>
+                <h2>2023</h2>
                 <div class="subsection">
                     <div class="subsectionTitle">
-                        Indiana IoT Lab – Intern
+                        Amazon (AWS) – Software Development Engineer Intern
                     </div>
                     <ul class="bullets">
-                        <li>Created/designed a Smart Fan with the following features: Bluetooth accessibility, variable speeds, portable design, white noise, and programmable temperature control system</li>
-                        <li>Used various 3D printing (CAD) hardware/software, laser cutting, and an Arduino ESP32 to create physical prototype</li>
+                        <li>
+                            Developed several bash scripts that bypass the need for operators to SSH into file systems and still execute the respective command
+                        </li>
+                        <li>
+                            Designed extendable and customizable dashboard for operators that retrieves real-time per-filesystem metrics (built using Ruby on Rails/HAML/AWS CloudWatch API)
+                        </li>
+                        <li>
+                            Reduced operator time-to-mitigate customer issues for Lustre filesystems
+                        </li>
+                        <li> 
+                            <div @click="goToElemOnDifferentPage(s3Elem)" class="link">View in the Gallery</div>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="container right large">
+            <div class="content">
+                <h2>2022</h2>
+                <div class="subsection">
+                    <div class="subsectionTitle">
+                        Amazon – Software Development Engineer Intern
+                    </div>
+                    <ul class="bullets">
+                        <li>Created webpage for Customer Service Representatives and Developers to debug issues on Amazon’s sellerCentral site</li>
+                        <li>Developed using Vue.JS, wrote unit tests and documentation, deployed webpage to production</li>
+                        <li>Designed the user interface and built robust code infrastructure to allow future additions</li>
+                        <li> 
+                            <div @click="goToElemOnDifferentPage(APAEElem)" class="link">View in the Gallery</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container left medium">
+            <div class="content">
+                <h2>2021</h2>
+                <div class="subsection">
+                    <div class="subsectionTitle">
+                        Google Computer Science Summer Institute (CSSI)
+                    </div>
+                    <ul class="bullets">
+                        <li>Completed an introductory, project-based JavaScript and Firebase curriculum taught by Google engineers</li>
+                        <li>Created web-based product, collaborated with other CSSI students, and presented to Google employees</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container right small">
             <div class="content">
                 <h2>2019 - 2021</h2>
                 <div class="subsection">
@@ -38,58 +80,16 @@
                 </div>
             </div>
         </div>
-        <div class="container left medium">
-            <div class="content">
-                <h2>2021</h2>
-                <div class="subsection">
-                    <div class="subsectionTitle">
-                        Google Computer Science Summer Institute (CSSI)
-                    </div>
-                    <ul class="bullets">
-                        <li>Completed an introductory, project-based JavaScript and Firebase curriculum taught by Google engineers</li>
-                        <li>Created web-based product, collaborated with other CSSI students, and presented to Google employees</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="container right small">
-            <div class="content">
-                <h2>2022</h2>
-                <div class="subsection">
-                    <div class="subsectionTitle">
-                        Amazon – Software Development Engineer Intern
-                    </div>
-                    <ul class="bullets">
-                        <li>Created webpage for Customer Service Representatives and Developers to debug issues on Amazon’s sellerCentral site</li>
-                        <li>Developed using Vue.JS, wrote unit tests and documentation, deployed webpage to production</li>
-                        <li>Designed the user interface and built robust code infrastructure to allow future additions</li>
-                        <li> 
-                            <div @click="goToElemOnDifferentPage(APAEElem)" class="link">View in the Gallery</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <div class="container left large">
             <div class="content">
-                <h2>2023</h2>
+                <h2>2019</h2>
                 <div class="subsection">
                     <div class="subsectionTitle">
-                        Amazon (AWS) – Software Development Engineer Intern
+                        Indiana IoT Lab – Intern
                     </div>
                     <ul class="bullets">
-                        <li>
-                            Developed several bash scripts that bypass the need for operators to SSH into file systems and still execute the respective command
-                        </li>
-                        <li>
-                            Designed extendable and customizable dashboard for operators that retrieves real-time per-filesystem metrics (built using Ruby on Rails/HAML/AWS CloudWatch API)
-                        </li>
-                        <li>
-                            Reduced operator time-to-mitigate customer issues for Lustre filesystems
-                        </li>
-                        <li> 
-                            <div @click="goToElemOnDifferentPage(s3Elem)" class="link">View in the Gallery</div>
-                        </li>
+                        <li>Created/designed a Smart Fan with the following features: Bluetooth accessibility, variable speeds, portable design, white noise, and programmable temperature control system</li>
+                        <li>Used various 3D printing (CAD) hardware/software, laser cutting, and an Arduino ESP32 to create physical prototype</li>
                     </ul>
                 </div>
             </div>
@@ -226,7 +226,7 @@
 
     .large{
         position: relative;
-        margin-top: -11em;
+        margin-top: -14em;
     }
     
 
