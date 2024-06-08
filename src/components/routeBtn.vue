@@ -15,7 +15,7 @@
                 if(this.site != "Exit") {
                     site = this.site
                 }
-                window.location = "http://www.mghera.com/#/" + site
+                window.location = "http://www.mghera.com/" + site
             }
         },
         props: {
