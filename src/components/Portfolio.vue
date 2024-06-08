@@ -50,75 +50,7 @@
                 Experience
             </div>
             <hr>
-            <div class="subsection">
-                <div class="subsectionTitle">
-                    Amazon (AWS) – Software Development Engineer Intern | May 2023–Aug 2023
-                </div>
-                <ul class="bullets">
-                    <li>
-                        Developed several bash scripts that bypass the need for operators to SSH into file systems and still execute the respective command
-                    </li>
-                    <li>
-                        Designed extendable and customizable dashboard for operators that retrieves real-time per-filesystem metrics (built using Ruby on Rails/HAML/AWS CloudWatch API)
-                    </li>
-                    <li>
-                        Reduced operator time-to-mitigate customer issues for Lustre filesystems
-                    </li>
-                    <li> 
-                        <div @click="goToElemOnDifferentPage(s3Elem)" class="link">View in the Gallery</div>
-                    </li>
-                </ul>
-            </div>
-            <div class="subsection">
-                <div class="subsectionTitle">
-                    Amazon – Software Development Engineer Intern | May 2022–Aug 2022
-                </div>
-                <ul class="bullets">
-                    <li>Created webpage for Customer Service Representatives and Developers to debug issues on Amazon’s sellerCentral site</li>
-                    <li>Developed using Vue.JS, wrote unit tests and documentation, deployed webpage to production</li>
-                    <li>Designed the user interface and built robust code infrastructure to allow future additions</li>
-                    <li> 
-                        <div @click="goToElemOnDifferentPage(APAEElem)" class="link">View in the Gallery</div>
-                    </li>
-                </ul>
-            </div>
-            <div class="subsection">
-                <div class="subsectionTitle">
-                    Google Computer Science Summer Institute (CSSI) | July 2021–Aug 2021
-                </div>
-                <ul class="bullets">
-                    <li>Completed an introductory, project-based JavaScript and Firebase curriculum taught by Google engineers</li>
-                    <li>Created web-based product, collaborated with other CSSI students, and presented to Google employees</li>
-                </ul>
-            </div>
-            <div class="subsection">
-                <div class="subsectionTitle">
-                    SchedLink LLC – CEO & Founder & Full-Stack Developer | Mar 2019 – May 2021
-                </div> 
-                <ul class="bullets">
-                    <li> 
-                        <a href="https://youtu.be/HQGwd_BH2-Y" target="blank" class="link"> Identified the business need and technical solution to aid students/faculty by creating an app/website</a>
-                    </li>
-                    <li> 
-                        <a href="https://github.com/codingforfishers/SchedLinkBeta" target="blank" class="link">Designed full-stack systems (PHP, MySQL database, HTML, CSS, JS)</a>
-                    </li>
-                    <li>
-                        Developed the initial vision, mission, and project management structure for the team. Achieved 10k unique views/day for one school system, and initiated replication in other high schools to eliminate costs for administration by having a free, multi-tool site
-                    </li>
-                    <li> 
-                        <div @click="goToElemOnDifferentPage(SchedElem)" class="link">View in the Gallery</div>
-                    </li>
-                </ul>
-            </div>
-            <div class="subsection">
-                <div class="subsectionTitle">
-                    Indiana IoT Lab – Intern | June 2019 – Aug 2019
-                </div>
-                <ul class="bullets">
-                    <li>Created/designed a Smart Fan with the following features: Bluetooth accessibility, variable speeds, portable design, white noise, and programmable temperature control system</li>
-                    <li>Used various 3D printing (CAD) hardware/software, laser cutting, and an Arduino ESP32 to create physical prototype</li>
-                </ul>
-            </div>
+            <timeline> </timeline>
         </div>
         <div class="section">
             <div class="sectionTitle">
@@ -159,6 +91,7 @@
 <script>
     import skillTag from './skillTag.vue'
     import mediaMedallion from './mediaMedallion.vue'
+    import timeline from './Timeline.vue'
 
     export default {
         name: 'Portfolio',
@@ -188,7 +121,8 @@
         },
         components: {
             skillTag,
-            mediaMedallion
+            mediaMedallion,
+            timeline
         },
         mounted: function () {
           
