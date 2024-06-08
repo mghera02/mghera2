@@ -105,9 +105,16 @@
         ],
         data() {
             return {
+                s3Elem: 'S3 Integration Dashboard',
+                APAEElem: 'Accessible Partner Account Explorer',
+                SchedElem: 'SchedLink',
             }
         },
         methods: {
+            goToElemOnDifferentPage(elemName) {
+                const routeData = this.$router.resolve({ path: '/Gallery', query: { 'elem': elemName } });
+                window.open(routeData.href, '_blank');
+            }
         },
         props: {
         },

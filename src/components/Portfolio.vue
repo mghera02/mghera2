@@ -100,9 +100,6 @@
         ],
         data() {
             return {
-                s3Elem: 'S3 Integration Dashboard',
-                APAEElem: 'Accessible Partner Account Explorer',
-                SchedElem: 'SchedLink',
                 red: '#aa0000',
                 programmingLanguages: ['Python', 'C', 'C++', 'Java', 'CSS', 'HTML', 'JavaScript (JS)', 'TypeScript', 'PHP', 'MATLAB', 'System Verilog', 'Bash', 'Ruby on Rails', 'HAML'],
                 tools: ['Vue.JS', 'version control (GIT)', 'Linux', 'REST API', 'OpenCV', 'CAD in Fusion 360', '3D printing troubleshooting', 'Circuit Schematic Editing in KiCad', 'PCB design', 'AWS (EC2/S3/CloudWatch)', 'Lustre File Systems', 'Microcontroller Sensors/Peripherals(GPIO, PWM)', 'Communication Protocols (SPI, I2C, USART)' ],
@@ -112,10 +109,6 @@
             }
         },
         methods: {
-            goToElemOnDifferentPage(elemName) {
-                const routeData = this.$router.resolve({ path: '/Gallery', query: { 'elem': elemName } });
-                window.open(routeData.href, '_blank');
-            }
         },
         props: {
         },
