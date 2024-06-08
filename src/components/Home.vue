@@ -152,7 +152,6 @@
 
     #mainTitle {
         position:relative;
-        top: 150px;
         /*font-family: 'Iceland';*/
         font-family: 'Mandalore-Half';
         font-size:4rem;
@@ -220,7 +219,7 @@
         }
         #enter {
             font-size:5rem;
-            top: 45%;
+            top: 400px;
         }
         #terminal {
             font-size: 1rem;
@@ -230,16 +229,18 @@
     @media (min-width: 1000px) {
         #mainTitle {
             font-size:9rem;
-            
+            top: 75px;
         }
 
         #enter {
             font-size:9rem; 
-            top: 45%;
+            top: 450px;
         }
 
         #terminal {
+            position: relative;
             font-size: 2.5rem;
+            top: -100px;
         }
     }
 

@@ -257,5 +257,14 @@
         .right {
             left: 0%;
         }
+
+        h2 {
+            font-size: 1.25em;
+            font-weight: bold !important;
+        }
+
+        .small, .medium, .large {
+            margin-top: 0em;
+        }
     }
 </style>

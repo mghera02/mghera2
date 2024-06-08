@@ -179,6 +179,17 @@
         font-size: 1.15rem;
     }
 
+    @media screen and (max-width: 600px) {
+        #portfolioBody .bullets {
+            font-size: .85rem;
+        }
+
+        #portfolioBody .subsectionTitle {
+            font-size: 1rem;
+            top: 0px;
+        }
+    }
+
     ul {
         position: relative;
         list-style: none;
