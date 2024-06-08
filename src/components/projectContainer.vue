@@ -99,7 +99,7 @@
         #body {
             position:relative;
             top: 1rem;
-            padding-bottom: 4rem;
+            padding-bottom: 50px;
             font-family: 'Michroma';
         }
 
@@ -144,7 +144,7 @@
             top: 1rem;
             display: flex;
             flex-direction: row;
-            padding-bottom: 4rem;
+            padding-bottom: 120px;
             font-family: 'Michroma';
         }
 
@@ -172,7 +172,7 @@
         }
 
         #video {
-            width: 350px;
+            width: 315px;
             height: 300px;
             left: 10px;
             top:-20px;
@@ -191,7 +191,7 @@
             top: 1rem;
             display: flex;
             flex-direction: row;
-            padding-bottom: 4rem;
+            padding-bottom: 120px;
             font-family: 'Michroma';
         }
 
@@ -213,7 +213,8 @@
 
         #video {
             left: 5%;
-            width: 500px;
+            width: 600px;
+            height: 315px;
             padding: 50px;
         }
 
