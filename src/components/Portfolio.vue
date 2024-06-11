@@ -193,7 +193,7 @@
     ul li:before {
         content: "○";
         position: absolute;
-        left: 0;
+        left: 0px;
         color:#ffccee;
         text-shadow: 
             0rem 0rem 1px #ff7788,
