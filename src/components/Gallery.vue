@@ -2,6 +2,7 @@
     <div id="Gallery">
         <routeBtn :site="'Exit'" id="exitBtn"/>
         <div id="galleryTitle">The Gallery</div>
+        <mediaMedallion class="medallion" :medallionType='printer.name' :medallionColor='printer.color' :medallionLink='printer.link'></mediaMedallion>
         <div v-for="project in projects" :key="project" :id="project.title">
             <projectContainer 
                 :title="project.title" 
@@ -25,17 +26,20 @@
     import data from '../data/projectData.json'
     import { useRoute } from 'vue-router';
     import { onMounted } from 'vue';
+    import mediaMedallion from './mediaMedallion.vue'
 
     export default {
         name: 'Gallery',
         data() {
             return {
                 projects: data.projects,
-                scrollPosition: 0
+                scrollPosition: 0,
+                printer:{name: "printer", color: "rgb(150,150,150)", link: "http://mghera.com/PrintPage"},
             }
         },
         components: {
             projectContainer,
+            mediaMedallion,
             routeBtn
         },
         methods: {

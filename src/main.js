@@ -8,6 +8,7 @@ import Gallery from './components/Gallery.vue';
 import HolocronPage from './components/HolocronPage.vue';
 import VoicePage from './components/VoicePage.vue';
 import Portfolio from './components/Portfolio.vue';
+import PrintPage from './components/3DPrintPage.vue';
 
 const routes = [
   { path: '/', component: landingPage },
@@ -15,7 +16,8 @@ const routes = [
   { path: '/Gallery', component: Gallery },
   { path: '/HolocronPage', component: HolocronPage },
   { path: '/VoicePage', component: VoicePage },
-  { path: '/Portfolio', component: Portfolio }
+  { path: '/Portfolio', component: Portfolio },
+  { path: '/PrintPage', component: PrintPage }
 ];
 
 const router = createRouter({

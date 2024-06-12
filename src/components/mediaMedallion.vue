@@ -2,7 +2,8 @@
     <a class="medallion" :style="getBorderColor()" :href="medallionLink" target="_blank" :class="{ 'medallion-visible': visible }">
         <img class="picture" src="../assets/githubLogo.png" v-if="medallionType == 'github'">   
         <img class="picture" src="../assets/linkedInLogo.png" v-if="medallionType == 'linkedIn'">
-        <img class="picture" src="../assets/emailLogo.png" v-if="medallionType == 'email'">             
+        <img class="picture" src="../assets/emailLogo.png" v-if="medallionType == 'email'">   
+        <img class="smallPicture" src="../assets/printer.png" v-if="medallionType == 'printer'">           
     </a>
 </template>
 
@@ -84,6 +85,19 @@
             filter: brightness(0%);
             width: 80px;
             height: 80px;
+            cursor: pointer;
+            z-index: 2;
+            pointer-events: visibleFill;
+        }
+
+        .smallPicture {
+            position: relative;
+            display: block;
+            filter: brightness(0%);
+            width: 60px;
+            height: 60px;
+            left: 10px;
+            top: 10px;
             cursor: pointer;
             z-index: 2;
             pointer-events: visibleFill;
