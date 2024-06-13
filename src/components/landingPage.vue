@@ -22,7 +22,9 @@ export default {
 
 <style>
     #app {
-    scroll-behavior: smooth;
+        scroll-behavior: smooth;
+        touch-action: unset !important;
+        color: white;
     }
 
     #backgroundVid {
