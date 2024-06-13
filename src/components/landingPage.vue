@@ -1,5 +1,8 @@
 <template>
   <div id="app">
+    <video autoplay muted loop id="backgroundVid">
+        <source src="@/assets/stars2.mp4" type="video/mp4">
+    </video>
     <home id="home-section"></home>
     <portfolio></portfolio>
   </div>
@@ -26,4 +29,12 @@ export default {
   min-height: 100vh;
   width: 100%;
 }
+
+#backgroundVid {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+    }
 </style>

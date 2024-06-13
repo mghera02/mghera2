@@ -1,8 +1,4 @@
 <template>
-    <video autoplay muted loop id="backgroundVid">
-        <source src="@/assets/stars2.mp4" type="video/mp4">
-    </video>
-    <!--<img id="backgroundVid" src="@/assets/stars.jpeg"/>-->
     <div id="Home">
         <!--<audio ref="audio" preload="auto" volume="1" loop>
           <source src="@/assets/homeMusic.mp3" />
@@ -11,10 +7,10 @@
             <span id="thirdWord">Matthew </span>
             <span id="fourthWord">Ghera </span>
         </div>
-        <!--<div id="terminalContainer">
+        <div id="terminalContainer">
             <div id="terminal">
             </div>
-        </div>-->
+        </div>
         <div id="enter" @click="goToNextPage()">
             ENTER
         </div>
@@ -103,14 +99,6 @@
     @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono');
     @import url('https://fonts.googleapis.com/css2?family=Orbitron');
 
-    #backgroundVid {
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        min-width: 100%;
-        min-height: 100%;
-    }
-
     #Home {
         z-index:-2;
         height: 100vh;
@@ -119,7 +107,6 @@
         flex-direction: column;
         background: #000;
         /*animation: brightenUpBackground 30s ease-in; */
-        overflow: hidden;
     }
 
     @font-face {
