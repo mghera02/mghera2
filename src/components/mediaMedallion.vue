@@ -67,6 +67,19 @@
             z-index: 2;
             pointer-events: visibleFill;
         }
+
+        .smallPicture {
+            position: relative;
+            display: block;
+            filter: brightness(0%);
+            width: 30px;
+            height: 30px;
+            left: 10px;
+            top: 10px;
+            cursor: pointer;
+            z-index: 2;
+            pointer-events: visibleFill;
+        }
     }
 
     @media (min-width: 1100px) {
