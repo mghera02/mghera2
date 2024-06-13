@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import { createRouter, createWebHistory } from 'vue-router';
+import smoothscroll from 'smoothscroll-polyfill';
 
 import landingPage from './components/landingPage.vue';
 import Home from './components/Home.vue';
@@ -9,6 +10,8 @@ import HolocronPage from './components/HolocronPage.vue';
 import VoicePage from './components/VoicePage.vue';
 import Portfolio from './components/Portfolio.vue';
 import PrintPage from './components/3DPrintPage.vue';
+
+smoothscroll.polyfill();
 
 const routes = [
   { path: '/', component: landingPage },

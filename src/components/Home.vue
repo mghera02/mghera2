@@ -11,7 +11,9 @@
             <div id="terminal">
             </div>
         </div>
-      
+        <div id="enter" @click="goToNextPage()">
+            ENTER
+        </div>
     </div>
 </template>
 
@@ -33,6 +35,10 @@
             }
         },
         methods: {
+            goToNextPage() {
+                const portfolioBody = document.getElementById('portfolioBody');
+                portfolioBody.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            },
             playAudio() {
                 let audio = this.$refs.audio;
                 audio.play();

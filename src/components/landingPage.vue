@@ -21,9 +21,16 @@ export default {
 </script>
 
 <style>
-    #app {
-        scroll-behavior: smooth;
-        touch-action: unset !important;
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth; /* Ensure smooth scrolling is enabled */
+    }
+
+    #home-section, #portfolio-section {
+        min-height: 100vh;
+        width: 100%;
     }
 
     #backgroundVid {

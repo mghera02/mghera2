@@ -11,6 +11,7 @@
     "child_process": "^1.0.2",
     "core-js": "^3.8.3",
     "recordrtc": "^5.6.2",
+    "smoothscroll-polyfill": "^0.4.4",
     "vue": "^3.2.13",
     "vue-3d-model": "^2.0.0-alpha.2",
     "vue-analytics": "^5.22.1",
