@@ -11,10 +11,10 @@
             <span id="thirdWord">Matthew </span>
             <span id="fourthWord">Ghera </span>
         </div>
-        <div id="terminalContainer">
+        <!--<div id="terminalContainer">
             <div id="terminal">
             </div>
-        </div>
+        </div>-->
         <div id="enter" @click="goToNextPage()">
             ENTER
         </div>
