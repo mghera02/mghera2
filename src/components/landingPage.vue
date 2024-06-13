@@ -24,7 +24,6 @@ export default {
     #app {
         scroll-behavior: smooth;
         touch-action: unset !important;
-        color: white;
     }
 
     #backgroundVid {
