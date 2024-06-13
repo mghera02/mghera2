@@ -100,13 +100,11 @@
     @import url('https://fonts.googleapis.com/css2?family=Orbitron');
 
     #Home {
-        z-index:-2;
-        height: 100vh;
+        height:99vh;
         width:100%;
         display: flex;
         flex-direction: column;
         background: #000;
-        /*animation: brightenUpBackground 30s ease-in; */
     }
 
     @font-face {

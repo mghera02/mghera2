@@ -3,7 +3,7 @@
     <video autoplay muted loop id="backgroundVid">
         <source src="@/assets/stars2.mp4" type="video/mp4">
     </video>
-    <home id="home-section"></home>
+    <home></home>
     <portfolio></portfolio>
   </div>
 </template>
@@ -21,16 +21,11 @@ export default {
 </script>
 
 <style>
-#app {
-  scroll-behavior: smooth;
-}
+    #app {
+    scroll-behavior: smooth;
+    }
 
-#home-section{
-  min-height: 100vh;
-  width: 100%;
-}
-
-#backgroundVid {
+    #backgroundVid {
         position: fixed;
         right: 0;
         bottom: 0;
