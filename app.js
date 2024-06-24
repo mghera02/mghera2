@@ -156,6 +156,8 @@ app.get('/lime', async (req, res) => {
 
 /* Database Endpoints */
 app.post('/put-item', (req, res) => {
+  console.log("received request for /put-item");
+
   const params = {
       TableName: 'mgheraDB',
       Item: req.body
@@ -168,6 +170,7 @@ app.post('/put-item', (req, res) => {
           res.status(200).send(data);
       }
   });
+  console.log("Completed request for /put-item");
 });
 
 app.listen(PORT, () => {
