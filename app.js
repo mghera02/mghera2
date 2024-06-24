@@ -159,6 +159,7 @@ app.post('/put-item', (req, res) => {
   console.log("received request for /put-item");
 
   const params = {
+      user: 'dbUser',
       TableName: 'mgheraDB',
       Item: req.body
   };
