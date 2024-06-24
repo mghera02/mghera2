@@ -1,7 +1,7 @@
 <template>
    <div>
     <routeBtn :site="'Exit'" id="exitBtn"/>
-    <iframe src="https://oe.ink/l/ux1ev3WpVx" width='550' height='550'></iframe>
+    <iframe src="https://oe.ink/l/ux1ev3WpVx" id="printerLivestream"></iframe>
     </div>
 </template>
 
@@ -32,4 +32,12 @@
 </script>
 
 <style>
+    #printerLivestream {
+        display: block;
+        position: relative;
+        top: 100px;
+        margin: auto;
+        width:580px !important;
+        height:930px !important;
+    }
 </style>

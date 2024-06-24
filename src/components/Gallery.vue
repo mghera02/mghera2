@@ -34,7 +34,7 @@
             return {
                 projects: data.projects,
                 scrollPosition: 0,
-                printer:{name: "printer", color: "rgb(150,150,150)", link: "http://mghera.com/PrintPage"},
+                printer:{name: "printer", color: "rgb(230,120,10)", link: "http://mghera.com/PrintPage"},
             }
         },
         components: {

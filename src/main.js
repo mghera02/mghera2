@@ -2,6 +2,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import { createRouter, createWebHistory } from 'vue-router';
 import smoothscroll from 'smoothscroll-polyfill';
+import { VueGtag } from 'vue-gtag-next';
 
 import landingPage from './components/landingPage.vue';
 import Home from './components/Home.vue';
@@ -23,11 +24,18 @@ const routes = [
   { path: '/PrintPage', component: PrintPage }
 ];
 
+const app = createApp(App);
+
 const router = createRouter({
   history: createWebHistory(),
   routes
 });
 
-const app = createApp(App);
+app.use(VueGtag, {
+  property: {
+    id: 'G-0RRKBDQ9B3'
+  }
+}, router);
+
 app.use(router);
 app.mount('#app');
