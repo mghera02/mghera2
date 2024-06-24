@@ -1,8 +1,29 @@
 const express = require('express');
+const AWS = require('aws-sdk');
+const bodyParser = require('body-parser');
 const app = express();
 const PORT = 8083;
-
 const { exec } = require('child_process');
+
+// Path to your credentials file
+const credentialsPath = path.join(__dirname, 'aws-credentials.json');
+
+// Read and parse the credentials file
+const credentials = JSON.parse(fs.readFileSync(credentialsPath, 'utf8'));
+
+// Configure the AWS SDK
+AWS.config.update({
+    accessKeyId: credentials.accessKeyId,
+    secretAccessKey: credentials.secretAccessKey,
+    region: credentials.region
+});
+
+const dynamoDB = new AWS.DynamoDB.DocumentClient();
+
+app.use(bodyParser.json());
+
+
+/* -----------Helper Functions----------- */
 
 function delay(ms) {
   return new Promise(resolve => {
@@ -21,6 +42,10 @@ function callPHPScript(phpScriptName) {
     });
   });
 }
+
+/* -----------ENDPOINTS----------- */
+
+/* Holocron Endpoints */
 
 app.get('/blue', async (req, res) => {
   try {
@@ -125,6 +150,22 @@ app.get('/lime', async (req, res) => {
   } catch (error) {
     res.status(500).send('Error executing PHP script');
   }
+});
+
+/* Database Endpoints */
+app.post('/put-item', (req, res) => {
+  const params = {
+      TableName: 'mgheraDB',
+      Item: req.body
+  };
+
+  dynamoDB.put(params, (err, data) => {
+      if (err) {
+          res.status(500).send(err);
+      } else {
+          res.status(200).send(data);
+      }
+  });
 });
 
 app.listen(PORT, () => {
