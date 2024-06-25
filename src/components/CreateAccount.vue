@@ -2,15 +2,15 @@
     <div>
         <routeBtn :site="'Exit'" id="exitBtn"/>
         <h1>Create Account (STILL IN DEVELOPMENT, NOT WORKING PROPERLY)</h1>
-        <form id="signInForm">
+        <div id="signInForm">
             <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
+            <input type="text" id="username" name="username">
 
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password">
 
-            <input type="submit" value="Sign In" @click="submitAccountDetails()">
-        </form>
+            <button @click="submitAccountDetails()">Sign In</button>
+        </div>
     </div>
  </template>
  
@@ -30,6 +30,8 @@
             submitAccountDetails() {
                 const key = document.getElementById('username').value;
                 const value = document.getElementById('password').value;
+
+                console.log(key, value)
 
                 const data = { user: "testUser", key: key, value: value };
 

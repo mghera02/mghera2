@@ -2,6 +2,7 @@ const express = require('express');
 const AWS = require('aws-sdk');
 const bodyParser = require('body-parser');
 const path = require('path');
+const cors = require('cors');
 const fs = require('fs');
 const app = express();
 const PORT = 8083;
@@ -22,6 +23,7 @@ AWS.config.update({
 
 const dynamoDB = new AWS.DynamoDB.DocumentClient();
 
+app.use(cors()); // Enable CORS for all routes
 app.use(bodyParser.json());
 
 
@@ -165,8 +167,10 @@ app.post('/put-item', (req, res) => {
 
   dynamoDB.put(params, (err, data) => {
       if (err) {
+          console.log("err: ", err);
           res.status(500).send(err);
       } else {
+        console.log("Success Putting in DB!");
           res.status(200).send(data);
       }
   });
