@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import { createRouter, createWebHistory } from 'vue-router';
-import { VueGtag } from 'vue-gtag-next';
+import { default as VueGtag } from 'vue-gtag-next';
 
 import landingPage from './components/landingPage.vue';
 import Home from './components/Home.vue';
@@ -10,6 +10,8 @@ import HolocronPage from './components/HolocronPage.vue';
 import VoicePage from './components/VoicePage.vue';
 import Portfolio from './components/Portfolio.vue';
 import PrintPage from './components/3DPrintPage.vue';
+import SignIn from './components/SignIn.vue';
+import CreateAccount from './components/CreateAccount.vue';
 
 const routes = [
   { path: '/', component: landingPage },
@@ -18,7 +20,9 @@ const routes = [
   { path: '/HolocronPage', component: HolocronPage },
   { path: '/VoicePage', component: VoicePage },
   { path: '/Portfolio', component: Portfolio },
-  { path: '/PrintPage', component: PrintPage }
+  { path: '/PrintPage', component: PrintPage },
+  { path: '/SignIn', component: SignIn },
+  { path: '/CreateAccount', component: CreateAccount }
 ];
 
 const app = createApp(App);

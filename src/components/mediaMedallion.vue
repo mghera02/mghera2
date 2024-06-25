@@ -3,7 +3,8 @@
         <img class="picture" src="../assets/githubLogo.png" v-if="medallionType == 'github'">   
         <img class="picture" src="../assets/linkedInLogo.png" v-if="medallionType == 'linkedIn'">
         <img class="picture" src="../assets/emailLogo.png" v-if="medallionType == 'email'">   
-        <img class="smallPicture" src="../assets/printer.png" v-if="medallionType == 'printer'">           
+        <img class="smallPicture" src="../assets/printer.png" v-if="medallionType == 'printer'">
+        <img class="picture" src="../assets/signIn.png" v-if="medallionType == 'signIn'">           
     </a>
 </template>
 
