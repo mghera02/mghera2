@@ -1,13 +1,20 @@
 <template>
-    <div>
+    <div id="createAccount">
         <routeBtn :site="'Exit'" id="exitBtn"/>
         <h1>Create Account (STILL IN DEVELOPMENT, NOT WORKING PROPERLY)</h1>
         <div id="signInForm">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username">
-
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password">
+            <div id="category">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div id="category">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email">
+            </div>
+            <div id="category">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password">
+            </div>
 
             <button @click="submitAccountDetails()">Sign In</button>
         </div>
@@ -28,12 +35,11 @@
          },
          methods: {
             submitAccountDetails() {
-                const key = document.getElementById('username').value;
-                const value = document.getElementById('password').value;
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
 
-                console.log(key, value)
-
-                const data = { user: "testUser", key: key, value: value };
+                const data = { user: email, name: name, password: password };
 
                 fetch('http://mghera.com:8083/put-item', {
                     method: 'POST',
@@ -45,6 +51,8 @@
                 .then(response => response.json())
                 .then(data => {
                     console.log('Success:', data);
+                    window.location.href = "signIn";
+
                 })
                 .catch((error) => {
                     console.error('Error:', error);
@@ -64,8 +72,45 @@
  </script>
  
  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Iceland');
+
+    #createAccount {
+        font-family: 'Michroma'; 
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 2em;
+    }
+
     #signInForm {
         position: relative;
         top: 100px;
+        display: flex;
+        flex-direction: column;
+        width: 600px;
+        margin:auto;
+        justify-content: center;
+    }
+
+    label {
+        font-size: 1.8em;
+        width: 80px;
+    }
+
+    #name, 
+    #email,
+    #password {
+        border-color: red;
+        display: inline-block;
+        margin-bottom: 10px;
+        margin-left: 150px;
+        font-size: 1.5em;
+    }
+
+    #category {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
     }
  </style>
