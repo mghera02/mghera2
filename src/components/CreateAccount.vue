@@ -2,7 +2,7 @@
     <div id="createAccount">
         <routeBtn :site="'Exit'" id="exitBtn"/>
         <h1>Create Account (STILL IN DEVELOPMENT, NOT WORKING PROPERLY)</h1>
-        <div id="signInForm">
+        <div id="createAccountForm">
             <div id="category">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name">
@@ -16,7 +16,7 @@
                 <input type="password" id="password" name="password">
             </div>
 
-            <button @click="submitAccountDetails()">Sign In</button>
+            <button @click="submitAccountDetails()">Create Account</button>
         </div>
     </div>
  </template>
@@ -83,7 +83,7 @@
         font-size: 2em;
     }
 
-    #signInForm {
+    #createAccountForm {
         position: relative;
         top: 100px;
         display: flex;

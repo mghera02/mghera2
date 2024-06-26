@@ -177,6 +177,29 @@ app.post('/put-item', (req, res) => {
   console.log("Completed request for /put-item");
 });
 
+app.get('/check-item', (req, res) => {
+  const params = {
+      TableName: 'your-table-name',
+      Key: {
+          user: req.body.user,
+          password: req.body.password 
+      }
+  };
+
+  dynamoDB.get(params, (err, data) => {
+      if (err) {
+          console.error("Error getting item:", err);
+          res.status(500).send(err);
+      } else {
+          if (data.Item) {
+              res.status(200).send({ exists: true, item: data.Item });
+          } else {
+              res.status(200).send({ exists: false });
+          }
+      }
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
