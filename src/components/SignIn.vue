@@ -37,7 +37,7 @@
                 const data = { user: email, password: password };
 
                 fetch('http://mghera.com:8083/check-item', {
-                    method: 'POST',
+                    method: 'GET',
                     headers: {
                         'Content-Type': 'application/json'
                     },

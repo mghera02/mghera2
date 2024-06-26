@@ -179,7 +179,7 @@ app.post('/put-item', (req, res) => {
 
 app.get('/check-item', (req, res) => {
   const params = {
-      TableName: 'your-table-name',
+      TableName: 'mgheraDB',
       Key: {
           user: req.body.user,
           password: req.body.password 
