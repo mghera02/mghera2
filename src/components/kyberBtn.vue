@@ -41,7 +41,7 @@
         },
         methods: {
             changeColor() {
-                const apiUrl = `http://10.0.0.25:8083/${this.color}`;
+                const apiUrl = `http://98.45.135.99:8083/${this.color}`;
                 fetch(apiUrl).then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
