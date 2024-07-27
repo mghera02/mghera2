@@ -36,12 +36,14 @@
         name: 'kyberBtn',
         data() {
             return {
-                background: false
+                background: false,
+                apiIP: "http://10.0.0.25:8083"
             }
         },
         methods: {
             changeColor() {
-                const apiUrl = `http://98.45.135.99:8083/${this.color}`;
+                const apiUrl = `${this.apiIP}/${this.color}`;
+                console.log(`request to ${apiUrl}`)
                 fetch(apiUrl).then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
@@ -105,7 +107,25 @@
                     }
                 }
             }
-        }
+        },
+        mounted: function () {
+            const isLocalNetwork = async () => {
+                try {
+                    await fetch('http://98.45.135.99:8082', { mode: 'no-cors' });
+                    return true;  // Assume local network if resource is accessible
+                } catch (error) {
+                    return false;  // Assume external network if resource is not accessible
+                }
+            }
+
+            const setServerIP = async () => {
+                const localNetwork = await isLocalNetwork();
+                this.apiIP = localNetwork ?  'http://98.45.135.99:8083': 'http://10.0.0.25:8083';
+                console.log('Using server IP:', this.apiIP);
+            }
+
+            setServerIP();
+        },
     }
 </script>
 
