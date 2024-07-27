@@ -37,7 +37,7 @@
         data() {
             return {
                 background: false,
-                apiIP: "http://10.0.0.25:8083"
+                apiIP: "http://98.45.135.99:8083"
             }
         },
         methods: {

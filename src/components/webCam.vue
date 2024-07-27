@@ -7,11 +7,14 @@
         name: 'webcam',
         data() {
             return {
-                cameraIP: "http://10.0.0.25:8082"
+                cameraIP: "http://98.45.135.99:8082"
             }
         },
         mounted: function () {
-            const isLocalNetwork = async () => {
+        },
+    }
+
+    const isLocalNetwork = async () => {
                 try {
                     await fetch('http://98.45.135.99:8082', { mode: 'no-cors' });
                     return true;  // Assume local network if resource is accessible
@@ -26,9 +29,7 @@
                 console.log('Using server IP:', this.cameraIP);
             }
 
-            setServerIP();
-        },
-    }
+    window.onload = setServerIP
 </script>
 
 <style>
