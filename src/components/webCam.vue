@@ -1,5 +1,5 @@
 <template>
-    <img id="webcamVid" src="http://seanet.asuscomm.com:8082" allowfullscreen="true"/>
+    <img id="webcamVid" src="http://10.0.0.6:8082" allowfullscreen="true"/>
 </template>
 
 <script>
