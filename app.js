@@ -191,7 +191,11 @@ app.post('/check-item', (req, res) => {
           res.status(500).send(err);
       } else {
           if (data.Item) {
+            if(data.Item.password == req.body.password) {
               res.status(200).send({ exists: true, item: data.Item });
+            } else {
+              res.status(200).send({ exists: false });
+            }
           } else {
               res.status(200).send({ exists: false });
           }
