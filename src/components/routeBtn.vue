@@ -1,5 +1,5 @@
 <template>
-    <div id="routeBtn" @click="changeRoute()">{{ site }}</div>
+    <div id="routeBtn" @click="changeRoute()"> Exit </div>
 </template>
 
 <script>

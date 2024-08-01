@@ -1,6 +1,6 @@
 <template>
     <div id="createAccount">
-        <routeBtn :site="'Exit'" id="exitBtn"/>
+        <routeBtn :site="'SignIn'" id="exitBtn"/>
         <h1>Create Account (STILL IN DEVELOPMENT, NOT WORKING PROPERLY)</h1>
         <div id="createAccountForm">
             <div id="category">
@@ -38,9 +38,9 @@
                 const name = document.getElementById('name').value;
                 const email = document.getElementById('email').value;
                 const password = document.getElementById('password').value;
-                let id = Math.floor(Math.random() * 100000000);
+                let id = Math.floor(Math.random() * 100000000 + 1);
 
-                const data = { user: email, name: name, password: password, id: id };
+                const data = { user: email, name: name, password: password, id: id, permission: 1 };
 
                 fetch('http://mghera.com:8083/put-item', {
                     method: 'POST',

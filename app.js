@@ -203,6 +203,28 @@ app.post('/check-item', (req, res) => {
   });
 });
 
+app.post('/get-info', (req, res) => {
+  const params = {
+      TableName: 'mgheraDB',
+      Key: {
+          id: req.body.id,
+      }
+  };
+
+  dynamoDB.get(params, (err, data) => {
+      if (err) {
+          console.error("Error getting item:", err);
+          res.status(500).send(err);
+      } else {
+          if (data.Item) {
+              res.status(200).send({ exists: true, user: data.Item.user, name: data.Item.name, permission: data.Item.permission });
+          } else {
+              res.status(200).send({ exists: false });
+          }
+      }
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

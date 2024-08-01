@@ -31,6 +31,23 @@
              }
          },
          methods: {
+            setCookie(cookieName, value) {
+                let expires = "";
+                let date = new Date();
+                date.setTime(date.getTime() + (100 * 365 * 24 * 60 * 60 * 1000)); // 100 years
+                expires = "; expires=" + date.toUTCString();
+                document.cookie = cookieName + "=" + (value || "") + expires + "; path=/; secure; SameSite=Strict";
+            },
+            getCookie(cookieName) {
+                let nameEQ = cookieName + "=";
+                let ca = document.cookie.split(';');
+                for (let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            },
             submitAccountDetails() {
                 const email = document.getElementById('email').value;
                 const password = document.getElementById('password').value;
@@ -49,7 +66,9 @@
                 .then(data => {
                     console.log('Success:');
                     if(data.exists) {
-                        console.log("correct password");
+                        console.log("correct password:", data.id);
+                        this.setCookie('id', data.id);
+                        window.location = "Account"
                     } else {
                         console.log("incorrect password");
                     }
@@ -67,6 +86,13 @@
          computed: {
          },
          mounted: function () {
+            let id = this.getCookie("id");
+            if(id) {
+                console.log("id found");
+                window.location = "Account"
+            } else {
+                console.log("id not found")
+            }
          },
      }
  </script>

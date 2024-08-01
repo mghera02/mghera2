@@ -11,6 +11,7 @@ import VoicePage from './components/VoicePage.vue';
 import Portfolio from './components/Portfolio.vue';
 import SignIn from './components/SignIn.vue';
 import CreateAccount from './components/CreateAccount.vue';
+import Account from './components/Account.vue';
 
 const routes = [
   { path: '/', component: landingPage },
@@ -20,7 +21,8 @@ const routes = [
   { path: '/VoicePage', component: VoicePage },
   { path: '/Portfolio', component: Portfolio },
   { path: '/SignIn', component: SignIn },
-  { path: '/CreateAccount', component: CreateAccount }
+  { path: '/CreateAccount', component: CreateAccount },
+  { path: '/Account', component: Account }
 ];
 
 const app = createApp(App);
