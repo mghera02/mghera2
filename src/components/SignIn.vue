@@ -39,7 +39,7 @@
                 console.log(email, password)
 
                 fetch('http://mghera.com:8083/check-item', {
-                    method: 'GET',
+                    method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
@@ -48,8 +48,6 @@
                 .then(response => response.json())
                 .then(data => {
                     console.log('Success:', data);
-                    
-
                 })
                 .catch((error) => {
                     console.error('Error:', error);

@@ -182,7 +182,6 @@ app.post('/check-item', (req, res) => {
       TableName: 'mgheraDB',
       Key: {
           user: req.body.user,
-          password: req.body.password 
       }
   };
 
