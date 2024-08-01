@@ -207,9 +207,9 @@ app.post('/get-info', (req, res) => {
   const params = {
       TableName: 'mgheraDB',
       IndexName: 'id-index',
-      KeyConditionExpression: 'secondaryKey = :secondaryKeyValue',
+      KeyConditionExpression: 'id-index = :idVal',
       ExpressionAttributeValues: {
-          ':secondaryKeyValue': req.body.id,
+          ':idVal': req.body.id,
       }
   };
 
