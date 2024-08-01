@@ -47,7 +47,12 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                    console.log('Success:', data);
+                    console.log('Success:');
+                    if(data.exists) {
+                        console.log("correct password");
+                    } else {
+                        console.log("incorrect password");
+                    }
                 })
                 .catch((error) => {
                     console.error('Error:', error);

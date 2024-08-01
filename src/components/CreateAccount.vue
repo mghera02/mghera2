@@ -38,8 +38,9 @@
                 const name = document.getElementById('name').value;
                 const email = document.getElementById('email').value;
                 const password = document.getElementById('password').value;
+                let id = Math.floor(Math.random() * 100000000);
 
-                const data = { user: email, name: name, password: password };
+                const data = { user: email, name: name, password: password, id: id };
 
                 fetch('http://mghera.com:8083/put-item', {
                     method: 'POST',
