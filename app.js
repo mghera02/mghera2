@@ -231,7 +231,7 @@ app.post('/get-info', (req, res) => {
 
 app.post('/get-all-items', async (req, res) => {
   const params = {
-      TableName: 'mgheraDB' // Replace with your table name
+      TableName: 'mgheraDB'
     };
 
     let items = [];
@@ -239,10 +239,11 @@ app.post('/get-all-items', async (req, res) => {
 
     do {
       console.log("new item");
-        data = await dynamoDB.scan(params).promise();
-        items = items.concat(data.Items);
-        params.ExclusiveStartKey = data.LastEvaluatedKey;
-        console.log("finished item");
+      data = await dynamoDB.scan(params).promise();
+      items = items.concat(data.Items);
+      console.log(data.Items)
+      params.ExclusiveStartKey = data.LastEvaluatedKey;
+      console.log("finished item");
     } while (data.LastEvaluatedKey);
 
     return items;

@@ -85,8 +85,6 @@
                     console.log('Success2:', data);
                 })
                 .catch((error) => {
-                    console.log("here");
-
                     console.error('Error:', error);
                 });
             }
