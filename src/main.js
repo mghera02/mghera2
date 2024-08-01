@@ -9,7 +9,6 @@ import Gallery from './components/Gallery.vue';
 import HolocronPage from './components/HolocronPage.vue';
 import VoicePage from './components/VoicePage.vue';
 import Portfolio from './components/Portfolio.vue';
-import PrintPage from './components/3DPrintPage.vue';
 import SignIn from './components/SignIn.vue';
 import CreateAccount from './components/CreateAccount.vue';
 
@@ -20,7 +19,6 @@ const routes = [
   { path: '/HolocronPage', component: HolocronPage },
   { path: '/VoicePage', component: VoicePage },
   { path: '/Portfolio', component: Portfolio },
-  { path: '/PrintPage', component: PrintPage },
   { path: '/SignIn', component: SignIn },
   { path: '/CreateAccount', component: CreateAccount }
 ];

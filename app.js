@@ -177,7 +177,7 @@ app.post('/put-item', (req, res) => {
   console.log("Completed request for /put-item");
 });
 
-app.get('/check-item', (req, res) => {
+app.post('/check-item', (req, res) => {
   const params = {
       TableName: 'mgheraDB',
       Key: {

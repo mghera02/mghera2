@@ -2,7 +2,6 @@
     <div id="Gallery">
         <routeBtn :site="'Exit'" id="exitBtn"/>
         <div id="galleryTitle">The Gallery</div>
-        <mediaMedallion class="medallion" :medallionType='printer.name' :medallionColor='printer.color' :medallionLink='printer.link'></mediaMedallion>
         <mediaMedallion class="medallion" :medallionType='signIn.name' :medallionColor='signIn.color' :medallionLink='signIn.link'></mediaMedallion>
         <div v-for="project in projects" :key="project" :id="project.title">
             <projectContainer 
@@ -35,8 +34,7 @@
             return {
                 projects: data.projects,
                 scrollPosition: 0,
-                printer:{name: "printer", color: "rgb(230,120,10)", link: "http://mghera.com/PrintPage"},
-                signIn:{name: "signIn", color: "rgb(230,40,10)", link: "http://mghera.com/SignIn"},
+                signIn:{name: "signIn", color: "rgb(230,40,10)", link: "SignIn"},
             }
         },
         components: {

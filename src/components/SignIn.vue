@@ -13,6 +13,7 @@
             </div>
 
             <button @click="submitAccountDetails()">Sign In</button>
+            <a href="CreateAccount">Create Account</a>
         </div>
     </div>
  </template>
@@ -35,6 +36,7 @@
                 const password = document.getElementById('password').value;
 
                 const data = { user: email, password: password };
+                console.log(email, password)
 
                 fetch('http://mghera.com:8083/check-item', {
                     method: 'GET',
