@@ -238,9 +238,11 @@ app.post('/get-all-items', async (req, res) => {
     let data;
 
     do {
+      console.log("new item");
         data = await dynamoDB.scan(params).promise();
         items = items.concat(data.Items);
         params.ExclusiveStartKey = data.LastEvaluatedKey;
+        console.log("finished item");
     } while (data.LastEvaluatedKey);
 
     return items;

@@ -58,7 +58,7 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                    console.log('Success:', data);
+                    console.log('Success1:', data);
                     this.name = data.name;
                     this.email = data.user;
                     this.permission = data.permission;
@@ -82,9 +82,11 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                    console.log('Success:', data);
+                    console.log('Success2:', data);
                 })
                 .catch((error) => {
+                    console.log("here");
+
                     console.error('Error:', error);
                 });
             }
