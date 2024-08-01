@@ -209,7 +209,7 @@ app.post('/get-info', (req, res) => {
       IndexName: 'id-index',
       KeyConditionExpression: 'id = :idVal',
       ExpressionAttributeValues: {
-          ':idVal': int(req.body.id),
+          ':idVal': parseInt(req.body.id),
       }
   };
 
