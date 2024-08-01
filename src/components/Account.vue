@@ -1,7 +1,13 @@
 <template>
     <div id="createAccount">
         <routeBtn :site="'Exit'" id="exitBtn"/>
-        <h1>My Account</h1>
+        <h1>{{ name }}</h1>
+        <h6>Permissions Level: {{ permissionConversion[permission] }}</h6>
+        <h6>Email: {{ email }}</h6>
+        <button @click="signOut()">Sign Out</button>
+        <div v-if="permission == 3">
+            
+        </div>
     </div>
  </template>
  
@@ -17,10 +23,19 @@
              return {
                 id: "",
                 name: "",
-                permission: ""
+                email: "",
+                permission: "",
+                permissionConversion: {1: "Default", 2: "Trusted", 3: "Admin"}
              }
          },
          methods: {
+            setCookie(cookieName, value) {
+                let expires = "";
+                let date = new Date();
+                date.setTime(date.getTime() + (100 * 365 * 24 * 60 * 60 * 1000)); // 100 years
+                expires = "; expires=" + date.toUTCString();
+                document.cookie = cookieName + "=" + (value || "") + expires + "; path=/; secure; SameSite=Strict";
+            },
             getCookie(cookieName) {
                 let nameEQ = cookieName + "=";
                 let ca = document.cookie.split(';');
@@ -35,6 +50,30 @@
                 const data = { id: this.id };
 
                 fetch('http://mghera.com:8083/get-info', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    this.name = data.name;
+                    this.email = data.user;
+                    this.permission = data.permission;
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+            },
+            signOut() {
+                this.setCookie("id", 0);
+                window.location = "SignIn"
+            },
+            getAllItems() {
+                const data = { };
+                fetch('http://mghera.com:8083/get-all-items', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -60,6 +99,7 @@
          mounted: function () {
             this.id = this.getCookie("id");
             this.getAccountDetails();
+            this.getAllItems();
          },
      }
  </script>

@@ -157,6 +157,8 @@ app.get('/lime', async (req, res) => {
 });
 
 /* Database Endpoints */
+// TO DO: ADD VERIFICATION USING HASHED PASSWORD (ALSO STORE COOKIE OF HASHED PASSWORD INSTEAD OF ID)
+
 app.post('/put-item', (req, res) => {
   console.log("received request for /put-item");
 
@@ -225,6 +227,23 @@ app.post('/get-info', (req, res) => {
           }
       }
   });
+});
+
+app.post('/get-all-items', async (req, res) => {
+  const params = {
+      TableName: 'mgheraDB' // Replace with your table name
+    };
+
+    let items = [];
+    let data;
+
+    do {
+        data = await docClient.scan(params).promise();
+        items = items.concat(data.Items);
+        params.ExclusiveStartKey = data.LastEvaluatedKey;
+    } while (data.LastEvaluatedKey);
+
+    return items;
 });
 
 
