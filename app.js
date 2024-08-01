@@ -209,23 +209,24 @@ app.post('/get-info', (req, res) => {
       IndexName: 'id',
       KeyConditionExpression: 'secondaryKey = :secondaryKeyValue',
       ExpressionAttributeValues: {
-          ':id': req.body.secondaryKey,
+          ':secondaryKeyValue': req.body.id,
       }
   };
 
-  dynamoDB.get(params, (err, data) => {
+  dynamoDB.query(params, (err, data) => {
       if (err) {
-          console.error("Error getting item:", err);
+          console.error("Error querying item:", err);
           res.status(500).send(err);
       } else {
-          if (data.Item) {
-              res.status(200).send({ exists: true, user: data.Item.user, name: data.Item.name, permission: data.Item.permission });
+          if (data.Items.length > 0) {
+              res.status(200).send({ exists: true, user: data.Items[0].user, name: data.Items[0].name, permission: data.Items[0].permission });
           } else {
               res.status(200).send({ exists: false });
           }
       }
   });
 });
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
