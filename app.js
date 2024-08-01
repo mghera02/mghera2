@@ -238,7 +238,7 @@ app.post('/get-all-items', async (req, res) => {
     let data;
 
     do {
-        data = await docClient.scan(params).promise();
+        data = await dynamoDB.scan(params).promise();
         items = items.concat(data.Items);
         params.ExclusiveStartKey = data.LastEvaluatedKey;
     } while (data.LastEvaluatedKey);
