@@ -5,8 +5,18 @@
         <h6>Permissions Level: {{ permissionConversion[permission] }}</h6>
         <h6>Email: {{ email }}</h6>
         <button @click="signOut()">Sign Out</button>
-        <div v-if="permission == 3">
-            
+        <div v-if="permission == 3" id="allItems">
+            <div class="itemCell" v-for="item, idx in allItems" :key="idx">
+                <div class="itemInfo">
+                    {{item}}
+                </div>
+                <div class="permissionChanger" @click="promote(item.id)">
+                    +
+                </div>
+                <div class="permissionChanger" @click="demote(item.id)">
+                    -
+                </div>
+            </div>
         </div>
     </div>
  </template>
@@ -25,7 +35,8 @@
                 name: "",
                 email: "",
                 permission: "",
-                permissionConversion: {1: "Default", 2: "Trusted", 3: "Admin"}
+                permissionConversion: {1: "Default", 2: "Trusted", 3: "Admin"},
+                allItems: []
              }
          },
          methods: {
@@ -72,7 +83,7 @@
                 window.location = "SignIn"
             },
             getAllItems() {
-                const data = { };
+                const data = { user: this.email, attr: 'permission', val: this.permission + 1};
                 fetch('http://mghera.com:8083/get-all-items', {
                     method: 'POST',
                     headers: {
@@ -83,11 +94,16 @@
                 .then(response => response.json())
                 .then(data => {
                     console.log('Success2:', data);
+                    this.allItems = data;
                 })
                 .catch((error) => {
                     console.error('Error:', error);
                 });
+            },
+            promote(item) {
+                console.log(item);
             }
+
          },
          props: {
          },
@@ -106,4 +122,34 @@
  
  <style>
     @import url('https://fonts.googleapis.com/css2?family=Iceland');
+
+    #allItems {
+        border:solid;
+        border-color: blue;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .itemCell {
+        border: solid;
+        border-color: red;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .itemInfo {
+        border: solid;
+        border-color: orange;
+        width: 90%;
+    }
+
+    .permissionChanger {
+        border: solid;
+        border-color: green;
+        width: 5%;
+        text-align: center;
+        cursor: pointer;
+    }
  </style>

@@ -158,6 +158,7 @@ app.get('/lime', async (req, res) => {
 
 /* Database Endpoints */
 // TO DO: ADD VERIFICATION USING HASHED PASSWORD (ALSO STORE COOKIE OF HASHED PASSWORD INSTEAD OF ID)
+// TO DO: MAKE USERNAME HAVE TO BE UNIQUE IN CREATE ACCOUNT
 
 app.post('/put-item', (req, res) => {
   console.log("received request for /put-item");
@@ -247,6 +248,28 @@ app.post('/get-all-items', async (req, res) => {
     } while (data.LastEvaluatedKey);
 
     res.status(200).send(items);
+});
+
+app.post('/update-item', async (req, res) => {
+  const params = {
+      TableName: 'mgheraDB',
+      Key: {
+          'user': req.body.user
+      },
+      UpdateExpression: `set ${req.body.attr} = :val`,
+      ExpressionAttributeValues: {
+          ':val': req.body.val
+      },
+  };
+
+  try {
+      const result = await dynamoDB.update(params).promise();
+      console.log('Update succeeded:', result);
+      return result;
+  } catch (err) {
+      console.error('Unable to update item. Error JSON:', JSON.stringify(err, null, 2));
+      throw err;
+  }
 });
 
 
