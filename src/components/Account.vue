@@ -10,10 +10,10 @@
                 <div class="itemInfo">
                     {{item}}
                 </div>
-                <div class="permissionChanger" @click="promote(item.user)">
+                <div class="permissionChanger" @click="promote(item.user, item.permission)">
                     +
                 </div>
-                <div class="permissionChanger" @click="demote(item.user)">
+                <div class="permissionChanger" @click="demote(item.user, item.permission)">
                     -
                 </div>
             </div>
@@ -100,8 +100,26 @@
                     console.error('Error:', error);
                 });
             },
-            promote(item) {
-                const data = { user: item, attr: 'permission', val: this.permission + 1};
+            promote(item, permission) {
+                const data = { user: item, attr: 'permission', val: permission + 1};
+                fetch('http://mghera.com:8083/update-item', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success2:', data);
+                    this.allItems = data;
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+            },
+            demote(item, permission) {
+                const data = { user: item, attr: 'permission', val: permission - 1};
                 fetch('http://mghera.com:8083/update-item', {
                     method: 'POST',
                     headers: {
