@@ -237,18 +237,16 @@ app.post('/get-all-items', async (req, res) => {
     let items = [];
     let data;
 
+    console.log("getting all items");
+
     do {
-      console.log("new item");
       data = await dynamoDB.scan(params).promise();
       items = items.concat(data.Items);
       console.log(data.Items)
       params.ExclusiveStartKey = data.LastEvaluatedKey;
-      console.log("finished item");
     } while (data.LastEvaluatedKey);
 
-    console.log("done getting all items")
-
-    return items;
+    res.status(200).send(items);
 });
 
 
