@@ -36,7 +36,7 @@
                 let date = new Date();
                 date.setTime(date.getTime() + (100 * 365 * 24 * 60 * 60 * 1000)); // 100 years
                 expires = "; expires=" + date.toUTCString();
-                document.cookie = cookieName + "=" + (value || "") + expires + "; path=/;";
+                document.cookie = cookieName + "=" + (value || "") + expires + "; path=/; same_site=none";
             },
             getCookie(cookieName) {
                 let nameEQ = cookieName + "=";
