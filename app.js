@@ -251,12 +251,17 @@ app.post('/get-all-items', async (req, res) => {
 });
 
 app.post('/update-item', async (req, res) => {
+  const attrNamePlaceholder = '#attr';
+
   const params = {
       TableName: 'mgheraDB',
       Key: {
-          'user': req.body.user
+          'user': req.body.user 
       },
-      UpdateExpression: `set ${req.body.attr} = :val`,
+      UpdateExpression: `set ${attrNamePlaceholder} = :val`,
+      ExpressionAttributeNames: {
+          [attrNamePlaceholder]: req.body.attr
+      },
       ExpressionAttributeValues: {
           ':val': req.body.val
       },
@@ -265,12 +270,13 @@ app.post('/update-item', async (req, res) => {
   try {
       const result = await dynamoDB.update(params).promise();
       console.log('Update succeeded:', result);
-      return result;
+      res.json(result);
   } catch (err) {
       console.error('Unable to update item. Error JSON:', JSON.stringify(err, null, 2));
-      throw err;
+      res.status(500).send('Error updating item'); 
   }
 });
+
 
 
 app.listen(PORT, () => {
