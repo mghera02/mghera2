@@ -45,7 +45,7 @@
                 let date = new Date();
                 date.setTime(date.getTime() + (100 * 365 * 24 * 60 * 60 * 1000)); // 100 years
                 expires = "; expires=" + date.toUTCString();
-                document.cookie = cookieName + "=" + (value || "") + expires + "; path=/; secure; SameSite=Strict";
+                document.cookie = cookieName + "=" + (value || "") + expires + "; path=/;";
             },
             getCookie(cookieName) {
                 let nameEQ = cookieName + "=";
@@ -58,6 +58,7 @@
                 return null;
             },
             getAccountDetails() {
+                console.log(`id ${this.id}`)
                 const data = { id: this.id };
 
                 fetch('http://mghera.com:8083/get-info', {
