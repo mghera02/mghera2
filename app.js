@@ -246,6 +246,8 @@ app.post('/get-all-items', async (req, res) => {
       console.log("finished item");
     } while (data.LastEvaluatedKey);
 
+    console.log("done getting all items")
+
     return items;
 });
 

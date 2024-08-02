@@ -96,10 +96,10 @@
          },
          computed: {
          },
-         mounted: function () {
+         mounted: async function () {
             this.id = this.getCookie("id");
             this.getAccountDetails();
-            this.getAllItems();
+            await this.getAllItems();
          },
      }
  </script>
