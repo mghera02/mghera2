@@ -247,7 +247,9 @@ app.post('/get-all-items', async (req, res) => {
             console.error("Error querying item:", err);
         } else {
             if (data.Items.length > 0) {
-              permission = data.Items[0].permission
+              permission = data.Items[0].permission;
+              console.log("permission of requesting user", permission);
+
             } else {
               console.error("Issue querying item");
             }
@@ -295,7 +297,9 @@ app.post('/update-item', async (req, res) => {
             console.error("Error querying item:", err);
         } else {
             if (data.Items.length > 0) {
-              permission = data.Items[0].permission
+              permission = data.Items[0].permission;
+              console.log("permission of requesting user", permission);
+
             } else {
               console.error("Issue querying item");
             }
