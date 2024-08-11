@@ -212,7 +212,7 @@ app.post('/get-info', (req, res) => {
       IndexName: 'password-index',
       KeyConditionExpression: 'password = :passwordVal',
       ExpressionAttributeValues: {
-          ':passwordVal': parseInt(req.body.password),
+          ':passwordVal': req.body.password,
       }
   };
 
