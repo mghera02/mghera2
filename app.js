@@ -195,7 +195,7 @@ app.post('/check-item', (req, res) => {
       } else {
           if (data.Item) {
             if(data.Item.password == req.body.password) {
-              res.status(200).send({ exists: true, id: data.Item.id });
+              res.status(200).send({ exists: true });
             } else {
               res.status(200).send({ exists: false });
             }
@@ -209,10 +209,10 @@ app.post('/check-item', (req, res) => {
 app.post('/get-info', (req, res) => {
   const params = {
       TableName: 'mgheraDB',
-      IndexName: 'id-index',
-      KeyConditionExpression: 'id = :idVal',
+      IndexName: 'password-index',
+      KeyConditionExpression: 'password = :passwordVal',
       ExpressionAttributeValues: {
-          ':idVal': parseInt(req.body.id),
+          ':passwordVal': parseInt(req.body.password),
       }
   };
 

@@ -23,6 +23,7 @@
  
  <script>
      import routeBtn from './routeBtn.vue'
+     import crypto from "crypto-js";
  
      export default {
          name: 'CreateAccount',
@@ -34,13 +35,18 @@
              }
          },
          methods: {
+            createSHA256Hash(inputString) {
+                const hash = crypto.createHash('sha256');
+                hash.update(inputString);
+                return hash.digest('hex');
+            },
             submitAccountDetails() {
                 const name = document.getElementById('name').value;
                 const email = document.getElementById('email').value;
                 const password = document.getElementById('password').value;
-                let id = Math.floor(Math.random() * 100000000 + 1);
+                let hash = this.createSHA256Hash(password);
 
-                const data = { user: email, name: name, password: password, id: id, permission: 1 };
+                const data = { user: email, name: name, password: hash, permission: 1 };
 
                 fetch('http://mghera.com:8083/put-item', {
                     method: 'POST',

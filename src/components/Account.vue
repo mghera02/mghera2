@@ -59,7 +59,7 @@
             },
             getAccountDetails() {
                 console.log(`id ${this.id}`)
-                const data = { id: this.id };
+                const data = { password: this.id };
 
                 fetch('http://mghera.com:8083/get-info', {
                     method: 'POST',

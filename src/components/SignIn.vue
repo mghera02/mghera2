@@ -20,6 +20,7 @@
  
  <script>
      import routeBtn from './routeBtn.vue'
+     import crypto from "crypto-js";
  
      export default {
          name: 'SignIn',
@@ -48,12 +49,17 @@
                 }
                 return null;
             },
+            createSHA256Hash(inputString) {
+                const hash = crypto.createHash('sha256');
+                hash.update(inputString);
+                return hash.digest('hex');
+            },
             submitAccountDetails() {
                 const email = document.getElementById('email').value;
                 const password = document.getElementById('password').value;
+                let hash = this.createSHA256Hash(password);
 
-                const data = { user: email, password: password };
-                console.log(email, password)
+                const data = { user: email, password: hash };
 
                 fetch('http://mghera.com:8083/check-item', {
                     method: 'POST',
@@ -66,8 +72,8 @@
                 .then(data => {
                     console.log('Success:');
                     if(data.exists) {
-                        console.log("correct password:", data.id);
-                        this.setCookie('id', data.id);
+                        console.log("correct password");
+                        this.setCookie('id', hash);
                         window.location = "Account"
                     } else {
                         console.log("incorrect password");
