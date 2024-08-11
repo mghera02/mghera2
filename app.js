@@ -231,50 +231,106 @@ app.post('/get-info', (req, res) => {
 });
 
 app.post('/get-all-items', async (req, res) => {
-  const params = {
-      TableName: 'mgheraDB'
+    let permission = 0;
+
+    let params = {
+      TableName: 'mgheraDB',
+      IndexName: 'password-index',
+      KeyConditionExpression: 'password = :passwordVal',
+      ExpressionAttributeValues: {
+          ':passwordVal': req.body.password,
+      }
     };
 
-    let items = [];
-    let data;
+    dynamoDB.query(params, (err, data) => {
+        if (err) {
+            console.error("Error querying item:", err);
+        } else {
+            if (data.Items.length > 0) {
+              permission = data.Items[0].permission
+            } else {
+              console.error("Issue querying item");
+            }
+        }
+    });
 
-    console.log("getting all items");
+    if(permission == 3) {
+      params = {
+        TableName: 'mgheraDB'
+      };
 
-    do {
-      data = await dynamoDB.scan(params).promise();
-      items = items.concat(data.Items);
-      console.log(data.Items)
-      params.ExclusiveStartKey = data.LastEvaluatedKey;
-    } while (data.LastEvaluatedKey);
+      let items = [];
+      let data;
 
-    res.status(200).send(items);
+      console.log("getting all items");
+
+      do {
+        data = await dynamoDB.scan(params).promise();
+        items = items.concat(data.Items);
+        console.log(data.Items)
+        params.ExclusiveStartKey = data.LastEvaluatedKey;
+      } while (data.LastEvaluatedKey);
+
+      res.status(200).send(items);
+    } else {
+      console.log("permission denied");
+      res.status(403).send();
+    }
 });
 
 app.post('/update-item', async (req, res) => {
-  const attrNamePlaceholder = '#attr';
+  let permission = 0;
 
-  const params = {
+  let params = {
       TableName: 'mgheraDB',
-      Key: {
-          'user': req.body.user 
-      },
-      UpdateExpression: `set ${attrNamePlaceholder} = :val`,
-      ExpressionAttributeNames: {
-          [attrNamePlaceholder]: req.body.attr
-      },
+      IndexName: 'password-index',
+      KeyConditionExpression: 'password = :passwordVal',
       ExpressionAttributeValues: {
-          ':val': req.body.val
-      },
+          ':passwordVal': req.body.password,
+      }
   };
 
-  try {
-      const result = await dynamoDB.update(params).promise();
-      console.log('Update succeeded:', result);
-      res.json(result);
-  } catch (err) {
-      console.error('Unable to update item. Error JSON:', JSON.stringify(err, null, 2));
-      res.status(500).send('Error updating item'); 
+  dynamoDB.query(params, (err, data) => {
+        if (err) {
+            console.error("Error querying item:", err);
+        } else {
+            if (data.Items.length > 0) {
+              permission = data.Items[0].permission
+            } else {
+              console.error("Issue querying item");
+            }
+        }
+  });
+
+  if(permission == 3) {
+    const attrNamePlaceholder = '#attr';
+    params = {
+        TableName: 'mgheraDB',
+        Key: {
+            'user': req.body.user 
+        },
+        UpdateExpression: `set ${attrNamePlaceholder} = :val`,
+        ExpressionAttributeNames: {
+            [attrNamePlaceholder]: req.body.attr
+        },
+        ExpressionAttributeValues: {
+            ':val': req.body.val
+        },
+    };
+
+    try {
+        const result = await dynamoDB.update(params).promise();
+        console.log('Update succeeded:', result);
+        res.json(result);
+    } catch (err) {
+        console.error('Unable to update item. Error JSON:', JSON.stringify(err, null, 2));
+        res.status(500).send('Error updating item'); 
+    }
+  } else {
+    console.log("permission denied");
+    res.status(403).send();
   }
+  
 });
 
 

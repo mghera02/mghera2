@@ -84,7 +84,7 @@
                 window.location = "SignIn"
             },
             getAllItems() {
-                const data = { };
+                const data = { password: this.id };
                 fetch('http://mghera.com:8083/get-all-items', {
                     method: 'POST',
                     headers: {
@@ -102,7 +102,7 @@
                 });
             },
             promote(item, permission) {
-                const data = { user: item, attr: 'permission', val: permission + 1};
+                const data = { user: item, attr: 'permission', val: permission + 1, password: this.id};
                 fetch('http://mghera.com:8083/update-item', {
                     method: 'POST',
                     headers: {
@@ -120,7 +120,7 @@
                 });
             },
             demote(item, permission) {
-                const data = { user: item, attr: 'permission', val: permission - 1};
+                const data = { user: item, attr: 'permission', val: permission - 1, password: this.id};
                 fetch('http://mghera.com:8083/update-item', {
                     method: 'POST',
                     headers: {
@@ -149,7 +149,9 @@
          mounted: async function () {
             this.id = this.getCookie("id");
             this.getAccountDetails();
-            await this.getAllItems();
+            if(this.permission == 3) {
+                await this.getAllItems();
+            }
          },
      }
  </script>
