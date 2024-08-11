@@ -20,7 +20,7 @@
  
  <script>
      import routeBtn from './routeBtn.vue'
-     import crypto from "crypto-js";
+     import CryptoJS from "crypto-js";
  
      export default {
          name: 'SignIn',
@@ -50,9 +50,7 @@
                 return null;
             },
             createSHA256Hash(inputString) {
-                const hash = crypto.createHash('sha256');
-                hash.update(inputString);
-                return hash.digest('hex');
+                return CryptoJS.SHA256(inputString).toString(CryptoJS.enc.Hex);
             },
             submitAccountDetails() {
                 const email = document.getElementById('email').value;
