@@ -188,6 +188,8 @@ app.post('/check-item', (req, res) => {
       }
   };
 
+  console.log("received request to log in user: ", user);
+
   dynamoDB.get(params, (err, data) => {
       if (err) {
           console.error("Error getting item:", err);
@@ -195,11 +197,14 @@ app.post('/check-item', (req, res) => {
       } else {
           if (data.Item) {
             if(data.Item.password == req.body.password) {
+              console.log("succeeded 2");
               res.status(200).send({ exists: true });
             } else {
+              console.log("failed 2.1");
               res.status(200).send({ exists: false });
             }
           } else {
+              console.log("failed 2.2");
               res.status(200).send({ exists: false });
           }
       }
