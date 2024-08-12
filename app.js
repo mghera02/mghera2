@@ -347,10 +347,13 @@ app.post('/like-proj', async (req, res) => {
       }
   };
 
+  console.log("validating request to like/unlike for user: ", req.body.password);
+
   dynamoDB.query(params, async (err, data) => {
         if (err) {
             console.error("Error querying item:", err);
         } else {
+            console.log("validated, making request to like");
             if (data.Items.length > 0) {
               const attrNamePlaceholder = '#attr';
                 params = {

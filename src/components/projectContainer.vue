@@ -106,6 +106,8 @@
                 if(!this.liked) {
                     const data = { password: this.id, proj: this.title, likes:  this.likes + 1};
 
+                    console.log("liking");
+                    
                     fetch('http://mghera.com:8083/like-proj', {
                         method: 'POST',
                         headers: {
@@ -127,6 +129,8 @@
             unlike() {
                 if(this.liked) {
                     const data = { password: this.id, proj: this.title, likes:  this.likes - 1};
+
+                    console.log("unliking");
 
                     fetch('http://mghera.com:8083/like-proj', {
                         method: 'POST',
