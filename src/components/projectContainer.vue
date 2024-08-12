@@ -111,9 +111,9 @@
                 }
             },
             like() {
-                this.likers = this.likers.push(this.id);
+                this.likers.push(this.id);
                 const data = { password: this.id, proj: this.title, likers:  this.likers};
-                console.log("liking");
+                console.log("liking: ", this.likers);
                 fetch('http://mghera.com:8083/like-proj', {
                     method: 'POST',
                     headers: {

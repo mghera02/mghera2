@@ -157,8 +157,9 @@ app.get('/lime', async (req, res) => {
 });
 
 /* Database Endpoints */
-// TO DO: ADD VERIFICATION USING HASHED PASSWORD (ALSO STORE COOKIE OF HASHED PASSWORD INSTEAD OF ID)
 // TO DO: MAKE USERNAME HAVE TO BE UNIQUE IN CREATE ACCOUNT
+// TO DO: Show who liked what in account page for permission 3ers
+// TO DO: likes on mobile
 
 app.post('/put-item', (req, res) => {
   console.log("received request for /put-item");
