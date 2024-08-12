@@ -92,9 +92,10 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                    console.log('Success:', data.item.likers);
-                    this.likes = data.item.likers.length;
-                    if(data.item.likers.includes(this.id)) {
+                    this.likers = data.item.likers;
+                    console.log('Success:', this.likers);
+                    this.likes = this.likers.length;
+                    if(this.likers.includes(this.id)) {
                         this.liked = true;
                     }
                 })
@@ -110,7 +111,8 @@
                 }
             },
             like() {
-                const data = { password: this.id, proj: this.title, likes:  this.likes + 1};
+                this.likers = this.likers.push(this.id);
+                const data = { password: this.id, proj: this.title, likers:  this.likers};
                 console.log("liking");
                 fetch('http://mghera.com:8083/like-proj', {
                     method: 'POST',
@@ -130,7 +132,8 @@
                 });
             },
             unlike() {
-                const data = { password: this.id, proj: this.title, likes:  this.likes - 1};
+                this.likers = this.likers.filter(item => item !== this.id);
+                const data = { password: this.id, proj: this.title, likers:  this.likers};
                 console.log("unliking");
 
                 fetch('http://mghera.com:8083/like-proj', {

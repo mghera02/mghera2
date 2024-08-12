@@ -363,10 +363,10 @@ app.post('/like-proj', async (req, res) => {
                     },
                     UpdateExpression: `set ${attrNamePlaceholder} = :val`,
                     ExpressionAttributeNames: {
-                        [attrNamePlaceholder]: req.body.attr
+                        [attrNamePlaceholder]: 'likers'
                     },
                     ExpressionAttributeValues: {
-                        ':val': req.body.likes
+                        ':val': req.body.likers
                     },
                 };
             
