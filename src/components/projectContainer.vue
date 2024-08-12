@@ -102,53 +102,53 @@
                     console.error('Error:', error);
                 });
             },
-            like() {
+            handleLike() {
                 if(!this.liked) {
-                    const data = { password: this.id, proj: this.title, likes:  this.likes + 1};
-
-                    console.log("liking");
-                    
-                    fetch('http://mghera.com:8083/like-proj', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(data)
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log('Like success', data);
-                        this.likes = this.likes + 1;
-                        this.liked = true;
-                    })
-                    .catch((error) => {
-                        console.error('Error:', error);
-                    });
+                    this.like();
+                } else {
+                    this.unlike();
                 }
             },
+            like() {
+                const data = { password: this.id, proj: this.title, likes:  this.likes + 1};
+                console.log("liking");
+                fetch('http://mghera.com:8083/like-proj', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Like success', data);
+                    this.likes = this.likes + 1;
+                    this.liked = true;
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+            },
             unlike() {
-                if(this.liked) {
-                    const data = { password: this.id, proj: this.title, likes:  this.likes - 1};
+                const data = { password: this.id, proj: this.title, likes:  this.likes - 1};
+                console.log("unliking");
 
-                    console.log("unliking");
-
-                    fetch('http://mghera.com:8083/like-proj', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(data)
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log('Like success', data);
-                        this.likes = this.likes - 1;
-                        this.liked = false;
-                    })
-                    .catch((error) => {
-                        console.error('Error:', error);
-                    });
-                }
+                fetch('http://mghera.com:8083/like-proj', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Like success', data);
+                    this.likes = this.likes - 1;
+                    this.liked = false;
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
             }
         },
         props: {
