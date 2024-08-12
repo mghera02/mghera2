@@ -79,7 +79,6 @@
                 return null;
             },
             getLikes() {
-                
                 const data = { password: this.id, proj: this.title };
 
                 fetch('http://mghera.com:8083/get-proj-likes', {
@@ -125,6 +124,7 @@
                 this.video2 = this.videoVertical2;
             }
             this.id = this.getCookie("id");
+            console.log("got id: ", this.id);
             await this.getLikes();
         },
     }
