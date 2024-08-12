@@ -391,10 +391,11 @@ app.post('/get-proj-likes', async (req, res) => {
         if (err) {
             console.error("Error querying item:", err);
         } else {
+          console.log("getting likes for project:", req.body.proj);
           params = {
               TableName: 'mgheraGallery',
               Key: {
-                  projID: req.body.proj,
+                  projID: `${req.body.proj}`,
               }
           };
         
