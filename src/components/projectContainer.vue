@@ -4,7 +4,7 @@
             <div id="title" :style="getTitleColor()">
                 {{title}}
             </div>
-            <div class="likeBtn">
+            <div class="likeBtn" @click="handleLike()">
                 <img v-if="!liked" src="../assets/like.png" class="likeImg">
                 <img v-if="liked" src="../assets/liked.png" class="likeImg">
                 {{ likes }}
