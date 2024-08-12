@@ -5,7 +5,8 @@
                 {{title}}
             </div>
             <div class="likeBtn">
-                <img src="../assets/like.png" class="likeImg">
+                <img v-if="!liked" src="../assets/like.png" class="likeImg">
+                <img v-if="liked" src="../assets/liked.png" class="likeImg">
                 {{ likes }}
             </div>
         </div>
@@ -45,7 +46,8 @@
                 video: "",
                 video2: "",
                 id: "",
-                likes: 0
+                likes: 0,
+                liked: false
             }
         },
         methods: {
@@ -90,11 +92,59 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                    console.log('Success:', data);
+                    console.log('Success:', data.item.likers);
+                    this.likes = data.item.likers.length;
+                    if(data.item.likers.includes(this.id)) {
+                        this.liked = true;
+                    }
                 })
                 .catch((error) => {
                     console.error('Error:', error);
                 });
+            },
+            like() {
+                if(!this.liked) {
+                    const data = { password: this.id, proj: this.title, likes:  this.likes + 1};
+
+                    fetch('http://mghera.com:8083/like-proj', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Like success', data);
+                        this.likes = this.likes + 1;
+                        this.liked = true;
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
+                }
+            },
+            unlike() {
+                if(this.liked) {
+                    const data = { password: this.id, proj: this.title, likes:  this.likes - 1};
+
+                    fetch('http://mghera.com:8083/like-proj', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Like success', data);
+                        this.likes = this.likes - 1;
+                        this.liked = false;
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
+                }
             }
         },
         props: {
