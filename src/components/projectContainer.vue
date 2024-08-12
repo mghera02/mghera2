@@ -1,7 +1,13 @@
 <template>
     <div id="projectContainer">
-        <div id="title" :style="getTitleColor()">
-            {{title}}
+        <div class="topBanner">
+            <div id="title" :style="getTitleColor()">
+                {{title}}
+            </div>
+            <div class="likeBtn">
+                <img src="../assets/like.png" class="likeImg">
+                {{ likes }}
+            </div>
         </div>
         <div class="year">{{year}}</div>
         <hr :style="getHRColor()">
@@ -37,7 +43,9 @@
         data() {
             return {
                 video: "",
-                video2: ""
+                video2: "",
+                id: "",
+                likes: 0
             }
         },
         methods: {
@@ -59,6 +67,35 @@
                 return {
                     boxShadow: `0px 0px 1.5rem .75rem ${this.color}`,
                 }  
+            },
+            getCookie(cookieName) {
+                let nameEQ = cookieName + "=";
+                let ca = document.cookie.split(';');
+                for (let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            },
+            getLikes() {
+                
+                const data = { password: this.id, proj: this.title };
+
+                fetch('http://mghera.com:8083/get-proj-likes', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
             }
         },
         props: {
@@ -78,7 +115,7 @@
         components: {
             skillTag
         },
-        mounted: function () {
+        mounted: async function () {
             console.log(window.innerWidth)
             if(window.innerWidth >= 1400) {
                 this.video = this.videoLandscape;
@@ -87,6 +124,8 @@
                 this.video = this.videoVertical;
                 this.video2 = this.videoVertical2;
             }
+            this.id = this.getCookie("id");
+            await this.getLikes();
         },
     }
 </script>
@@ -231,6 +270,32 @@
         box-shadow:0px 0px 2rem .5rem #282848 inset;
         margin-bottom: 5rem;
         animation: loadIn 2s;   
+    }
+
+    .topBanner {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .likeBtn {
+        display: flex;
+        flex-direction: row;
+        width: 100px;
+        padding-top: 10px;
+        height: 75px !important;
+        text-align:center;
+        height: 3em;
+        filter: invert();
+        cursor: pointer;
+        color: black;
+        font-size: 4em;
+        font-family: 'Iceland';
+    }
+
+    .likeImg {
+        width: 50px;
+        height: 50px;
     }
 
     #title {

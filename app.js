@@ -332,6 +332,84 @@ app.post('/update-item', async (req, res) => {
   });
 });
 
+app.post('/like-proj', async (req, res) => {
+  let params = {
+      TableName: 'mgheraDB',
+      IndexName: 'password-index',
+      KeyConditionExpression: 'password = :passwordVal',
+      ExpressionAttributeValues: {
+          ':passwordVal': req.body.password,
+      }
+  };
+
+  dynamoDB.query(params, async (err, data) => {
+        if (err) {
+            console.error("Error querying item:", err);
+        } else {
+            if (data.Items.length > 0) {
+              const attrNamePlaceholder = '#attr';
+                params = {
+                    TableName: 'mgheraGallery',
+                    Key: {
+                        'projID': req.body.proj 
+                    },
+                    UpdateExpression: `set ${attrNamePlaceholder} = :val`,
+                    ExpressionAttributeNames: {
+                        [attrNamePlaceholder]: req.body.attr
+                    },
+                    ExpressionAttributeValues: {
+                        ':val': req.body.likes
+                    },
+                };
+            
+                try {
+                    const result = await dynamoDB.update(params).promise();
+                    console.log('Update succeeded:', result);
+                    res.json(result);
+                } catch (err) {
+                    console.error('Unable to update item. Error JSON:', JSON.stringify(err, null, 2));
+                    res.status(500).send('Error updating item'); 
+                }
+            } else {
+              console.error("Issue querying item");
+            }
+        }
+  });
+});
+
+app.post('/get-proj-likes', async (req, res) => {
+  let params = {
+      TableName: 'mgheraDB',
+      IndexName: 'password-index',
+      KeyConditionExpression: 'password = :passwordVal',
+      ExpressionAttributeValues: {
+          ':passwordVal': req.body.password,
+      }
+  };
+
+  dynamoDB.query(params, async (err, data) => {
+        if (err) {
+            console.error("Error querying item:", err);
+        } else {
+          params = {
+              TableName: 'mgheraGallery',
+              Key: {
+                  projID: req.body.proj,
+              }
+          };
+        
+          dynamoDB.get(params, (err, data) => {
+              if (err) {
+                  console.error("Error getting item:", err);
+                  res.status(500).send(err);
+              } else {
+                  res.status(200).send({ item: data.Item });
+              }
+          });
+        }
+  });
+});
+
 
 
 app.listen(PORT, () => {
