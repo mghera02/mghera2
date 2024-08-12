@@ -242,42 +242,40 @@ app.post('/get-all-items', async (req, res) => {
       }
     };
 
-    dynamoDB.query(params, (err, data) => {
+    dynamoDB.query(params, async (err, data) => {
         if (err) {
             console.error("Error querying item:", err);
         } else {
             if (data.Items.length > 0) {
               permission = data.Items[0].permission;
               console.log("permission of requesting user", permission);
-
+              if(permission == 3) {
+                params = {
+                  TableName: 'mgheraDB'
+                };
+          
+                let items = [];
+                let data;
+          
+                console.log("getting all items");
+          
+                do {
+                  data = await dynamoDB.scan(params).promise();
+                  items = items.concat(data.Items);
+                  console.log(data.Items)
+                  params.ExclusiveStartKey = data.LastEvaluatedKey;
+                } while (data.LastEvaluatedKey);
+          
+                res.status(200).send(items);
+              } else {
+                console.log("permission denied");
+                res.status(403).send();
+              }
             } else {
               console.error("Issue querying item");
             }
         }
     });
-
-    if(permission == 3) {
-      params = {
-        TableName: 'mgheraDB'
-      };
-
-      let items = [];
-      let data;
-
-      console.log("getting all items");
-
-      do {
-        data = await dynamoDB.scan(params).promise();
-        items = items.concat(data.Items);
-        console.log(data.Items)
-        params.ExclusiveStartKey = data.LastEvaluatedKey;
-      } while (data.LastEvaluatedKey);
-
-      res.status(200).send(items);
-    } else {
-      console.log("permission denied");
-      res.status(403).send();
-    }
 });
 
 app.post('/update-item', async (req, res) => {
@@ -292,49 +290,46 @@ app.post('/update-item', async (req, res) => {
       }
   };
 
-  dynamoDB.query(params, (err, data) => {
+  dynamoDB.query(params, async (err, data) => {
         if (err) {
             console.error("Error querying item:", err);
         } else {
             if (data.Items.length > 0) {
               permission = data.Items[0].permission;
               console.log("permission of requesting user", permission);
-
+              if(permission == 3) {
+                const attrNamePlaceholder = '#attr';
+                params = {
+                    TableName: 'mgheraDB',
+                    Key: {
+                        'user': req.body.user 
+                    },
+                    UpdateExpression: `set ${attrNamePlaceholder} = :val`,
+                    ExpressionAttributeNames: {
+                        [attrNamePlaceholder]: req.body.attr
+                    },
+                    ExpressionAttributeValues: {
+                        ':val': req.body.val
+                    },
+                };
+            
+                try {
+                    const result = await dynamoDB.update(params).promise();
+                    console.log('Update succeeded:', result);
+                    res.json(result);
+                } catch (err) {
+                    console.error('Unable to update item. Error JSON:', JSON.stringify(err, null, 2));
+                    res.status(500).send('Error updating item'); 
+                }
+              } else {
+                console.log("permission denied");
+                res.status(403).send();
+              }
             } else {
               console.error("Issue querying item");
             }
         }
   });
-
-  if(permission == 3) {
-    const attrNamePlaceholder = '#attr';
-    params = {
-        TableName: 'mgheraDB',
-        Key: {
-            'user': req.body.user 
-        },
-        UpdateExpression: `set ${attrNamePlaceholder} = :val`,
-        ExpressionAttributeNames: {
-            [attrNamePlaceholder]: req.body.attr
-        },
-        ExpressionAttributeValues: {
-            ':val': req.body.val
-        },
-    };
-
-    try {
-        const result = await dynamoDB.update(params).promise();
-        console.log('Update succeeded:', result);
-        res.json(result);
-    } catch (err) {
-        console.error('Unable to update item. Error JSON:', JSON.stringify(err, null, 2));
-        res.status(500).send('Error updating item'); 
-    }
-  } else {
-    console.log("permission denied");
-    res.status(403).send();
-  }
-  
 });
 
 
