@@ -188,7 +188,7 @@ app.post('/check-item', (req, res) => {
       }
   };
 
-  console.log("received request to log in user: ", user);
+  console.log("received request to log in user: ", req.body.user);
 
   dynamoDB.get(params, (err, data) => {
       if (err) {
