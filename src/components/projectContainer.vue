@@ -1,5 +1,6 @@
 <template>
     <div id="projectContainer">
+        <popUp v-if="likesPopUpVisible" title="Sign in to like" mainMessage="In order to like this project, you must sign in first." btnMessage="Sign in" btnLink="signIn"></popUp>
         <div class="topBanner">
             <div id="title" :style="getTitleColor()">
                 {{title}}
@@ -38,6 +39,7 @@
 
 <script>
     import skillTag from './skillTag.vue'
+    import popUp from './popUp.vue'
 
     export default {
         name: 'projectContainer',
@@ -47,7 +49,8 @@
                 video2: "",
                 id: "",
                 likes: 0,
-                liked: false
+                liked: false,
+                likesPopUpVisible: false
             }
         },
         methods: {
@@ -104,10 +107,14 @@
                 });
             },
             handleLike() {
-                if(!this.liked) {
-                    this.like();
+                if(this.id) {
+                    if(!this.liked) {
+                        this.like();
+                    } else {
+                        this.unlike();
+                    }
                 } else {
-                    this.unlike();
+                    this.likesPopUpVisible = true;
                 }
             },
             like() {
@@ -169,7 +176,8 @@
         computed: {
         },
         components: {
-            skillTag
+            skillTag,
+            popUp
         },
         mounted: async function () {
             console.log(window.innerWidth)

@@ -12,6 +12,7 @@ import Portfolio from './components/Portfolio.vue';
 import SignIn from './components/SignIn.vue';
 import CreateAccount from './components/CreateAccount.vue';
 import Account from './components/Account.vue';
+import popUp from './components/popUp.vue';
 
 const routes = [
   { path: '/', component: landingPage },
@@ -22,7 +23,8 @@ const routes = [
   { path: '/Portfolio', component: Portfolio },
   { path: '/SignIn', component: SignIn },
   { path: '/CreateAccount', component: CreateAccount },
-  { path: '/Account', component: Account }
+  { path: '/Account', component: Account },
+  { path: '/popUp', component: popUp }
 ];
 
 const app = createApp(App);
