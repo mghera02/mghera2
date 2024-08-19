@@ -387,21 +387,9 @@ app.post('/like-proj', async (req, res) => {
 });
 
 app.post('/get-proj-likes', async (req, res) => {
-  let params = {
-      TableName: 'mgheraDB',
-      IndexName: 'password-index',
-      KeyConditionExpression: 'password = :passwordVal',
-      ExpressionAttributeValues: {
-          ':passwordVal': req.body.password,
-      }
-  };
-
-  dynamoDB.query(params, async (err, data) => {
-        if (err) {
-            console.error("Error querying item:", err);
-        } else {
+  
           console.log("getting likes for project:", req.body.proj);
-          params = {
+          let params = {
               TableName: 'mgheraGallery',
               Key: {
                   projID: `${req.body.proj}`,
@@ -416,8 +404,6 @@ app.post('/get-proj-likes', async (req, res) => {
                   res.status(200).send({ item: data.Item });
               }
           });
-        }
-  });
 });
 
 
