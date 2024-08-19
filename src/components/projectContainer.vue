@@ -1,6 +1,6 @@
 <template>
     <div id="projectContainer">
-        <popUp v-if="likesPopUpVisible" title="Sign in to like" mainMessage="In order to like this project, you must sign in first." btnMessage="Sign in" btnLink="signIn"></popUp>
+        <popUp v-if="likesPopUpVisible" title="Sign in to like" mainMessage="In order to like this project, you must sign in first." btnMessage="Sign in" btnLink="signIn" @hidePopUp="hidePopUp($event)"></popUp>
         <div class="topBanner">
             <div id="title" :style="getTitleColor()">
                 {{title}}
@@ -159,6 +159,9 @@
                 .catch((error) => {
                     console.error('Error:', error);
                 });
+            },
+            hidePopUp(hide) {
+                this.likesPopUpVisible = !hide;
             }
         },
         props: {

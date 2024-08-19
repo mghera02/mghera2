@@ -3,7 +3,7 @@
         <div class="greyBackground"></div>
         <div class="popUpBox">
             <div class="topSection">
-                <img src="../assets/remove.png" class="xIcon"/>
+                <img src="../assets/remove.png" class="xIcon" @click="hidePopUp"/>
                 <div class="title"> {{ title }} </div>
             </div>
             <div class="popUpBody"> {{ mainMessage }} </div>
@@ -20,6 +20,9 @@
             };
         },
         methods: {
+            hidePopUp() {
+                this.$emit('hidePopUp', true);
+            }
         },
         props: {
             title: String,
@@ -78,6 +81,8 @@
     height: 70px;
     display: inline;
     float: left;
+    cursor: pointer;
+    z-index: 4;
 }
 
 .title {
