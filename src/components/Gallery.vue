@@ -1,5 +1,5 @@
 <template>
-    <div id="Gallery">
+    <div id="Gallery" v-if="permission">
         <routeBtn :site="'Exit'" id="exitBtn"/>
         <div id="galleryTitle">The Gallery</div>
         <mediaMedallion class="medallion" :medallionType='signIn.name' :medallionColor='signIn.color' :medallionLink='signIn.link'></mediaMedallion>
@@ -15,6 +15,8 @@
                 :skills="project.skills"
                 :link="project.link"
                 :year="project.year"
+                :itemPermission="project.permission"
+                :permission="permission"
             />
         </div>
     </div>
@@ -35,6 +37,8 @@
                 projects: data.projects,
                 scrollPosition: 0,
                 signIn:{name: "signIn", color: "rgb(230,40,10)", link: "SignIn"},
+                id: "",
+                permission: 0,
             }
         },
         components: {
@@ -43,13 +47,48 @@
             routeBtn
         },
         methods: {
+            getCookie(cookieName) {
+                let nameEQ = cookieName + "=";
+                let ca = document.cookie.split(';');
+                for (let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            },
+            async getAccountDetails() {
+                console.log(`id ${this.id}`)
+                const data = { password: this.id };
+
+                try {
+                    const response = await fetch('http://mghera.com:8083/get-info', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    });
+                    const responseData = await response.json();
+                    console.log('Success1:', responseData);
+                    this.name = responseData.name;
+                    this.email = responseData.user;
+                    this.permission = responseData.permission;
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            },
         },
         props: {
         },
         computed: {
         },
-        mounted() {
-
+        mounted: async function () {
+            this.id = this.getCookie("id");
+            await this.getAccountDetails();
+            if(!this.id) {
+                this.permission = 1;
+            }
         },
         setup() {
             const route = useRoute();

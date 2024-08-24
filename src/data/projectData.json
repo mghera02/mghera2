@@ -1,6 +1,19 @@
 {
     "projects": [
         {
+            "title":"Stupid Video 4",
+            "color":"white",
+            "year": "2024",
+            "description": "",
+            "videoLandscape": "<iframe width='1000' height='600' src='https://drive.google.com/file/d/1ucVzaV5pE4X1s7WAQDY_8IvVoY8i7vTe/preview' allow='autoplay'></iframe>",
+            "videoVertical":  "<iframe width='250' height='400' src='https://drive.google.com/file/d/1ucVzaV5pE4X1s7WAQDY_8IvVoY8i7vTe/preview' allow='autoplay'></iframe>",
+            "videoLandscape2": "",
+            "videoVertical2": "",
+            "link": "",
+            "skills": "",
+            "permission": 3
+        },
+        {
             "title":"M.O.U.S.E",
             "color":"Blue",
             "year": "2024",
@@ -10,7 +23,8 @@
             "videoLandscape2": "<iframe width='500' height='600' src='/web/Team/progress/progress3.html'></iframe>",
             "videoVertical2": "<iframe width='250' height='300' src='/web/Team/progress/progress3.html'></iframe>",
             "link": {"link":"https://github.com/cmiotto20/477Grp2", "github": true},
-            "skills":["ESP32", "Microcontrollers", "C++", "Circuit Design", "PCB Design", "Soldering", "HTML", "CSS", "JS", "Web Socket", "Motor Control", "Cad", "3D Printing"]
+            "skills":["ESP32", "Microcontrollers", "C++", "Circuit Design", "PCB Design", "Soldering", "HTML", "CSS", "JS", "Web Socket", "Motor Control", "Cad", "3D Printing"],
+            "permission":1 
         },
         {
             "title":"KTT",
@@ -22,7 +36,8 @@
             "videoLandscape2": "<iframe width='500' height='400' src='/KTTDD.pdf#page=1&zoom=60' />",
             "videoVertical2": "<p> <a href='/KTTDD.pdf'> Mobile does not support pdf embedding unfortunately, download here the design review document here </a> </p>",
             "link": {"link":"https://github.com/mghera02/IoTMesh", "github": true},
-            "skills":["Leadership", "ESP8266", "Microcontrollers", "C++", "Circuit Design", "PCB Design", "Soldering", "CAD", "3D Printing", "Material Design", "WIFI Mesh"]
+            "skills":["Leadership", "ESP8266", "Microcontrollers", "C++", "Circuit Design", "PCB Design", "Soldering", "CAD", "3D Printing", "Material Design", "WIFI Mesh"],
+            "permission":1 
         },
         {
             "title":"MIND Arduino Workshops",
@@ -34,7 +49,8 @@
             "videoLandscape": "<iframe src='https://docs.google.com/presentation/d/e/2PACX-1vRjaGxFhnoHS7oOU7zxlY9Ql3FfwAlt-7OpmgU1kZ818PCM2wv-GgBN3EMbLQAgtBAQ2h31m3_rNzYa/embed?start=false&loop=false&delayms=3000' frameborder='0' width='500' height='315' allowfullscreen='true' mozallowfullscreen='true' webkitallowfullscreen='true'></iframe>",
             "videoVertical": "<iframe src='https://docs.google.com/presentation/d/e/2PACX-1vRjaGxFhnoHS7oOU7zxlY9Ql3FfwAlt-7OpmgU1kZ818PCM2wv-GgBN3EMbLQAgtBAQ2h31m3_rNzYa/embed?start=false&loop=false&delayms=3000' frameborder='0' width='250' height='300' allowfullscreen='true' mozallowfullscreen='true' webkitallowfullscreen='true'></iframe>",
             "link": {"link":"", "github": false},
-            "skills":["Leadership", "Arduino", "Microcontrollers", "C++", "Circuit Design"]
+            "skills":["Leadership", "Arduino", "Microcontrollers", "C++", "Circuit Design"],
+            "permission":1 
         },
         {
             "title":"S3 Integration Dashboard",
@@ -44,7 +60,8 @@
             "videoLandscape": "<iframe width='500' height='315' src='https://www.youtube.com/embed/vkjANGPAuvE?si=BhSDjNf5AOI9kV2a' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
             "videoVertical": "<iframe width='250' height='300' src='https://www.youtube.com/embed/vkjANGPAuvE?si=BhSDjNf5AOI9kV2a' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
             "link": {"link":"", "github": false},
-            "skills":["Ruby", "Haml", "Bash", "AWS", "S3", "EC2", "CloudWatch", "Lustre File Systems", "JavaScript", "CSS"]
+            "skills":["Ruby", "Haml", "Bash", "AWS", "S3", "EC2", "CloudWatch", "Lustre File Systems", "JavaScript", "CSS"],
+            "permission":1 
         },
         {
             "title":"Dum-E",
@@ -54,7 +71,8 @@
             "videoLandscape": "<iframe width='500' height='315' src='https://www.youtube.com/embed/_Io_BHvZyO4' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
             "videoVertical": "<iframe width='250' height='300' src='https://www.youtube.com/embed/_Io_BHvZyO4' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
             "link": {"link":"https://github.com/mghera02/Dum-E-Bot", "github": true},
-            "skills":["Raspberry Pi", "Robotics", "Motor Control", "Python", "OpenCV", "CAD", "3D-Printing", "Circuit Design"]
+            "skills":["Raspberry Pi", "Robotics", "Motor Control", "Python", "OpenCV", "CAD", "3D-Printing", "Circuit Design"],
+            "permission":1 
         },
         {
             "title": "Accessible Partner Account Explorer",
@@ -64,7 +82,8 @@
             "videoLandscape": "<iframe width='500' height='315' src='https://www.youtube.com/embed/0Me9P6x6LBU' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
             "videoVertical": "<iframe width='250' height='300' src='https://www.youtube.com/embed/0Me9P6x6LBU' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
             "link": {"link":"", "github": false},
-            "skills":["Vue.js", "HTML", "CSS", "JavaScript", "Web Design", "unit testing", "Jest"]
+            "skills":["Vue.js", "HTML", "CSS", "JavaScript", "Web Design", "unit testing", "Jest"],
+            "permission":1 
         },
         {
             "title": "H4-KR",
@@ -74,7 +93,47 @@
             "videoLandscape": "<iframe width='500' height='315' src='https://www.youtube.com/embed/rc-0-Qx7w10' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
             "videoVertical": "<iframe width='250' height='300' src='https://www.youtube.com/embed/rc-0-Qx7w10' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
             "link": {"link":"https://github.com/mghera02/starwarsDroid", "github": true},
-            "skills":["Arduino", "Robotics", "C++", "CAD", "3D-Printing", "Motor Control", "Circuit Design"]
+            "skills":["Arduino", "Robotics", "C++", "CAD", "3D-Printing", "Motor Control", "Circuit Design"],
+            "permission":1 
+        },
+        {
+            "title":"Bad Cops III",
+            "color":"blue",
+            "year": "2024",
+            "description": "",
+            "videoLandscape": "<iframe width='1000' height='600' src='https://drive.google.com/file/d/1E4UX05qz4w-PXSrBQSPs9OHYDLlk7q7O/preview' allow='autoplay'></iframe>",
+            "videoVertical":  "<iframe width='250' height='400' src='https://drive.google.com/file/d/1E4UX05qz4w-PXSrBQSPs9OHYDLlk7q7O/preview' allow='autoplay'></iframe>",
+            "videoLandscape2": "",
+            "videoVertical2": "",
+            "link": "",
+            "skills": "",
+            "permission": 3
+        },
+        {
+            "title":"East Coast Road Trip",
+            "color":"rgb(20, 160, 140)",
+            "year": "2021",
+            "description": "",
+            "videoLandscape": "<iframe width='1000' height='600' src='https://www.youtube.com/embed/WWq2rq3pSZI?si=Nv2qxn6KVgTJL_8P' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+            "videoVertical":  "<iframe width='250' height='400' src='https://www.youtube.com/embed/WWq2rq3pSZI?si=Nv2qxn6KVgTJL_8P' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+            "videoLandscape2": "",
+            "videoVertical2": "",
+            "link": "",
+            "skills": "",
+            "permission": 3
+        },
+        {
+            "title":"Bad Cops II",
+            "color":"blue",
+            "year": "2020",
+            "description": "",
+            "videoLandscape": "<iframe width='1000' height='600' src='https://drive.google.com/file/d/1xP6Quacgup0yZI37dI-pCOz1iQP9lou-/preview' allow='autoplay'></iframe>",
+            "videoVertical":  "<iframe width='250' height='400' src='https://drive.google.com/file/d/1xP6Quacgup0yZI37dI-pCOz1iQP9lou-/preview' allow='autoplay'></iframe>",
+            "videoLandscape2": "",
+            "videoVertical2": "",
+            "link": "",
+            "skills": "",
+            "permission": 3
         },
         {
             "title": "Sith Holocron",
@@ -84,7 +143,21 @@
             "videoLandscape": "<iframe width='500' height='315' src='https://www.youtube.com/embed/4KzuhPVkj2g' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
             "videoVertical": "<iframe width='250' height='300' src='https://www.youtube.com/embed/4KzuhPVkj2g' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
             "link": {"link":"HolocronPage", "github":false},
-            "skills":["Raspberry Pi", "PHP", "HTML", "CSS", "JS", "Vue.js", "CAD", "3D-Printing", "Motor Control", "Circuit Design", "Server Management"]
+            "skills":["Raspberry Pi", "PHP", "HTML", "CSS", "JS", "Vue.js", "CAD", "3D-Printing", "Motor Control", "Circuit Design", "Server Management"],
+            "permission":1 
+        },
+        {
+            "title":"Stupid Video 3",
+            "color":"Orange",
+            "year": "2020",
+            "description": "",
+            "videoLandscape": "<iframe width='1000' height='600' src='https://www.youtube.com/embed/-4zHcIrejmo?si=di40Gbi9mAtW3xwq' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+            "videoVertical":  "<iframe width='250' height='400' src='https://www.youtube.com/embed/-4zHcIrejmo?si=di40Gbi9mAtW3xwq' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+            "videoLandscape2": "",
+            "videoVertical2": "",
+            "link": "",
+            "skills": "",
+            "permission": 3
         },
         {
             "title": "SchedLink",
@@ -94,7 +167,47 @@
             "videoLandscape": "<iframe width='500' height='315' src='https://www.youtube.com/embed/HQGwd_BH2-Y' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
             "videoVertical": "<iframe width='250' height='300' src='https://www.youtube.com/embed/HQGwd_BH2-Y' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>",
             "link": {"link":"https://schedlink.com/fishers/", "github":false},
-            "skills":["HTML", "PHP", "JS", "CSS", "Server Management", "Project Management", "Leadership", "Entrepreneurship"]
+            "skills":["HTML", "PHP", "JS", "CSS", "Server Management", "Project Management", "Leadership", "Entrepreneurship"],
+            "permission":1 
+        },
+        {
+            "title":"Stupid Video 2",
+            "color":"tan",
+            "year": "2019",
+            "description": "",
+            "videoLandscape": "<iframe width='1000' height='600' src='https://www.youtube.com/embed/R38lvtEbbcA?si=w6B7vFJqlgb9ectc' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+            "videoVertical":  "<iframe width='250' height='400' src='https://www.youtube.com/embed/R38lvtEbbcA?si=w6B7vFJqlgb9ectc' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+            "videoLandscape2": "",
+            "videoVertical2": "",
+            "link": "",
+            "skills": "",
+            "permission": 3
+        },
+        {
+            "title":"Stupid Video 1",
+            "color":"grey",
+            "year": "2019",
+            "description": "",
+            "videoLandscape": "<iframe width='1000' height='600' src='https://www.youtube.com/embed/rJR6BRO0Zpg?si=5CKrNqs-Obn8jRTq' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+            "videoVertical":  "<iframe width='250' height='400' src='https://www.youtube.com/embed/rJR6BRO0Zpg?si=5CKrNqs-Obn8jRTq' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+            "videoLandscape2": "",
+            "videoVertical2": "",
+            "link": "",
+            "skills": "",
+            "permission": 3
+        },
+        {
+            "title":"Bad Cops I",
+            "color":"blue",
+            "year": "2019",
+            "description": "",
+            "videoLandscape": "<iframe width='1000' height='600' src='https://www.youtube.com/embed/ZZcl9mIYby4?si=MpB42UQ-kesCeOl6' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+            "videoVertical":  "<iframe width='250' height='400' src='https://www.youtube.com/embed/ZZcl9mIYby4?si=MpB42UQ-kesCeOl6' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share' referrerpolicy='strict-origin-when-cross-origin' allowfullscreen></iframe>",
+            "videoLandscape2": "",
+            "videoVertical2": "",
+            "link": "",
+            "skills": "",
+            "permission": 3
         }
     ]
 }

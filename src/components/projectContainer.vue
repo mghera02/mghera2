@@ -1,39 +1,48 @@
 <template>
     <div id="projectContainer">
-        <popUp v-if="likesPopUpVisible" title="Sign in to like" mainMessage="In order to like this project, you must sign in first." btnMessage="Sign in" btnLink="signIn" @hidePopUp="hidePopUp($event)"></popUp>
-        <div class="topBanner">
-            <div id="title" :style="getTitleColor()">
-                {{title}}
+        <div v-if="itemPermission <= permission">
+            <popUp v-if="likesPopUpVisible" title="Sign in to like" mainMessage="In order to like this project, you must sign in first." btnMessage="Sign in" btnLink="signIn" @hidePopUp="hidePopUp($event)"></popUp>
+            <div class="topBanner">
+                <div id="title" :style="getTitleColor()">
+                    {{title}}
+                </div>
+                <div class="likeBtn" @click="handleLike()">
+                    <img v-if="!liked" src="../assets/like.png" class="likeImg">
+                    <img v-if="liked" src="../assets/liked.png" class="likeImg">
+                    {{ likes }}
+                </div>
             </div>
-            <div class="likeBtn" @click="handleLike()">
-                <img v-if="!liked" src="../assets/like.png" class="likeImg">
-                <img v-if="liked" src="../assets/liked.png" class="likeImg">
-                {{ likes }}
+            <div class="year">{{year}}</div>
+            <hr :style="getHRColor()">
+            <div id="body" v-if="itemPermission != 3">
+                <div id="description">
+                    {{description}}
+                    <br>
+                    <div v-if="link.link">
+                        <a v-if="link.github" :href="link.link" target="_blank" class="gitHubLink">Go to the GitHub</a>
+                        <a v-else :href="link.link" target="_blank" class="projectLink" :style="getTitleColor()">Go to the Project!</a>
+                    </div>
+                </div>
+                <div>
+                    <div v-if="videoLandscape" id="video">
+                    <div v-html="video" :style="getBorderColor()"></div>
+                    </div>
+                    <div v-if="videoLandscape2" id="video">
+                        <div v-html="video2" :style="getBorderColor()"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="altBody" v-if="itemPermission == 3">
+                <div v-if="videoLandscape" id="altVideo">
+                    <div v-html="video" :style="getBorderColor()"></div>
+                </div>
+            </div>
+            <div v-if="itemPermission != 3">
+                <span id="skills" v-for="skill in skills" :key="skill">
+                    <span><skillTag :skill="skill" :color="color"/></span>
+                </span>
             </div>
         </div>
-        <div class="year">{{year}}</div>
-        <hr :style="getHRColor()">
-        <div id="body">
-            <div id="description">
-                {{description}}
-                <br>
-                <div v-if="link.link">
-                    <a v-if="link.github" :href="link.link" target="_blank" class="gitHubLink">Go to the GitHub</a>
-                    <a v-else :href="link.link" target="_blank" class="projectLink" :style="getTitleColor()">Go to the Project!</a>
-                </div>
-            </div>
-            <div>
-                <div v-if="videoLandscape" id="video">
-                <div v-html="video" :style="getBorderColor()"></div>
-                </div>
-                <div v-if="videoLandscape2" id="video">
-                    <div v-html="video2" :style="getBorderColor()"></div>
-                </div>
-            </div>
-        </div>
-        <span id="skills" v-for="skill in skills" :key="skill">
-            <span><skillTag :skill="skill" :color="color"/></span>
-        </span>
     </div>
 </template>
 
@@ -162,7 +171,7 @@
             },
             hidePopUp(hide) {
                 this.likesPopUpVisible = !hide;
-            }
+            },
         },
         props: {
             title: String,
@@ -174,7 +183,9 @@
             videoLandscape2: String,
             videoVertical2: String,
             skills: Array,
-            link: Object
+            link: Object,
+            itemPermission: Number,
+            permission: Number,
         },
         computed: {
         },
@@ -194,6 +205,7 @@
             this.id = this.getCookie("id");
             console.log("got id: ", this.id);
             await this.getLikes();
+            console.log(this.permission, this.itemPermission)
         },
     }
 </script>
@@ -259,6 +271,18 @@
         .topBanner {
             width: 100%;
             flex-wrap: wrap;
+        }
+
+        #altVideo {
+            position: relative;
+            left: -50px;
+            width: 350px;
+            height: 350px;
+            padding: 50px;
+        }
+
+        #altBody {
+            padding-bottom: 150px;
         }
     }
 
@@ -327,6 +351,20 @@
             width: 50px;
             height: 50px;
         }
+
+        #altVideo {
+            left: 5%;
+            width: 1100px;
+            height: 590px;
+            padding: 50px;
+        }
+
+        #altBody {
+            position: relative;
+            left: 5%;
+            width: 90%;
+            padding-bottom: 100px;
+        }
     }
 
     @media (min-width: 1400px) {
@@ -365,6 +403,20 @@
         .gitHubLink, .projectLink {
             font-size: 2rem;
         }
+
+        #altVideo {
+            left: 5%;
+            width: 1100px;
+            height: 590px;
+            padding: 50px;
+        }
+
+        #altBody {
+            position: relative;
+            left: 5%;
+            width: 90%;
+            padding-bottom: 100px;
+        }
     }
 
     #projectContainer {
@@ -375,6 +427,12 @@
         box-shadow:0px 0px 2rem .5rem #282848 inset;
         margin-bottom: 5rem;
         animation: loadIn 2s;   
+    }
+
+    #altBody {
+        position: relative;
+        left: 5%;
+        width: 90%;
     }
 
     .topBanner {
