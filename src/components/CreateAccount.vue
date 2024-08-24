@@ -1,7 +1,7 @@
 <template>
     <div id="createAccount">
         <routeBtn :site="'SignIn'" id="exitBtn"/>
-        <h1>Create Account (STILL IN DEVELOPMENT, NOT WORKING PROPERLY)</h1>
+        <h1>Create Account</h1>
         <div id="createAccountForm">
             <div id="category">
                 <label for="name">Name</label>
@@ -79,6 +79,25 @@
  <style>
     @import url('https://fonts.googleapis.com/css2?family=Iceland');
 
+    @media (max-width: 1100px) {
+        #createAccountForm {
+            top: 75px !important;
+            width: 200px !important;
+        }
+
+        h1 {
+            position: relative;
+            top: 50px;
+        }
+    }
+
+    @media (min-width: 1400px) {
+        #createAccountForm {
+            top: 100px;
+            width: 600px;
+        }
+    }
+
     #createAccount {
         font-family: 'Michroma'; 
     }
@@ -90,10 +109,8 @@
 
     #createAccountForm {
         position: relative;
-        top: 100px;
         display: flex;
         flex-direction: column;
-        width: 600px;
         margin:auto;
         justify-content: center;
     }

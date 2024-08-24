@@ -1,7 +1,7 @@
 <template>
     <div id="signIn">
         <routeBtn :site="'Exit'" id="exitBtn"/>
-        <h1>Sign In (STILL IN DEVELOPMENT, NOT WORKING PROPERLY)</h1>
+        <h1>Sign In</h1>
         <div id="signInForm">
             <div id="category">
                 <label for="email">Email</label>
@@ -104,6 +104,51 @@
  <style>
     @import url('https://fonts.googleapis.com/css2?family=Iceland');
 
+    @media (max-width: 1100px) {
+        #signInForm {
+            top: 50px !important;
+            width: 200px !important;
+        }
+
+        label {
+            font-size: 1.2em !important;
+            width: 50px !important;
+        }
+
+        #name, 
+        #email,
+        #password {
+            margin-bottom: 10px !important;
+            margin-left: 100px !important;
+            font-size: 1.2em !important;
+            width: 150px !important;
+        }
+
+        #category {
+            width: 200px;
+        }
+    }
+
+    @media (min-width: 1400px) {
+        #signInForm {
+            top: 100px;
+            width: 600px;
+        }
+
+        label {
+            font-size: 1.8em;
+            width: 80px;
+        }
+
+        #name, 
+        #email,
+        #password {
+            margin-bottom: 10px;
+            margin-left: 150px;
+            font-size: 1.5em;
+        }
+    }
+
     #signIn {
         font-family: 'Michroma'; 
     }
@@ -115,17 +160,10 @@
 
     #signInForm {
         position: relative;
-        top: 100px;
         display: flex;
         flex-direction: column;
-        width: 600px;
         margin:auto;
         justify-content: center;
-    }
-
-    label {
-        font-size: 1.8em;
-        width: 80px;
     }
 
     #name, 
@@ -133,9 +171,6 @@
     #password {
         border-color: red;
         display: inline-block;
-        margin-bottom: 10px;
-        margin-left: 150px;
-        font-size: 1.5em;
     }
 
     #category {

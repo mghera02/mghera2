@@ -2,9 +2,11 @@
     <div id="createAccount">
         <routeBtn :site="'Exit'" id="exitBtn"/>
         <h1>{{ name }}</h1>
-        <h6>Permissions Level: {{ permissionConversion[permission] }}</h6>
-        <h6>Email: {{ email }}</h6>
-        <button @click="signOut()">Sign Out</button>
+        <div id="personalInfo">
+            <h6>Permissions Level: {{ permissionConversion[permission] }}</h6>
+            <h6>Email: {{ email }}</h6>
+        </div>
+        <button @click="signOut()" id="signOutBtn">Sign Out</button>
         <div v-if="permission == 3" id="allItems">
             <div class="itemCell" v-for="item, idx in allItems" :key="idx">
                 <div class="itemInfo">
@@ -152,12 +154,36 @@ export default {
  <style>
     @import url('https://fonts.googleapis.com/css2?family=Iceland');
 
+    @media (max-width: 1100px) {
+        #personalInfo {
+            position: relative;
+            top: 50px;
+            width: 80%;
+            left: 10%;
+        }
+
+        #signOutBtn {
+            position: relative;
+            top: 50px;
+        }
+
+        #allItems {
+            top: 100px;
+        }
+    }
+
+    @media (min-width: 1400px) {
+        #allItems {
+            top: 0px;
+        }
+    }
+
     #allItems {
+        position: relative;
         border:solid;
         border-color: blue;
         display: flex;
         flex-direction: column;
-
     }
 
     .itemCell {
@@ -172,6 +198,8 @@ export default {
         border: solid;
         border-color: orange;
         width: 90%;
+        word-wrap: break-word;
+        display: block;
     }
 
     .permissionChanger {

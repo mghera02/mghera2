@@ -243,6 +243,23 @@
         .gitHubLink, .projectLink {
             font-size: 1rem;
         }
+
+        .likeBtn {
+            width: 70px;
+            height: 50px !important;
+            height: 3em;
+            font-size: 3em;
+        }
+
+        .likeImg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .topBanner {
+            width: 100%;
+            flex-wrap: wrap;
+        }
     }
 
     @media (min-width: 1100px) {
@@ -289,6 +306,26 @@
 
         .gitHubLink, .projectLink {
             font-size: 1rem;
+        }
+
+        .likeBtn {
+            display: flex;
+            flex-direction: row;
+            width: 100px;
+            padding-top: 10px;
+            height: 75px !important;
+            text-align:center;
+            height: 3em;
+            filter: invert();
+            cursor: pointer;
+            color: black;
+            font-size: 4em;
+            font-family: 'Iceland';
+        }
+
+        .likeImg {
+            width: 50px;
+            height: 50px;
         }
     }
 
@@ -349,21 +386,11 @@
     .likeBtn {
         display: flex;
         flex-direction: row;
-        width: 100px;
-        padding-top: 10px;
-        height: 75px !important;
         text-align:center;
-        height: 3em;
         filter: invert();
         cursor: pointer;
         color: black;
-        font-size: 4em;
         font-family: 'Iceland';
-    }
-
-    .likeImg {
-        width: 50px;
-        height: 50px;
     }
 
     #title {
