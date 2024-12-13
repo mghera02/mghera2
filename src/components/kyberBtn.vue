@@ -37,7 +37,7 @@
         data() {
             return {
                 background: false,
-                apiIP: "http://98.45.135.99:8083"
+                apiIP: "http://98.45.132.33:8083"
             }
         },
         methods: {
@@ -111,7 +111,7 @@
         mounted: function () {
             const isLocalNetwork = async () => {
                 try {
-                    await fetch('http://98.45.135.99:8082', { mode: 'no-cors' });
+                    await fetch('http://98.45.132.33:8082', { mode: 'no-cors' });
                     return true;  // Assume local network if resource is accessible
                 } catch (error) {
                     return false;  // Assume external network if resource is not accessible
@@ -120,7 +120,7 @@
 
             const setServerIP = async () => {
                 const localNetwork = await isLocalNetwork();
-                this.apiIP = localNetwork ?  'http://98.45.135.99:8083': 'http://10.0.0.25:8083';
+                this.apiIP = localNetwork ?  'http://98.45.132.33:8083': 'http://10.0.0.25:8083';
                 console.log('Using server IP:', this.apiIP);
             }
 
